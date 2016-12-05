@@ -29,21 +29,22 @@ and sufficient CSS styling:
 
   **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Book and Shelf API, Model, and Components  (2 days)
+### Phase 2: User and Shelf API, Model, and Components  (2 days)
 
-**Objective:** Books can be created and assigned Users through shelves.  Shelves can be created, updated, and destroyed.
+  **Objective:** Users can create, update and destroy Shelves.
 
-### Phase 3: Review API, Model and Component (1 days)
+### Phase 3: Book API, Model and Component (2 day)
 
-**Objective:** Reviews belong to users and books.  Can up updated through API
+  **Objective:** Users can create Books and assign them to Shelves.  
 
-### Phase 4: Read Status (1 days)
+### Phase 4: Review API Model and Component (1 day)
 
-**Objective:** Enables users to have a status for every book, and autogenerate shelves by this status
+  **Objective:** Reviews belong to Users and Books.  Reviews can up created and updated.
 
-### Phase 5: Author Accounts (2 days)
+### Phase 5: Read Status (2 days)
 
-**Objective:** Users with Author accounts can have many books, and books point to Author's account page (which displays authored books)
+  **Objective:** Users can mark books as 'read, reading, or to read'. Three shelves will be automatically generated for users based on book status.
+
 
 # Bonus Features
 * Search across multiple models
