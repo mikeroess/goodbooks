@@ -33,9 +33,9 @@ and sufficient CSS styling:
 
   **Objective:** Users can create, update and destroy Shelves.
 
-### Phase 3: Book API, Model and Component (2 day)
+### Phase 3: Book API, Model and Component and Search (2 day)
 
-  **Objective:** Users can create Books and assign them to Shelves.  
+  **Objective:** Users can create Books and search for them by title.  Books can be assigned to shelves.
 
 ### Phase 4: Review API Model and Component (1 day)
 
