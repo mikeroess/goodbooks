@@ -37,6 +37,7 @@ export  const logout = () => {
 };
 
 export const signup = (user) => {
+  debugger
   return (dispatch) => {
     return APIUtil.signup(user)
       .then(newUser => dispatch(receiveCurrentUser(newUser)),

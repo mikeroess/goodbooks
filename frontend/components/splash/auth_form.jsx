@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './splash_footer';
-
+import { withRouter } from 'react-router';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -10,13 +10,6 @@ class AuthForm extends React.Component {
       email: ""
     };
   }
-
-  // signIn(e) {
-  //   e.preventDefault();
-  //   const user = this.state;
-  //   debugger
-  //   this.props.signIn({ user });
-  // }
 
   handleInput(field) {
     return (e) => this.setState({
@@ -58,4 +51,4 @@ class AuthForm extends React.Component {
   }
 }
 
-export default AuthForm;
+export default withRouter(AuthForm);
