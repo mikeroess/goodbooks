@@ -1,12 +1,11 @@
 import React from 'react';
 import { login } from '../../util/session_api_util';
-
+import Footer from './splash_footer';
 
 
 class AuthForm extends React.Component {
 
   render(){
-    debugger
     if (this.props.loggedIn {
       return (
         <p>Welcome, { this.props.currentUser.username }!
@@ -14,21 +13,26 @@ class AuthForm extends React.Component {
       );
     } else {
       return (
-        <form className="authForm" onSubmit={() => login({user: this.state})}>
-          <label>Email:
-            <input type="text"
-              value={this.state.email}
-              onChange={this.handleInput("email")} />
-          </label>
+        <div className="splash">
+          <form className="authForm" onSubmit={() => login({user: this.state})}>
+            <label>Email:
 
-          <label>
-            Password:
-            <input type="password" value={this.state.password}
-              onChange={this.handleInput("password")} />
-          </label>
+              <input type="text"
+                value={this.state.email}
+                onChange={this.handleInput("email")} />
+            </label>
 
-          <button>Sign In!</button>
-        </form>
+            <label>
+              Password:
+              <br />
+              <input type="password" value={this.state.password}
+                onChange={this.handleInput("password")} />
+            </label>
+
+            <button>Sign in</button>
+          </form>
+          <Footer />
+        </div>
       );
     }
   }

@@ -1,6 +1,5 @@
 import React from 'react';
-import { login } from '../../util/session_api_util';
-
+import Footer from './splash_footer';
 
 
 class AuthForm extends React.Component {
@@ -12,11 +11,12 @@ class AuthForm extends React.Component {
     };
   }
 
-  loggedIn() {
-    return (this.props.currentUser === "null");
-  }
-
-  signup(){}
+  // signIn(e) {
+  //   e.preventDefault();
+  //   const user = this.state;
+  //   debugger
+  //   this.props.signIn({ user });
+  // }
 
   handleInput(field) {
     return (e) => this.setState({
@@ -27,29 +27,32 @@ class AuthForm extends React.Component {
 
 
   render(){
-    if (this.loggedIn()) {
+    if (this.props.loggedIn) {
       return (
         <p>Welcome, { this.props.currentUser.username }!
       This will be replaced with a redirect soon!</p>
       );
     } else {
       return (
-        <form className="authForm" onSubmit={() => login({user: this.state})}>
-          <h1>{ this.props.currentUser }</h1>
-          <label>Email:
-            <input type="text"
-              value={this.state.email}
-              onChange={this.handleInput("email")} />
-          </label>
+        <div>
+          <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
+            <h1>{ this.props.currentUser }</h1>
+            <label>Email:
+              <input type="text"
+                value={this.state.email}
+                onChange={this.handleInput("email")} />
+            </label>
 
-          <label>
-            Password:
-            <input type="password" value={this.state.password}
-              onChange={this.handleInput("password")} />
-          </label>
+            <label>
+              Password:
+              <input type="password" value={this.state.password}
+                onChange={this.handleInput("password")} />
+            </label>
 
-          <button>Sign In!</button>
-        </form>
+            <button>Sign In!</button>
+          </form>
+          <Footer />
+        </div>
       );
     }
   }

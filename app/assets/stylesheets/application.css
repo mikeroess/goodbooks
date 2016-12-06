@@ -38,7 +38,7 @@
     display: block;
     width: 100%;
     margin-bottom: 16px;
-    /*background-image:linear-gradient(to bottom, #9d8a78, #4f3418)*/
+    background: image-url('splash-background.jpg');
   }
 
    .header-logo a {
@@ -74,7 +74,6 @@
      padding: 5px 15px;
      text-decoration: none;
 
-
    }
 
    .sign-up {
@@ -98,5 +97,43 @@
 /*Auth Form*/
 
  .authForm {
-   border: solid 1px black;
+   border: solid 1px #d0d0c8;
+   background-color: #fff;
+   box-shadow: 0px 1px 1px #d0d0c8;
+    padding: 28px 10px 34px 10px;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+
  }
+
+
+/*Splash*/
+
+  .authForm .label {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    color: #333;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+  }
+
+  .authForm button {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    background-color: #F4F1EA;
+    border-radius: 3px;
+    padding: 12px 24px;
+    font-size: 16;
+    display: inline-block;
+  }
+
+
+  /*footer*/
+
+  .splash-footer {
+    background: image-url('images/backgrounds/footer-background.jpg')
+  }

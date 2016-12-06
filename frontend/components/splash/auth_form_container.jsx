@@ -1,6 +1,6 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import AuthForm from './auth_form';
+import { login, logout } from '../../actions/session_actions';
 
 const mapStateToProps = ({ session }) => {
   return {currentUser: session.currentUser,
@@ -9,11 +9,14 @@ const mapStateToProps = ({ session }) => {
 
 };
 
-const mapDispatchToProps = (dispactch, { location }) => ({
-  // const logout = () => dispatch(logout()),
-  // formType: location.pathname.slice(1),
-  // process
+const mapDispatchToProps = (dispatch, { location }) => {
+  return {
+    login: (user) => dispatch(login(user)),
+    logout: () => dispatch(logout()),
+  };
 
-});
+
+
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthForm);

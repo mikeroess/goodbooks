@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { receiveCurrentUser  } from './actions/session_actions.js';
-// SetupApp();
+import setUpApp from './setup_app';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
-  // store.dispatch(receiveCurrentUser(window.gon));
+  setUpApp();
   const root = document.getElementById('root');
-  // window.store = store;
+  window.store = store;
   ReactDOM.render(<Root store={ store }/>, root);
 });
