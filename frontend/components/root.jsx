@@ -24,7 +24,7 @@ const _ensureLoggedIn = (nextState, replace) => {
 const Root = ({ store }) => {
   return (<Provider store={ store } >
     <Router history={ hashHistory }>
-      <Route path="/" component={ App } />
+      <Route path="/" component={ App } onEnter={_redirectIfLoggedIn}/>
       <Route path="/user" component={UserContainer} onEnter={_ensureLoggedIn}/>
       <Route path="/login" component={AuthFormContainer}
          onEnter={_redirectIfLoggedIn} />
