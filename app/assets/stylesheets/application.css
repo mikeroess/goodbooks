@@ -13,3 +13,90 @@
  *= require_tree .
  *= require_self
  */
+
+ header, body, form, label, input,
+ button, p, h1, header, nav, a, button, ul, li{
+   padding: 0;
+   border: 0;
+   margin: 0;
+
+   background: inherit;
+   font: inherit;
+   font-family: sans-serif;
+ }
+
+/*clearfix*/
+ .group {
+   /*clear: both;
+   content: "";
+   display: block;*/
+   overflow: auto;
+ }
+
+/*Header*/
+  .header {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    /*background-image:linear-gradient(to bottom, #9d8a78, #4f3418)*/
+  }
+
+   .header-logo a {
+     float: left;
+     font-family: helvetica;
+     font-size: 20px;
+     padding: 5px 15px;
+     color: #382110;
+   }
+
+   .header-nav {
+     display: block;
+     width: 100%;
+   }
+
+   .sign-up {
+     float: right;
+     margin: 10px 15px;
+     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+     font-size: 13px;
+   }
+
+   .header-logo .good {
+     font-weight: 100;
+     font-family: 'Raleway', sans-serif;
+   }
+
+   .header-logo .books {
+     font-weight: 500;
+   }
+
+   .header-logo > a {
+     padding: 5px 15px;
+     text-decoration: none;
+
+
+   }
+
+   .sign-up {
+     font-size: 10px;
+   }
+
+   .sign-up > button {
+     padding: 5px 15px;
+     background: #382110;
+     color: #fff;
+     border-radius: 3px;
+     margin-left: 10px;
+   }
+
+   .sign-up > button:hover {
+     cursor: pointer;
+     background: #58371F;
+   }
+
+
+/*Auth Form*/
+
+ .authForm {
+   border: solid 1px black;
+ }
