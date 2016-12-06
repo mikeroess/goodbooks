@@ -38,7 +38,7 @@
     display: block;
     width: 100%;
     margin-bottom: 16px;
-    background: image-url('/images/backgrounds/splash-background.jpg');
+    /*background: image-url('/images/backgrounds/splash-background.jpg');*/
   }
 
    .header-logo a {
@@ -156,5 +156,5 @@
   /*footer*/
 
   .splash-footer {
-    background: image-url('images/backgrounds/footer-background.jpg')
+    /*background: image-url('images/backgrounds/footer-background.jpg')*/
   }
