@@ -7,14 +7,12 @@ import SignUpContainer from './splash/sign_up_container';
 import UserContainer from './user/user_container';
 
 
-// function requireAuth(nextState, replace) {
-//   if (!userExists()) {
-//     replace({
-//       pathname: '/signin',
-//       state: { nextPathname: nextState.location.pathname }
-//     })
-//   }
-// }
+const _ensureLoggedIn = (nextState, replace) => {
+  const currentUser = store.getState().session.currentUser;
+  if (!currentUser) {
+    replace('/login');
+  }
+};
 
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
@@ -27,8 +25,7 @@ const Root = ({ store }) => {
   return (<Provider store={ store } >
     <Router history={ hashHistory }>
       <Route path="/" component={ App } />
-      <IndexRoute component={UserContainer} />
-      <Route path="/user" component={UserContainer} />
+      <Route path="/user" component={UserContainer} onEnter={_ensureLoggedIn}/>
       <Route path="/login" component={AuthFormContainer}
          onEnter={_redirectIfLoggedIn} />
        <Route path="/signup" component={SignUpContainer}

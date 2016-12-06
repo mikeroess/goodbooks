@@ -27,6 +27,10 @@ export const login = (user) => {
   };
 };
 
+export const gonLogin = (user) => {
+  return(dispatch) => dispatch(receiveCurrentUser(user));
+};
+
 export  const logout = () => {
   return (dispatch) => {
     return APIUtil.logout()

@@ -6,6 +6,7 @@ const mapStateToProps = ({ session }) => {
 };
 
 const mapDispatchToProps = (dispatch, { location }) => {
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserHome);

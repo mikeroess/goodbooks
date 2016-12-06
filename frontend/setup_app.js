@@ -1,10 +1,9 @@
-import { receiveCurrentUser } from './actions/session_actions';
+import { gonLogin } from './actions/session_actions';
 
 
 const setUpApp = function() {
-  // debugger
   const currentUser = window.gon["username"];
-  receiveCurrentUser(currentUser);
+  return gonLogin(currentUser);
 };
 
 export default setUpApp;
