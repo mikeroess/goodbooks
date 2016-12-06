@@ -54,7 +54,7 @@
      width: 100%;
    }
 
-   .sign-up {
+   .login {
      float: right;
      margin: 10px 15px;
      font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
@@ -76,11 +76,14 @@
 
    }
 
-   .sign-up {
+   .header-button {
+     float: right;
+     margin: 10px 15px;
+     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
      font-size: 10px;
    }
 
-   .sign-up  button {
+   .header-button  button {
      padding: 5px 15px;
      background: #382110;
      color: #fff;
@@ -88,7 +91,7 @@
      margin-left: 10px;
    }
 
-   .sign-up  button:hover {
+   .header-button  button:hover {
      cursor: pointer;
      background: #58371F;
    }

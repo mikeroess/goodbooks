@@ -1,15 +1,11 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router';
+import { logout } from '../../actions/session_actions';
 
-class Header extends React.Component {
+class LoggedInHeader extends React.Component {
 
-
-
-  // <ul className="header-list group">
-  //   <li><a href=#></a></li>
-  // </ul>
 
   render() {
-    const notAMember = "Not a member?";
     return (
       <header className="header">
         <nav className="header-nav group">
@@ -20,7 +16,9 @@ class Header extends React.Component {
             </a>
           </h1>
 
-          <p className="sign-up">{notAMember}<button>Sign Up</button></p>
+          <p className="header-button">
+            <button onClick={this.props.logout()}>Sign out</button>
+          </p>
         </nav>
       </header>
     );
@@ -28,4 +26,4 @@ class Header extends React.Component {
 
 }
 
-export default Header;
+export default withRouter(LoggedInHeader);

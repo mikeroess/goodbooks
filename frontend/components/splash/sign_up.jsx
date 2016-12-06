@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './splash_footer';
 import { withRouter } from 'react-router';
-import Header from '../header/header';
+import LoginHeader from '../header/login_header';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class SignUp extends React.Component {
   render(){
     return (
       <div>
-        <Header />
+        <LoginHeader />
         <form className="authForm"
           onSubmit={() => this.props.signup({user: this.state})}>
           <h1>{ this.props.currentUser }</h1>
@@ -44,7 +44,7 @@ class SignUp extends React.Component {
                   onChange={this.handleInput("password")} />
               </label>
 
-            <button>Sign In!</button>
+            <button>Sign up</button>
           </section>
         </form>
         <Footer />
