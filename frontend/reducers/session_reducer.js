@@ -17,6 +17,7 @@ const SessionReducer = (state = initialState, action) => {
       return newState;
 
     case RECEIVE_CURRENT_USER:
+    debugger
       newState.currentUser = action.currentUser;
       return newState;
 
