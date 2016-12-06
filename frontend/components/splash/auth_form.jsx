@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './splash_footer';
-import { withRouter } from 'react-router';
+import { browserHitory, withRouter } from 'react-router';
 import SignupHeader from '../header/signup_header';
 
 class AuthForm extends React.Component {
@@ -23,14 +23,13 @@ class AuthForm extends React.Component {
   render(){
     if (this.props.loggedIn) {
       return (
-        <p>Welcome, { this.props.currentUser.username }!
-      This will be replaced with a redirect soon!</p>
+        <p>redirecting</p>
       );
     } else {
       return (
         <div>
           <SignupHeader />
-          <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
+          <form className="authForm" onSubmit={() => this.props.login({user: this.state}).then(() => browserHitory.push("/user"))}>
             <h1>{ this.props.currentUser }</h1>
             <label>Email:
               <input type="text"

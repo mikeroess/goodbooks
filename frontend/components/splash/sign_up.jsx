@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './splash_footer';
-import { withRouter } from 'react-router';
+import { browserHitory, withRouter } from 'react-router';
 import LoginHeader from '../header/login_header';
 
 class SignUp extends React.Component {
@@ -19,11 +19,16 @@ class SignUp extends React.Component {
 }
 
   render(){
-    return (
-      <div>
+    if (this.props.loggedIn) {
+      return (
+        <p>redirecting</p>
+      );
+    } else {
+      return (
+        <div>
         <LoginHeader />
         <form className="authForm"
-          onSubmit={() => this.props.signup({user: this.state})}>
+          onSubmit={() => this.props.signup({user: this.state}).then(() => browserHitory.push("/user"))}>
           <h1>{ this.props.currentUser }</h1>
             <section className="authFormFields">
               <label>Email Address:
@@ -52,5 +57,6 @@ class SignUp extends React.Component {
       );
     }
   }
+}
 
 export default withRouter(SignUp);
