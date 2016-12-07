@@ -40,6 +40,12 @@ export  const logout = () => {
   };
 };
 
+export  const clearErrors = () => {
+  return (dispatch) => {
+    dispatch(receiveErrors([]));
+  };
+};
+
 export const signup = (user) => {
   return (dispatch) => {
     return APIUtil.signup(user)
@@ -50,8 +56,9 @@ export const signup = (user) => {
 };
 
 export const loginGuest = () => {
+  debugger
   return (dispatch) => {
-    return APIUtil.login({email: "mwr", password:"password"})
+    return APIUtil.login({user: {email: "mwr", password:"password"}})
       .then(user => dispatch(receiveCurrentUser(user)),
       error => dispatch(receiveErrors(error.responseJSON))
     );

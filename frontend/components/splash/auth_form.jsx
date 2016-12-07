@@ -10,6 +10,12 @@ class AuthForm extends React.Component {
       password: "",
       email: ""
     };
+    this.handleClick = this.handleClick.bind(this);
+
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleInput(field) {
@@ -17,21 +23,30 @@ class AuthForm extends React.Component {
       [field]: e.currentTarget.value
     });
 }
-  renderErrors() {
-    if (typeof(this.props.errors) === "undefined") {
-      return;
-    } else {
-      return(
-        <ul className="errorsList">
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`} className="errorMessage">
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    }
+
+handleClick(e) {
+  e.preventDefault();
+  this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
+}
+
+renderErrors() {
+  if (typeof(this.props.errors) === "undefined") {
+    return;
+  } else {
+    return(
+      <ul className="errorsList">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`} className="errorMessage">
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
+}
+
+
+
 
 
   render(){
@@ -44,27 +59,33 @@ class AuthForm extends React.Component {
       return (
         <div>
           <SignupHeader />
-          <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
-            {this.renderErrors()}
-            <label>Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.handleInput("email")} />
-            </label>
+          <div className="authContainer">
+            <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
+              {this.renderErrors()}
 
-            <label>
-              Password:
-              <input type="password" value={this.state.password}
-                onChange={this.handleInput("password")} />
-            </label>
+              <div className="fieldparagraph">
+                <label>Email Address:</label>
+                  <input type="text"
+                    value={this.state.email}
+                    placeholder="you@yours"
+                    onChange={this.handleInput("email")} />
+              </div>
 
-            <div className="buttonContainer group">
-              <button>Log in</button>
-              <button>
-                Guest Account
-              </button>
-            </div>
-          </form>
+              <div className="fieldparagraph">
+                <label> Password: </label>
+                  <input type="password" value={this.state.password}
+                    onChange={this.handleInput("password")} />
+              </div>
+
+
+              <div className="buttonContainer">
+                <button>Log in</button>
+                <button onClick={ this.handleClick }>
+                  Guest Account
+                </button>
+              </div>
+            </form>
+          </div>
           <Footer />
         </div>
       );

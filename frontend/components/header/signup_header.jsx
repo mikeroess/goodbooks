@@ -17,7 +17,7 @@ class SignupHeader extends React.Component {
           </h1>
 
           <p className="header-button">{membershipTest}
-            <Link to="/signup"><button>sign-up</button></Link>
+            <Link to="/signup"><button>Sign up</button></Link>
           </p>
         </nav>
       </header>

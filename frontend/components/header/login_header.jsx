@@ -17,7 +17,7 @@ class LoginHeader extends React.Component {
           </h1>
 
           <p className="header-button">{membershipText}
-            <Link to="/login"><button>log in</button></Link>
+            <Link to="/login"><button>Sign in</button></Link>
           </p>
         </nav>
       </header>

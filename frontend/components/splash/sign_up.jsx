@@ -10,13 +10,22 @@ class SignUp extends React.Component {
       password: "",
       email: ""
     };
-    // this.renderErrors = this.renderErrrors.bind(this);
+  this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleInput(field) {
     return (e) => this.setState({
       [field]: e.currentTarget.value
     });
+}
+
+handleClick(e) {
+  e.preventDefault();
+  this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
 }
 
 renderErrors() {
@@ -44,34 +53,44 @@ renderErrors() {
       return (
         <div>
         <LoginHeader />
-        <form className="authForm"
-          onSubmit={() => this.props.signup({user: this.state})
-          .then(() => hashHistory.push("/user"))}>
-            <section className="authFormFields">
-              {this.renderErrors()}
-              <label>Email Address:
-              <input type="text" placeholder="you@yours"
-                value={this.state.email}
-                onChange={this.handleInput("email")} />
-              </label>
+        <div className="authContainer">
+          <form className="authForm"
+            onSubmit={() => this.props.signup({user: this.state})
+            .then(() => hashHistory.push("/user"))}>
+              <section className="authFormFields">
+                {this.renderErrors()}
 
-              <label>Username:
-                <input type="text" placeholder="name"
-                  value={this.state.username}
-                  onChange={this.handleInput("username")} />
-              </label>
+                <div className="fieldparagraph">
+                  <label>Email Address:</label>
+                    <input type="text"
+                      value={this.state.email}
+                      placeholder="you@yours"
+                      onChange={this.handleInput("email")} />
+                </div>
 
-              <label>
-                Password:
-                <input type="password" value={this.state.password}
-                  onChange={this.handleInput("password")} />
-              </label>
+                <div className="fieldparagraph">
+                  <label> Password:</label>
+                  <input type="password" value={this.state.password}
+                    onChange={this.handleInput("password")} />
+                </div>
 
-            <div className="buttonContainer group">
-              <button>Sign up</button> <button>Guest Account</button>
-            </div>
-          </section>
-        </form>
+                <div className="fieldparagraph">
+                  <label>Username:</label>
+                    <input type="text" placeholder="name"
+                      value={this.state.username}
+                      onChange={this.handleInput("username")} />
+                </div>
+
+
+                  <div className="buttonContainer">
+                    <button>Sign up</button>
+                    <button onClick={ this.handleClick }>
+                      Guest Account
+                    </button>
+                  </div>
+            </section>
+          </form>
+        </div>
         <Footer />
       </div>
       );
