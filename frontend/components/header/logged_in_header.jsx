@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { browserHistory, Link, withRouter } from 'react-router';
 import { logout } from '../../actions/session_actions';
 
 class LoggedInHeader extends React.Component {
@@ -15,9 +15,8 @@ class LoggedInHeader extends React.Component {
               <span className="books">Books</span>
             </a>
           </h1>
-
           <p className="header-button">
-            <button onClick={this.props.logout()}>Sign out</button>
+            <button onClick={this.props.logout().then(browserHistory.push('/'))}>Sign out</button>
           </p>
         </nav>
       </header>

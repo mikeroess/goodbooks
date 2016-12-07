@@ -48,3 +48,12 @@ export const signup = (user) => {
     );
   };
 };
+
+export const loginGuest = () => {
+  return (dispatch) => {
+    return APIUtil.login({email: "mwr", password:"password"})
+      .then(user => dispatch(receiveCurrentUser(user)),
+      error => dispatch(receiveErrors(error.responseJSON))
+    );
+  };
+};

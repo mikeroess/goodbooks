@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './splash_footer';
-import { browserHitory, withRouter } from 'react-router';
+import { hashHistory, withRouter } from 'react-router';
 import SignupHeader from '../header/signup_header';
 
 class AuthForm extends React.Component {
@@ -18,20 +18,25 @@ class AuthForm extends React.Component {
     });
 }
   renderErrors() {
-  return(
-    <ul className="errorsList">
-      {this.props.errors.map((error, i) => (
-        <li key={`error-${i}`} className="errorMessage">
-          {error}
-        </li>
-      ))}
-    </ul>
-  );
+    if (typeof(this.props.errors) === "undefined") {
+      return;
+    } else {
+      return(
+        <ul className="errorsList">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`} className="errorMessage">
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
 
   render(){
     if (this.props.loggedIn) {
+      hashHistory.push("/user");
       return (
         <p>redirecting</p>
       );
@@ -54,7 +59,10 @@ class AuthForm extends React.Component {
             </label>
 
             <div className="buttonContainer group">
-              <button>Log in</button> <button>Guest Account</button>
+              <button>Log in</button>
+              <button>
+                Guest Account
+              </button>
             </div>
           </form>
           <Footer />

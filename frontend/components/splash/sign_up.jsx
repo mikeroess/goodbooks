@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './splash_footer';
-import { browserHitory, withRouter } from 'react-router';
+import { hashHistory, withRouter } from 'react-router';
 import LoginHeader from '../header/login_header';
 
 class SignUp extends React.Component {
@@ -20,15 +20,19 @@ class SignUp extends React.Component {
 }
 
 renderErrors() {
-return(
-  <ul className="errorsList">
-    {this.props.errors.map((error, i) => (
-      <li key={`error-${i}`} className="errorMessage">
-        {error}
-      </li>
-    ))}
-  </ul>
-);
+  if (typeof(this.props.errors) === "undefined") {
+    return;
+  } else {
+    return(
+      <ul className="errorsList">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`} className="errorMessage">
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 }
 
   render(){
@@ -41,7 +45,8 @@ return(
         <div>
         <LoginHeader />
         <form className="authForm"
-          onSubmit={() => this.props.signup({user: this.state}).then(() => browserHitory.push("/user"))}>
+          onSubmit={() => this.props.signup({user: this.state})
+          .then(() => hashHistory.push("/user"))}>
             <section className="authFormFields">
               {this.renderErrors()}
               <label>Email Address:
