@@ -8,6 +8,10 @@
     "errors": []
   },
 
+  "loading": {
+    "loading": true
+  },
+
   "book": {
     "1": {
       "title": "Rules for the Direction of the Mind",
