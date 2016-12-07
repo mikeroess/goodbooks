@@ -11,6 +11,7 @@ class SignUp extends React.Component {
       email: ""
     };
   this.handleClick = this.handleClick.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillUnmount() {
@@ -23,9 +24,17 @@ class SignUp extends React.Component {
     });
 }
 
-handleClick(e) {
+// Replace onsubmit function with this -- add spinner if loading.
+// handleClick(e) {
+//   e.preventDefault();
+//   // Write method that you need to invoke that adds a spinner if state 'loading' is true
+//   this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
+//
+// }
+
+handleSubmit(e) {
   e.preventDefault();
-  this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
+  this.props.signup({user: this.state})
 }
 
 renderErrors() {
@@ -55,7 +64,7 @@ renderErrors() {
         <LoginHeader />
         <div className="authContainer">
           <form className="authForm"
-            onSubmit={() => this.props.signup({user: this.state})
+            onSubmit={(e) => )
             .then(() => hashHistory.push("/user"))}>
                 {this.renderErrors()}
 
@@ -69,7 +78,9 @@ renderErrors() {
 
                 <div className="fieldparagraph">
                   <label> Password:</label>
-                  <input type="password" value={this.state.password}
+                  <input type="password"
+                    placeholder="password"
+                    value={this.state.password}
                     onChange={this.handleInput("password")} />
                 </div>
 

@@ -73,7 +73,9 @@ renderErrors() {
 
               <div className="fieldparagraph">
                 <label> Password: </label>
-                  <input type="password" value={this.state.password}
+                  <input type="password"
+                    placeholder="password"
+                    value={this.state.password}
                     onChange={this.handleInput("password")} />
               </div>
 

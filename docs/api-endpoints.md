@@ -16,6 +16,10 @@
 ### Shelves
   * `GET /api/users/:id/shelf/:shelf_id` Get a single shelf item
     - NB include books and user to avoid n + 1
+  * `DELETE /api/users/:id/shelf/:shelf_id` Get a single shelf item
+  - NB include books and user to avoid n + 1
+  * `POST /api/users/:id/shelf/` Get a single shelf item
+    - NB include books and user to avoid n + 1
 
 ### Session
   * `POST /api/session` Create session/current_user (log in)
