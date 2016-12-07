@@ -25,16 +25,16 @@ class SignUp extends React.Component {
 }
 
 // Replace onsubmit function with this -- add spinner if loading.
-// handleClick(e) {
-//   e.preventDefault();
-//   // Write method that you need to invoke that adds a spinner if state 'loading' is true
-//   this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
-//
-// }
+handleClick(e) {
+  e.preventDefault();
+  this.props.loading({"loading": true});
+  this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
+}
 
 handleSubmit(e) {
   e.preventDefault();
-  this.props.signup({user: this.state})
+  this.props.loading({"loading": true});
+  this.props.signup({user: this.state}).then(hashHistory.push("/"))
 }
 
 renderErrors() {
