@@ -57,7 +57,6 @@ renderErrors() {
           <form className="authForm"
             onSubmit={() => this.props.signup({user: this.state})
             .then(() => hashHistory.push("/user"))}>
-              <section className="authFormFields">
                 {this.renderErrors()}
 
                 <div className="fieldparagraph">
@@ -88,7 +87,6 @@ renderErrors() {
                       Guest Account
                     </button>
                   </div>
-            </section>
           </form>
         </div>
         <Footer />
