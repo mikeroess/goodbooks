@@ -17,7 +17,17 @@ class AuthForm extends React.Component {
       [field]: e.currentTarget.value
     });
 }
-
+  renderErrors() {
+  return(
+    <ul className="errorsList">
+      {this.props.errors.map((error, i) => (
+        <li key={`error-${i}`} className="errorMessage">
+          {error}
+        </li>
+      ))}
+    </ul>
+  );
+  }
 
 
   render(){
@@ -29,8 +39,8 @@ class AuthForm extends React.Component {
       return (
         <div>
           <SignupHeader />
-          <form className="authForm" onSubmit={() => this.props.login({user: this.state}).then(() => browserHitory.push("/user"))}>
-            <h1>{ this.props.currentUser }</h1>
+          <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
+            {this.renderErrors()}
             <label>Email:
               <input type="text"
                 value={this.state.email}
@@ -43,7 +53,9 @@ class AuthForm extends React.Component {
                 onChange={this.handleInput("password")} />
             </label>
 
-            <button>Sign In!</button>
+            <div className="buttonContainer group">
+              <button>Log in</button> <button>Guest Account</button>
+            </div>
           </form>
           <Footer />
         </div>

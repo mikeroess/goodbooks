@@ -19,10 +19,13 @@
    padding: 0;
    border: 0;
    margin: 0;
-
    background: inherit;
    font: inherit;
    font-family: sans-serif;
+ }
+
+ body {
+   background: image-url('splash-background.jpg');
  }
 
 /*clearfix*/
@@ -37,8 +40,7 @@
   .header {
     display: block;
     width: 100%;
-    margin-bottom: 16px;
-    /*background: image-url('/images/backgrounds/splash-background.jpg');*/
+    background: image-url('splash-background.jpg');
   }
 
    .header-logo a {
@@ -95,66 +97,3 @@
      cursor: pointer;
      background: #58371F;
    }
-
-
-/*Auth Form*/
-
- .authForm {
-   border: solid 1px #d0d0c8;
-   background-color: #fff;
-   box-shadow: 0px 1px 1px #d0d0c8;
-  padding: 28px 10px 34px 10px;
-  width: 620px;
-  margin: 0 auto;
-  text-align: center;
-
- }
-
-  .authFormFields {
-    width: 350px;
-    margin: 0 auto;
-  }
-
-/*Splash*/
-
-  .authForm label {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-align: left;
-    color: #333;
-    font-weight: bold;
-    width: 100%;
-    display: block;
-    font-weight: normal;
-    font-size: 10px;
-  }
-
-  .authForm input {
-    font-weight: normal;
-    font-size: 10px;
-    display: block;
-    width: 150px;
-    padding: 5px 0;
-    border: 1px solid darkgrey;
-    border-radius: 3px;
-  }
-
-  .authForm button {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-align: left;
-    font-weight: bold;
-    color: #333;
-    background-color: #F4F1EA;
-    border-radius: 3px;
-    padding: 10px;
-    font-size: 10px;
-    display: inline-block;
-    border: 1px solid darkgrey;
-    margin: 10px 10px 10px 0;
-  }
-
-
-  /*footer*/
-
-  .splash-footer {
-    /*background: image-url('images/backgrounds/footer-background.jpg')*/
-  }
