@@ -1,9 +1,18 @@
 import React from 'react';
-import { browserHistory, Link, withRouter } from 'react-router';
+import { hashHistory, Link, withRouter } from 'react-router';
 import { logout } from '../../actions/session_actions';
 
 class LoggedInHeader extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event){
+    event.preventDefault();
+    this.props.logout().then(() => hashHistory.push("/"));
+  }
 
   render() {
     return (
@@ -16,7 +25,7 @@ class LoggedInHeader extends React.Component {
             </a>
           </h1>
           <p className="header-button">
-            <button onClick={this.props.logout().then(browserHistory.push('/'))}>Sign out</button>
+            <button onClick={this.handleClick}>Sign out</button>
           </p>
         </nav>
       </header>
