@@ -1,5 +1,6 @@
 class Api::SessionsController < ApplicationController
   def create
+    sleep(1)
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.is_password?(params[:user][:password])
       login(@user)

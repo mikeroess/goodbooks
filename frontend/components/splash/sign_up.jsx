@@ -2,13 +2,15 @@ import React from 'react';
 import Footer from './splash_footer';
 import { hashHistory, withRouter } from 'react-router';
 import LoginHeader from '../header/login_header';
+import Loader from 'react-loader';
 
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {username: "",
       password: "",
-      email: ""
+      email: "",
+      loading: false
     };
   this.handleClick = this.handleClick.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,10 +21,6 @@ class SignUp extends React.Component {
     this.props.clearErrors();
   }
 
-  componentWillMount() {
-    // this.props.loading({loading: false});
-  }
-
   handleInput(field) {
     return (e) => this.setState({
       [field]: e.currentTarget.value
@@ -31,19 +29,23 @@ class SignUp extends React.Component {
 
 handleClick(e) {
   e.preventDefault();
-  this.props.loading({"loading": true});
   this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
 }
 
-handleSubmit(e) {
-  e.preventDefault();
-  this.props.loading({"loading": true});
-  this.props.signup({user: this.state});
-  // .then(
-  //   hashHistory.push("/"),
-  //   this.renderErrors()
-  // );
-}
+// Older version
+// handleSubmit(e) {
+//   e.preventDefault();
+//   debugger
+//   // this.setState({"loading": true});
+//   this.props.signup({user: this.state});
+//   // .then(
+//   //   hashHistory.push("/"),
+//   //   this.renderErrors()
+//   // );
+// }
+
+handleSubmit(e) => this.props.signup({user: this.state})
+            .then(() => hashHistory.push("/user"))
 
 renderErrors() {
   if (typeof(this.props.errors) === "undefined") {
@@ -61,30 +63,19 @@ renderErrors() {
   }
 }
 
-renderSpinner() {
-  if (!this.props.loadingState) {
-    return <div className="progress"></div>;
-  } else {
-    return;
-  }
-}
-
   render(){
+    debugger
     if (this.props.loggedIn) {
-      hashHistory.push("/user");
-    } else if (!this.props.loadingState) {
-      return <div className="progress"></div>;
+      return (<p>redirecting</p>);
     } else {
       return (
         <div>
         <LoginHeader />
         <div className="authContainer">
+          <Loader loading={this.state.loading}>
           <form className="authForm">
 
 
-
-
-              {this.renderSpinner()}
               {this.renderErrors()}
 
                 <div className="fieldparagraph">
@@ -120,6 +111,7 @@ renderSpinner() {
                     </button>
                   </div>
           </form>
+          </Loader>
         </div>
         <Footer />
       </div>

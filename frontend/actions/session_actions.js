@@ -58,7 +58,6 @@ export const signup = (user) => {
 };
 
 export const loginGuest = () => {
-  debugger
   return (dispatch) => {
     return APIUtil.login({user: {email: "mwr", password:"password"}})
       .then(user => dispatch(receiveCurrentUser(user)),

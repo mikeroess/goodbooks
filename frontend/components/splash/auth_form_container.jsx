@@ -7,7 +7,7 @@ const mapStateToProps = ({ session, loading }) => {
   return {currentUser: session.currentUser,
           loggedIn: Boolean(session.currentUser),
           errors: session.errors,
-          loadingState: loading.loading};
+          };
 
 };
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
     login: (user) => dispatch(login(user)),
     loginGuest: () => dispatch(loginGuest()),
     clearErrors: () => dispatch(clearErrors()),
-    loading: (loading) => dispatch(receiveLoading(loading))
+    
   };
 
 

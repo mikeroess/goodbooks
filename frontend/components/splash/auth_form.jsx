@@ -2,32 +2,22 @@ import React from 'react';
 import Footer from './splash_footer';
 import { hashHistory, withRouter } from 'react-router';
 import SignupHeader from '../header/signup_header';
+// import Loader from 'react-loader';
 
 class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {username: "",
       password: "",
-      email: ""
+      email: "",
+      // loaded: false
     };
     this.handleClick = this.handleClick.bind(this);
 
   }
 
-  componentWillMount() {
-    this.props.loading({loading: false});
-  }
-
   componentWillUnmount() {
     this.props.clearErrors();
-  }
-
-  renderSpinner() {
-    if (!this.props.loadingState) {
-      return <div className="progress"></div>;
-    } else {
-      return;
-    }
   }
 
   handleInput(field) {
@@ -38,6 +28,7 @@ class AuthForm extends React.Component {
 
 handleClick(e) {
   e.preventDefault();
+  // this.setState({loaded: false});
   this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
 }
 
@@ -64,14 +55,17 @@ renderErrors() {
   render(){
     if (this.props.loggedIn) {
       hashHistory.push("/user");
+    } else if (this.state.loaded) {
+      <Loader loaded={this.state.loaded}></Loader>
     } else {
       return (
         <div>
           <SignupHeader />
           <div className="authContainer">
+
+            <Loader loaded={this.state.loaded}>
             <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
               { this.renderErrors() }
-              { this.renderSpinner() }
               <div className="fieldparagraph">
                 <label>Email Address:</label>
                   <input type="text"
@@ -96,12 +90,14 @@ renderErrors() {
                 </button>
               </div>
             </form>
+            </Loader>
+
           </div>
           <Footer />
         </div>
       );
+      }
     }
   }
-}
 
 export default withRouter(AuthForm);

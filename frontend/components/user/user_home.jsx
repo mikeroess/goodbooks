@@ -11,17 +11,18 @@ class UserHome extends React.Component {
 
   render() {
     return (
-    <div className="userHome">
-      <LoggedInHeaderContainer />
-      <main className="userMain group">
-        <aside className="userHomeAside">
-          <Shelves />
-        </aside>
-        <content className="userHomeContent">
-          <h1>HEY!</h1>
-        </content>
-      </main>
-    </div>
+    // <div className="userHome">
+    <div>hi</div>
+      // <LoggedInHeaderContainer />
+    //   <main className="userMain group">
+    //     <aside className="userHomeAside">
+    //       <Shelves />
+    //     </aside>
+    //     <content className="userHomeContent">
+    //       <h1>HEY!</h1>
+    //     </content>
+    //   </main>
+    // </div>
     );
   }
 }
