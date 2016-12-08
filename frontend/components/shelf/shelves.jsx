@@ -1,11 +1,11 @@
 import React from 'react';
 import ShelfIndexItem from './shelf_index_item';
-import CreateShelf from './create_shelf';
+import CreateShelfContainer from './create_shelf_container';
 
 class Shelves extends React.Component {
 
   componentWillMount() {
-    this.props.fetchShelves(51);
+    this.props.fetchShelves(this.props.currentUser.userId);
   }
 
 
@@ -23,7 +23,7 @@ class Shelves extends React.Component {
           <ul className="customShelvesList">
             { shelfContent }
           </ul>
-          <CreateShelf />
+          <CreateShelfContainer />
 
         </section>
       );
@@ -32,8 +32,7 @@ class Shelves extends React.Component {
         <section className="shelves">
           <h3>BOOKSHELVES</h3>
           <p>You have no shelves!  Make one!</p>
-          <CreateShelf userId={this.props.currentUserId}
-             createShelf={this.props.CreateShelf}/>
+          <CreateShelfContainer />
         </section>
       );
     }

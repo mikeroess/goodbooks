@@ -1,8 +1,9 @@
 class Api::ShelvesController < ApplicationController
 
 def create
+  debugger
   @shelf = Shelf.new
-  @shelf.title = params[:shelf][:title]
+  @shelf.title = params[:title]
   @shelf.user_id = current_user.id
   if @shelf.save
     render 'api/shelves/show'
@@ -12,7 +13,7 @@ def create
 end
 
 def index
-  @user = User.find(params[:shelf][:user_id].to_i)
+  @user = User.find(params[:user_id].to_i)
   if @user
     render 'api/shelves/index'
   else

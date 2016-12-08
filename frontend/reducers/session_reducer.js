@@ -4,7 +4,6 @@ import { RECEIVE_ERRORS, RECEIVE_CURRENT_USER}
 
 const initialState = {
   currentUser: null,
-  userId: 0,
   errors: []
 };
 

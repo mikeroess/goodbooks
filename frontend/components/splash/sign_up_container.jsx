@@ -18,9 +18,6 @@ const mapDispatchToProps = (dispatch, { location }) => {
     login: (user) => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors()),
   };
-
-
-
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

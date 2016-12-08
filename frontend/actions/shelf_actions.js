@@ -41,7 +41,7 @@ export const receiveShelfDetail = (shelf) => {
   };
 };
 
-export const CreateShelf = (userId, shelf) => {
+export const createShelfAction = (userId, shelf) => {
   return (dispatch) => {
     return APIUtil.createShelf(userId, shelf)
       .then(newShelf => dispatch(receiveShelf(newShelf)),

@@ -4,7 +4,6 @@ import { receiveLoading } from '../../actions/loading_actions';
 
 const mapStateToProps = ({ session, loading}) => {
   return {currentUser: session.currentUser,
-          currentUserId: session.userId,
           loadingState: loading};
 };
 

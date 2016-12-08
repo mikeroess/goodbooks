@@ -19,3 +19,22 @@
 .shelfIndexLink:hover {
   text-decoration: underline;
 }
+
+.miniCreateShelf {
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  background-color: #F4F1EA;
+  color: #333333;
+  display: inline-block;
+  padding: 4px;
+  font-size: 10px;
+}
+
+.CreateShelfForm input {
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  margin-right: 15px;
+}

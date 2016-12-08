@@ -7,7 +7,7 @@ import setUpApp from './setup_app';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
-  store.dispatch(setUpApp());
+  // store.dispatch(setUpApp());
   const root = document.getElementById('root');
   window.store = store;
   ReactDOM.render(<Root store={ store }/>, root);

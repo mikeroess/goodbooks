@@ -19,7 +19,7 @@ class UserHome extends React.Component {
           </aside>
 
           <content className="userHomeContent">
-            <h1>HEY!</h1>
+            <h1>I will become the main content</h1>
           </content>
 
         </main>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CreateShelf extends React.Component {
+class CreateShelfComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {title: ""};
@@ -14,21 +14,22 @@ class CreateShelf extends React.Component {
   }
 
   render() {
-    const userId = this.props.userId;
+    const userId = this.props.currentUser.userId;
       return(
 
         <form className="CreateShelfForm"
-          onSubmit={() => this.props.CreateShelf(userId, this.state)}>
+          onSubmit={() => this.props.createShelf(userId, this.state)}>
 
           <label><h3>Add a Shelf:</h3></label>
           <input type="text" placeholder="shelfName"
             value={this.state.title} onChange={this.handleInput()}>
           </input>
-          <button>add</button>
+
+          <button className="miniCreateShelf">add</button>
         </form>
       );
   }
 
 }
 
-export default CreateShelf;
+export default CreateShelfComponent;

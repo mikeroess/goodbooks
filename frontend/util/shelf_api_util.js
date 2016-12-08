@@ -1,8 +1,7 @@
-export const fetchShelves = (userID) => {
+export const fetchShelves = (userId) => {
   return $.ajax({
     method: "GET",
-    url: `/api/users/${userID}/shelves`,
-    data: {shelf: {user_id: `${userID}`}}
+    url: `/api/users/${userId}/shelves`,
   });
 };
 
