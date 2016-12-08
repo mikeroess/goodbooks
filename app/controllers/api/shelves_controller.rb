@@ -12,7 +12,8 @@ def create
 end
 
 def index
-  @user = User.find(params[:shelf][:user_id]).includes(:shelves)
+  debugger
+  @user = User.find(params[:shelf][:user_id].to_i)
   if @user
     render 'api/shelves/index'
   else

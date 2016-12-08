@@ -4,15 +4,14 @@ import ShelfIndexItem from './shelf_index_item';
 class Shelves extends React.Component {
 
   componentDidMount() {
-    this.props.fetchShelves(this.props.shelfOwner.id);
+    this.props.fetchShelves(51);
   }
 
-
+  // const shelfContent = shelves.map((shelf) => {
+  //   return <ShelfIndexItem key={shelf.id} shelf={shelf} />;
+  // });
   render() {
     const shelves = this.props.shelves;
-    // const shelfContent = shelves.map((shelf) => {
-    //   return <ShelfIndexItem key={shelf.id} shelf={shelf} />;
-    // });
 
     return(
       <section className="shelves">
@@ -22,7 +21,7 @@ class Shelves extends React.Component {
         </ul>
       </section>
     );
-  }
+  };
 }
 
 export default Shelves;
