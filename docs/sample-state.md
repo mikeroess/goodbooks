@@ -59,8 +59,20 @@
   },
 
   "shelves": {
+    "shelves": {
+      "username": "mwr",
+      "user_id": 1,
+      "12": { "title": "1927",
+      "count": 3 },
+      "34": { "title": "philosophy",
+      "count": 75}
+    },
+
+  "shelfDetail": {
     "title": "1927",
     "username": "mwr",
+    "user_id": 1,
+    "count": 3,
     "books": {
       "1": {
         "title": "Rules for the Direction of the Mind",
@@ -77,9 +89,10 @@
         "user_rating": 4,
         "status": "read"
       }
-    },
-    "errors": ["Shelf Requires a Name"]
-  }
+    }
+  },
 
+  "errors": ["Shelf Requires a Name"]
+  }
 }
 ````
