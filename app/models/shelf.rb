@@ -10,9 +10,8 @@
 #
 
 class Shelf < ApplicationRecord
-  validates :title, :user_id presence: true,
-  validates :title, uniqueness: {scope: :user_id,
-    message: "You already have a shelf with that name"}
+  validates :title, :user_id, presence: true
+  validates :title, uniqueness: {scope: :user_id, message: "You already have a shelf with that name"}
 
-  belongs_to: user
+  belongs_to :user
 end
