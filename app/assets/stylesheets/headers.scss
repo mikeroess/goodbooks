@@ -1,0 +1,63 @@
+
+/*Header*/
+  .header {
+    display: block;
+    width: 100%;
+    background: image-url('splash-background.jpg');
+  }
+
+   .header-logo a {
+     float: left;
+     font-family: helvetica;
+     font-size: 30px;
+     padding: 5px 15px;
+     color: #382110;
+   }
+
+   .header-nav {
+     display: block;
+     width: 100%;
+   }
+
+   .login {
+     float: right;
+     margin: 10px 15px;
+     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+     font-size: 13px;
+   }
+
+   .header-logo .good {
+     font-weight: 100;
+     font-family: 'Raleway', sans-serif;
+   }
+
+   .header-logo .books {
+     font-weight: 500;
+   }
+
+   .header-logo > a {
+     padding: 5px 15px;
+     text-decoration: none;
+
+   }
+
+   .header-button {
+     float: right;
+     margin: 12px 16px 0 0;
+     font-family: "Lato", "Helvetica Neue", "Helvetica";
+     font-size: 12px;
+   }
+
+   .header-button  button {
+     padding: 8px 12px;
+     background: #382110;
+     color: #fff;
+     border-radius: 3px;
+     margin-left: 10px;
+     font-size: 13px;
+   }
+
+   .header-button  button:hover {
+     cursor: pointer;
+     background: #58371F;
+   }
