@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
     signup: (user) => dispatch(signup(user)),
     login: (user) => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors()),
-    loading: (loading) => dispatch(receiveLoading(loading))
+    loading: (loadAction) => dispatch(receiveLoading(loadAction))
   };
 
 

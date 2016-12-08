@@ -14,8 +14,13 @@ class SignUp extends React.Component {
   this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   componentWillUnmount() {
     this.props.clearErrors();
+  }
+
+  componentWillMount() {
+    // this.props.loading({loading: false});
   }
 
   handleInput(field) {
@@ -24,7 +29,6 @@ class SignUp extends React.Component {
     });
 }
 
-// Replace onsubmit function with this -- add spinner if loading.
 handleClick(e) {
   e.preventDefault();
   this.props.loading({"loading": true});
@@ -34,7 +38,11 @@ handleClick(e) {
 handleSubmit(e) {
   e.preventDefault();
   this.props.loading({"loading": true});
-  this.props.signup({user: this.state}).then(hashHistory.push("/"))
+  this.props.signup({user: this.state});
+  // .then(
+  //   hashHistory.push("/"),
+  //   this.renderErrors()
+  // );
 }
 
 renderErrors() {
@@ -53,20 +61,31 @@ renderErrors() {
   }
 }
 
+renderSpinner() {
+  if (!this.props.loadingState) {
+    return <div className="progress"></div>;
+  } else {
+    return;
+  }
+}
+
   render(){
     if (this.props.loggedIn) {
-      return (
-        <p>redirecting</p>
-      );
+      hashHistory.push("/user");
+    } else if (!this.props.loadingState) {
+      return <div className="progress"></div>;
     } else {
       return (
         <div>
         <LoginHeader />
         <div className="authContainer">
-          <form className="authForm"
-            onSubmit={(e) => )
-            .then(() => hashHistory.push("/user"))}>
-                {this.renderErrors()}
+          <form className="authForm">
+
+
+
+
+              {this.renderSpinner()}
+              {this.renderErrors()}
 
                 <div className="fieldparagraph">
                   <label>Email Address:</label>
@@ -83,7 +102,6 @@ renderErrors() {
                     value={this.state.password}
                     onChange={this.handleInput("password")} />
                 </div>
-
                 <div className="fieldparagraph">
                   <label>Username:</label>
                     <input type="text" placeholder="name"
@@ -93,8 +111,11 @@ renderErrors() {
 
 
                   <div className="buttonContainer">
-                    <button>Sign up</button>
-                    <button onClick={ this.handleClick }>
+                    <button onClick={(e) => this.handleSubmit(e) }>
+                      Sign up
+                    </button>
+
+                  <button onClick={ (e) => this.handleClick(e) }>
                       Guest Account
                     </button>
                   </div>

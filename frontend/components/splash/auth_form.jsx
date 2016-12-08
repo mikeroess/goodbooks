@@ -14,8 +14,20 @@ class AuthForm extends React.Component {
 
   }
 
+  componentWillMount() {
+    this.props.loading({loading: false});
+  }
+
   componentWillUnmount() {
     this.props.clearErrors();
+  }
+
+  renderSpinner() {
+    if (!this.props.loadingState) {
+      return <div className="progress"></div>;
+    } else {
+      return;
+    }
   }
 
   handleInput(field) {
@@ -52,17 +64,14 @@ renderErrors() {
   render(){
     if (this.props.loggedIn) {
       hashHistory.push("/user");
-      return (
-        <p>redirecting</p>
-      );
     } else {
       return (
         <div>
           <SignupHeader />
           <div className="authContainer">
             <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
-              {this.renderErrors()}
-
+              { this.renderErrors() }
+              { this.renderSpinner() }
               <div className="fieldparagraph">
                 <label>Email Address:</label>
                   <input type="text"
