@@ -4,7 +4,7 @@ import { fetchShelves } from '../../actions/shelf_actions';
 
 const mapStateToProps = ({ session, shelves}) => {
   return { currentUser: session.currentUser,
-          currentUser_id: session.user_id,
+          currentUserId: session.userId,
           shelfDetail: shelves.shelfDetail,
           shelves: shelves.shelves,
           errors: shelves.errors,
@@ -14,7 +14,7 @@ const mapStateToProps = ({ session, shelves}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchShelves: (user_id) => dispatch(fetchShelves(user_id))
+    fetchShelves: (userId) => dispatch(fetchShelves(userId))
   };
 };
 

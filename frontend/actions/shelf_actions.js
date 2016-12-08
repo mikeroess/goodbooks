@@ -33,9 +33,9 @@ export const receiveShelfDetail = (shelfDetail) => {
   };
 };
 
-export const fetchShelves = (user_id) => {
+export const fetchShelves = (userId) => {
   return (dispatch) => {
-    return APIUtil.fetchShelves(user_id)
+    return APIUtil.fetchShelves(userId)
     .then(shelves => dispatch(receiveShelves(shelves))),
     error => dispatch(receiveErrors(error.responseJSON));
   };

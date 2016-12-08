@@ -1,14 +1,14 @@
-export const fetchShelves = (user_id) => {
+export const fetchShelves = (userID) => {
   return $.ajax({
     method: "GET",
-    url: '/api/users/${user_id}/shelves',
+    url: '/api/users/${userID}/shelves',
   });
 };
 
-export const createShelf = (user_id, shelf) => {
+export const createShelf = (userID, shelf) => {
   return $.ajax({
     method: "POST",
-    url: `api/users/${user_id}/shelves`,
+    url: `api/users/${userID}/shelves`,
     data: shelf
   });
 };
