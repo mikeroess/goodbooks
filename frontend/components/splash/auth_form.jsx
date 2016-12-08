@@ -56,14 +56,14 @@ renderErrors() {
     if (this.props.loggedIn) {
       hashHistory.push("/user");
     } else if (this.state.loaded) {
-      <Loader loaded={this.state.loaded}></Loader>
+
     } else {
       return (
         <div>
           <SignupHeader />
           <div className="authContainer">
 
-            <Loader loaded={this.state.loaded}>
+
             <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
               { this.renderErrors() }
               <div className="fieldparagraph">
@@ -90,7 +90,6 @@ renderErrors() {
                 </button>
               </div>
             </form>
-            </Loader>
 
           </div>
           <Footer />

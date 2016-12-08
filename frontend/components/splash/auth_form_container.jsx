@@ -5,6 +5,7 @@ import { receiveLoading } from '../../actions/loading_actions';
 
 const mapStateToProps = ({ session, loading }) => {
   return {currentUser: session.currentUser,
+          currentUser_id: session.user_id,
           loggedIn: Boolean(session.currentUser),
           errors: session.errors,
           };
@@ -16,7 +17,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
     login: (user) => dispatch(login(user)),
     loginGuest: () => dispatch(loginGuest()),
     clearErrors: () => dispatch(clearErrors()),
-    
+
   };
 
 

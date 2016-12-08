@@ -29,7 +29,8 @@ class SignUp extends React.Component {
 
 handleClick(e) {
   e.preventDefault();
-  this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
+  this.props.login({user: {email: "mwr", password: "password"}})
+  .then(hashHistory.push("/"));
 }
 
 // Older version
@@ -44,8 +45,11 @@ handleClick(e) {
 //   // );
 // }
 
-handleSubmit(e) => this.props.signup({user: this.state})
-            .then(() => hashHistory.push("/user"))
+handleSubmit(e) {
+  e.preventDefault();
+  this.props.signup({user: this.state})
+  .then(() => hashHistory.push("/user"));
+}
 
 renderErrors() {
   if (typeof(this.props.errors) === "undefined") {
@@ -64,7 +68,7 @@ renderErrors() {
 }
 
   render(){
-    debugger
+
     if (this.props.loggedIn) {
       return (<p>redirecting</p>);
     } else {
@@ -72,7 +76,7 @@ renderErrors() {
         <div>
         <LoginHeader />
         <div className="authContainer">
-          <Loader loading={this.state.loading}>
+
           <form className="authForm">
 
 
@@ -111,7 +115,7 @@ renderErrors() {
                     </button>
                   </div>
           </form>
-          </Loader>
+
         </div>
         <Footer />
       </div>
