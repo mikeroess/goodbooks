@@ -1,1 +1,2 @@
-json.shelf_title @shelf.title
+json.shelfTitle @shelf.title
+json.shelfId @shelf.id

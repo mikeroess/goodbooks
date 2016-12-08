@@ -1,0 +1,21 @@
+.shelves h3 {
+  color: #333333;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin: 12px 0;
+  text-transform: uppercase;
+}
+
+.shelfIndexLink {
+  color: #00635d;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  line-height: 21px;
+  font-size: 14px;
+}
+
+.shelfIndexLink:hover {
+  text-decoration: underline;
+}

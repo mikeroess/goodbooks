@@ -4,6 +4,7 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RECEIVE_SHELVES = "RECEIVE_SHELVES";
 export const RECEIVE_SHELF_DETAIL = "RECEIVE_SHELF_DETAIL";
 export const RECEIVE_SHELF_OWNER = "RECEIVE_SHELF_OWNER";
+export const RECEIVE_SHELF = "RECEIVE_SHELF";
 
 export const receiveErrors = (errors) => {
   return {
@@ -25,19 +26,34 @@ export const receiveShelves = (shelves) => {
     shelves
   };
 };
-
-export const receiveShelfDetail = (shelfDetail) => {
+export const receiveShelf = (shelf) => {
   return {
-    type: RECEIVE_SHELF_DETAIL,
-    shelfDetail
+    type: RECEIVE_SHELF,
+    shelf
+  };
+};
+
+
+export const receiveShelfDetail = (shelf) => {
+  return {
+    type: RECEIVE_SHELF,
+    shelf
+  };
+};
+
+export const CreateShelf = (userId, shelf) => {
+  return (dispatch) => {
+    return APIUtil.createShelf(userId, shelf)
+      .then(newShelf => dispatch(receiveShelf(newShelf)),
+      error => dispatch(receiveErrors(error.reseponseJSON)));
   };
 };
 
 export const fetchShelves = (userId) => {
   return (dispatch) => {
     return APIUtil.fetchShelves(userId)
-    .then(shelves => dispatch(receiveShelves(shelves))),
-    error => dispatch(receiveErrors(error.responseJSON));
+    .then(shelves => dispatch(receiveShelves(shelves)),
+    error => dispatch(receiveErrors(error.responseJSON)));
   };
 };
 

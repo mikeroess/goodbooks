@@ -6,17 +6,17 @@ export const fetchShelves = (userID) => {
   });
 };
 
-export const createShelf = (userID, shelf) => {
+export const createShelf = (userId, shelf) => {
   return $.ajax({
     method: "POST",
-    url: `api/users/${userID}/shelves`,
+    url: `api/users/${userId}/shelves`,
     data: shelf
   });
 };
 
-export const destroyShelf = (shelf_id) => {
+export const destroyShelf = (shelfId) => {
   return $.ajax({
     method: "DELETE",
-    url: `api/shelves/${shelf_id}`
+    url: `api/shelves/${shelfId}`
   });
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import ShelfIndexItem from './shelf_index_item';
+import CreateShelf from './create_shelf';
 
 class Shelves extends React.Component {
 
@@ -13,24 +14,26 @@ class Shelves extends React.Component {
     if (Array.isArray(shelves)) {
 
       const shelfContent = shelves.map((shelf) => {
-        return <ShelfIndexItem key={shelf.id} shelf={shelf} />;
+        return <ShelfIndexItem key={shelf.shelfId} shelf={shelf} />;
       });
 
       return(
         <section className="shelves">
+          <h3>BOOKSHELVES</h3>
           <ul className="customShelvesList">
-            <li>DummyShelfItem</li>
             { shelfContent }
           </ul>
+          <CreateShelf />
+
         </section>
       );
     } else {
       return(
         <section className="shelves">
-          <ul className="customShelvesList">
-            <li>No Shelves</li>
-
-          </ul>
+          <h3>BOOKSHELVES</h3>
+          <p>You have no shelves!  Make one!</p>
+          <CreateShelf userId={this.props.currentUserId}
+             createShelf={this.props.CreateShelf}/>
         </section>
       );
     }

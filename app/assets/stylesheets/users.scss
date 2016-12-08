@@ -1,22 +1,23 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.userHome{
-  background-color: rgba(244,241,234,0.5);
+.userHome {
+  min-height: 900px;
+  background: rgba(244,241,234,0.5);
 }
 
-.userMain{
+.userMain {
   margin: 0 auto;
   width: 780px;
 }
 
-.userHomeAside{
+.userHomeAside {
   float: left;
   margin-right: 40px;
   width: 300px;
 }
 
-.userHomeContent{
+.userHomeContent {
   float: right;
   margin-left: 40px;
   width: 440px;

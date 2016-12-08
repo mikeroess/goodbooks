@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router';
 
 class ShelfIndexItem extends React.Component {
 
 render () {
-
   return (
       <li>
-      {this.props.shelf.title}
+      <Link className="shelfIndexLink">
+        {this.props.shelf.title} {this.props.shelf.count}
+      </Link>
       </li>
   );
 }

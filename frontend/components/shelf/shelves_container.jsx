@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Shelves from './shelves';
-import { fetchShelves } from '../../actions/shelf_actions';
+import { fetchShelves, createShelf} from '../../actions/shelf_actions';
 
 const mapStateToProps = ({ session, shelves}) => {
   return { currentUser: session.currentUser,
@@ -14,7 +14,8 @@ const mapStateToProps = ({ session, shelves}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchShelves: (userId) => dispatch(fetchShelves(userId))
+    fetchShelves: (userId) => dispatch(fetchShelves(userId)),
+    createShelf: (userId, shelf) => dispatch(createShelf(userId, shelf))
   };
 };
 

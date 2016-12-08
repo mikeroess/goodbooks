@@ -11,8 +11,7 @@ class UserHome extends React.Component {
   render() {
     return (
     <div className="userHome">
-        <LoggedInHeaderContainer />
-
+      <LoggedInHeaderContainer />
       <main className="userMain group">
 
           <aside className="userHomeAside">
