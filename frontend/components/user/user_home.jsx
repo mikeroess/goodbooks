@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import LoggedInHeaderContainer from '../header/logged_in_header_container';
-import Shelves from '../shelf/shelves';
+import ShelvesContainer from '../shelf/shelves_container';
 
 
 
@@ -16,7 +16,7 @@ class UserHome extends React.Component {
       <main className="userMain group">
 
           <aside className="userHomeAside">
-              <Shelves />
+              <ShelvesContainer />
           </aside>
 
           <content className="userHomeContent">

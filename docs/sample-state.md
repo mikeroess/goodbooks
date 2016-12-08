@@ -59,7 +59,7 @@
   },
 
   "shelves": {
-    "shelf_owner": {
+    "shelfOwner": {
       "id": 1,
       "username": "mwr"
     },
