@@ -6,7 +6,7 @@ render () {
 
   return (
       <li>
-        DummyShelfIndexItem
+      {this.props.shelf.title}
       </li>
   );
 }
