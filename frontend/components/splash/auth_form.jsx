@@ -10,7 +10,6 @@ class AuthForm extends React.Component {
     this.state = {username: "",
       password: "",
       email: "",
-      // loaded: false
     };
     this.handleClick = this.handleClick.bind(this);
 
@@ -28,7 +27,6 @@ class AuthForm extends React.Component {
 
 handleClick(e) {
   e.preventDefault();
-  // this.setState({loaded: false});
   this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
 }
 
@@ -55,8 +53,6 @@ renderErrors() {
   render(){
     if (this.props.loggedIn) {
       hashHistory.push("/user");
-    } else if (this.state.loaded) {
-
     } else {
       return (
         <div>
@@ -66,6 +62,7 @@ renderErrors() {
 
             <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
               { this.renderErrors() }
+
               <div className="fieldparagraph">
                 <label>Email Address:</label>
                   <input type="text"
