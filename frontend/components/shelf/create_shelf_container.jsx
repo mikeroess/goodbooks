@@ -10,7 +10,7 @@ const mapStateToProps = ({session, shelves}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createShelf: (userId, shelf) => dispatch(createShelfAction(userId, shelf)),
+    createShelf: (shelf) => dispatch(createShelfAction(shelf)),
   };
 };
 

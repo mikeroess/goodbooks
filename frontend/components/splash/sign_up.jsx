@@ -27,27 +27,15 @@ class SignUp extends React.Component {
     });
 }
 
-handleClick(e) {
-  e.preventDefault();
-  this.props.login({user: {email: "mwr", password: "password"}})
-  .then(hashHistory.push("/"));
-}
-
-// Older version
-// handleSubmit(e) {
-//   e.preventDefault();
-//   debugger
-//   // this.setState({"loading": true});
-//   this.props.signup({user: this.state});
-//   // .then(
-//   //   hashHistory.push("/"),
-//   //   this.renderErrors()
-//   // );
-// }
-
 handleSubmit(e) {
   e.preventDefault();
   this.props.signup({user: this.state})
+  .then(() => hashHistory.push("/"));
+}
+
+handleClick(e) {
+  e.preventDefault();
+  this.props.login({user: {email: "mwr", password: "password"}})
   .then(() => hashHistory.push("/user"));
 }
 
@@ -110,7 +98,7 @@ renderErrors() {
                       Sign up
                     </button>
 
-                  <button onClick={ (e) => this.handleClick(e) }>
+                  <button onClick={(e) => this.handleClick(e) }>
                       Guest Account
                     </button>
                   </div>

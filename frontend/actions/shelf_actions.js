@@ -51,7 +51,7 @@ export const createShelfAction = (userId, shelf) => {
 
 export const fetchShelves = (userId) => {
   return (dispatch) => {
-    return APIUtil.fetchShelves(userId)
+    return APIUtil.fetchShelves()
     .then(shelves => dispatch(receiveShelves(shelves)),
     error => dispatch(receiveErrors(error.responseJSON)));
   };

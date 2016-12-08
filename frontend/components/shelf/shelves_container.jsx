@@ -13,7 +13,7 @@ const mapStateToProps = ({ session, shelves}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchShelves: (userId) => dispatch(fetchShelves(userId)),
+    fetchShelves: () => dispatch(fetchShelves()),
   };
 };
 

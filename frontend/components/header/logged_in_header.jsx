@@ -11,7 +11,7 @@ class LoggedInHeader extends React.Component {
 
   handleClick(event){
     event.preventDefault();
-    this.props.logout().then(() => hashHistory.push("/"));
+    this.props.logout().then(() => hashHistory.push("/login"));
   }
 
   render() {

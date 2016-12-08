@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './splash_footer';
 import { hashHistory, withRouter } from 'react-router';
 import SignupHeader from '../header/signup_header';
-// import Loader from 'react-loader';
+
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -12,7 +12,13 @@ class AuthForm extends React.Component {
       email: "",
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
+  }
+  componentWillMount() {
+    if (this.props.loggedIn) {
+      hashHistory.push("/user");
+    }
   }
 
   componentWillUnmount() {
@@ -25,9 +31,16 @@ class AuthForm extends React.Component {
     });
 }
 
+handleSubmit(e) {
+  e.preventDefault();
+  this.props.login({user: this.state})
+  .then(() => hashHistory.push("/"));
+}
+
 handleClick(e) {
   e.preventDefault();
-  this.props.login({user: {email: "mwr", password: "password"}}).then(hashHistory.push("/"));
+  this.props.login({user: {email: "mwr", password: "password"}})
+  .then(() => hashHistory.push("/user"));
 }
 
 renderErrors() {
@@ -49,51 +62,48 @@ renderErrors() {
 
 
 
-
   render(){
-    if (this.props.loggedIn) {
-      hashHistory.push("/user");
-    } else {
-      return (
-        <div>
-          <SignupHeader />
-          <div className="authContainer">
+    return (
+      <div>
+        <SignupHeader />
+        <div className="authContainer">
+          <form className="authForm">
+            { this.renderErrors() }
+
+            <div className="fieldparagraph">
+              <label>Email Address:</label>
+                <input type="text"
+                  value={ this.state.email }
+                  placeholder="you@yours"
+                  onChange={ this.handleInput("email") } />
+            </div>
+
+            <div className="fieldparagraph">
+              <label> Password: </label>
+                <input type="password"
+                  placeholder="password"
+                  value={ this.state.password }
+                  onChange={ this.handleInput("password") } />
+            </div>
 
 
-            <form className="authForm" onSubmit={() => this.props.login({user: this.state})}>
-              { this.renderErrors() }
-
-              <div className="fieldparagraph">
-                <label>Email Address:</label>
-                  <input type="text"
-                    value={this.state.email}
-                    placeholder="you@yours"
-                    onChange={this.handleInput("email")} />
-              </div>
-
-              <div className="fieldparagraph">
-                <label> Password: </label>
-                  <input type="password"
-                    placeholder="password"
-                    value={this.state.password}
-                    onChange={this.handleInput("password")} />
-              </div>
+            <div className="buttonContainer">
+              <button onClick={(e) => this.handleSubmit(e)}>
+                Login
+              </button>
 
 
-              <div className="buttonContainer">
-                <button>Log in</button>
-                <button onClick={ this.handleClick }>
-                  Guest Account
-                </button>
-              </div>
-            </form>
+              <button onClick={(e) => this.handleClick(e)}>
+                Guest Account
+              </button>
+            </div>
+          </form>
 
-          </div>
-          <Footer />
         </div>
-      );
+        <Footer />
+      </div>
+    );
       }
     }
-  }
 
 export default withRouter(AuthForm);

@@ -3,8 +3,7 @@ import LoggedInHeader from './logged_in_header';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = ({ session }) => {
-  return {currentUser: session.currentUser,
-          currentUserId: session.userId,};
+  return {currentUser: session.currentUser};
 };
 
 const mapDispatchToProps = (dispatch, { location }) => {
