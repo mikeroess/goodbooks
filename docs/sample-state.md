@@ -59,9 +59,12 @@
   },
 
   "shelves": {
+    "shelf_owner": {
+      "id": 1,
+      "username": "mwr"
+    },
+
     "shelves": {
-      "username": "mwr",
-      "user_id": 1,
       "12": { "title": "1927",
       "count": 3 },
       "34": { "title": "philosophy",
@@ -70,8 +73,6 @@
 
   "shelfDetail": {
     "title": "1927",
-    "username": "mwr",
-    "user_id": 1,
     "count": 3,
     "books": {
       "1": {
