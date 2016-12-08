@@ -5,10 +5,10 @@ export const fetchShelves = (userId) => {
   });
 };
 
-export const createShelf = (userId, shelf) => {
+export const createShelf = (shelf) => {
   return $.ajax({
     method: "POST",
-    url: `api/users/${userId}/shelves`,
+    url: `api/shelves`,
     data: shelf
   });
 };

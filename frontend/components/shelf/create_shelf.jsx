@@ -18,7 +18,7 @@ class CreateShelfComponent extends React.Component {
       return(
 
         <form className="CreateShelfForm"
-          onSubmit={() => this.props.createShelf(userId, this.state)}>
+          onSubmit={() => this.props.createShelf(this.state)}>
 
           <label><h3>Add a Shelf:</h3></label>
           <input type="text" placeholder="shelfName"
