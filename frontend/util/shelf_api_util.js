@@ -12,3 +12,10 @@ export const createShelf = (user_id, shelf) => {
     data: shelf
   });
 };
+
+export const destroyShelf = (shelf_id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `api/shelves/${shelf_id}`
+  });
+};

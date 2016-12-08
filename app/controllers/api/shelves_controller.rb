@@ -8,10 +8,16 @@ def create
     render 'api/shelves/show'
   else
     render json: @shelf.errors.full_messages, staus: 422
+  end
 end
 
 def index
   @user = User.find(params[:shelf][:user_id]).includes(:shelves)
+  if @user
+    render 'api/shelves/index'
+  else
+    render json: @user.errors.full_messages, status: 422
+  end
 end
 
 def show
