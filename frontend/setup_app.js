@@ -1,9 +1,13 @@
-import { gonLogin } from './actions/session_actions';
+import { gonLogin, logout } from './actions/session_actions';
 
 
 const setUpApp = function() {
   const currentUser = window.gon;
-  return gonLogin(currentUser);
+  if (currentUser.hasOwnProperty("username")) {
+    return gonLogin(currentUser);
+  } else {
+    return logout();
+  }
 };
 
 export default setUpApp;

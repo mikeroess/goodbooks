@@ -14,7 +14,6 @@ class CreateShelfComponent extends React.Component {
   }
 
   render() {
-    const userId = this.props.currentUser.userId;
       return(
 
         <form className="CreateShelfForm"

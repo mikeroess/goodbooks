@@ -36,7 +36,7 @@ export const gonLogin = (user) => {
 export  const logout = () => {
   return (dispatch) => {
     return APIUtil.logout()
-      .then(currentUser => dispatch(receiveCurrentUser(null)),
+      .then(() => dispatch(receiveCurrentUser(null)),
       error => dispatch(receiveErrors(error.responseJSON))
     );
   };
