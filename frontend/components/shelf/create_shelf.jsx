@@ -20,7 +20,7 @@ class CreateShelfComponent extends React.Component {
           onSubmit={() => this.props.createShelf(this.state)}>
 
           <label><h3>Add a Shelf:</h3></label>
-          <input type="text" placeholder="shelfName"
+          <input type="text" placeholder="shelf name"
             value={this.state.title} onChange={this.handleInput()}>
           </input>
 
