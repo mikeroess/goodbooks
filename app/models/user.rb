@@ -27,7 +27,7 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_many :shelves
-  has_many :books, as: :bookable
+  has_many :books, through: :shelves
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)

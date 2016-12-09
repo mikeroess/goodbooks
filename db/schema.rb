@@ -20,10 +20,17 @@ ActiveRecord::Schema.define(version: 20161209195514) do
     t.string   "author_name",                                                                                                                                                 null: false
     t.text     "cover_image_url",    default: "plain_book_url"
     t.text     "blurb",              default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", null: false
+    t.string   "bookable_type"
+    t.integer  "bookable_id"
+    t.integer  "shelf_id"
+    t.datetime "created_at",                                                                                                                                                  null: false
+    t.datetime "updated_at",                                                                                                                                                  null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.index ["bookable_type", "bookable_id"], name: "index_books_on_bookable_type_and_bookable_id", using: :btree
+    t.index ["shelf_id"], name: "index_books_on_shelf_id", using: :btree
   end
 
   create_table "shelves", force: :cascade do |t|
