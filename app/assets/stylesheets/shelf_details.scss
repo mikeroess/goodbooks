@@ -1,0 +1,47 @@
+.shelfDetailHeader > li {
+  float: left;
+  padding: 12px 5px 5px 0;
+  color: #382110;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.shelfDetailHeader {
+  border-bottom: solid 2px #F4F4EA;
+}
+
+.shelfDetail {
+  width: 600px;
+  margin-top: 40px;
+  background: #fff;
+}
+
+.shelfDetailItem > li {
+  float: left;
+  padding: 12px 5px 5px 0;
+  overflow-wrap: break-word;
+}
+
+.cover-col {
+  width: 51px;
+}
+
+.title-col {
+  width: 182px;
+}
+
+.author-col {
+  width: 71px;
+}
+
+.avg-rating-col {
+  width: 45px;
+}
+
+.rating-col {
+  width: 45px;
+}
+
+.shelves-col {
+  width: 78px;
+}
