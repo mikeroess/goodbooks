@@ -1,6 +1,7 @@
 import React from 'react';
 import { hashHistory, Link, withRouter } from 'react-router';
 import { logout } from '../../actions/session_actions';
+import Modal from 'react-modal';
 
 class LoggedInHeader extends React.Component {
 
@@ -17,6 +18,7 @@ class LoggedInHeader extends React.Component {
 
 
   render() {
+    const imagePath = this.props.currentUser.imageUrl;
     return (
       <header className="header">
         <nav className="header-nav group">
@@ -27,8 +29,8 @@ class LoggedInHeader extends React.Component {
             </a>
           </h1>
 
-          <p className="header-button">
-            <button onClick={this.handleClick}><img className="userIcon" src='http://s3.amazonaws.com/goodbooks-standard/users/images/000/000/051/original/book-flat.png?1481300082'></img></button>
+          <p className="header-icon">
+            <button onClick={this.handleClick}><img className="userIcon" src={imagePath}></img></button>
           </p>
         </nav>
       </header>

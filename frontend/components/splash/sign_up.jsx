@@ -10,9 +10,11 @@ class SignUp extends React.Component {
     this.state = {username: "",
       password: "",
       email: "",
-      loading: false
+      loading: false,
+      imageFile: null,
+      imageUrl: null
     };
-  this.handleClick = this.handleClick.bind(this);
+  this.guestLogin = this.guestLogin.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,13 +27,38 @@ class SignUp extends React.Component {
     return (e) => this.setState({
       [field]: e.currentTarget.value
     });
-}
+  }
+
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({ imageFile: file,
+      imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
 
 handleSubmit(e) {
   e.preventDefault();
-  this.props.signup({user: this.state})
+  const formData = new FormData();
+  formData.append("user[username]", this.state.username);
+  formData.append("user[password]", this.state.password);
+  formData.append("user[email]", this.state.email);
+  formData.append("user[image]", this.state.imageFile);
+  this.props.signup(formData)
   .then(() => hashHistory.push("/"));
 }
+
+
+// password: "",
+// email: "",
+// loading: false,
+// imageFile: null,
+// imageUrl: null
 
 guestLogin(e) {
   e.preventDefault();
@@ -65,6 +92,8 @@ renderErrors() {
         <LoginHeader />
         <div className="authContainer">
 
+
+
           <form className="authForm">
 
 
@@ -88,10 +117,19 @@ renderErrors() {
                 <div className="fieldparagraph">
                   <label>Username:</label>
                     <input type="text" placeholder="name"
-                      value={this.state.username}
-                      onChange={this.handleInput("username")} />
+                      value={ this.state.username }
+                      onChange={ this.handleInput("username") } />
                 </div>
 
+                <div className="fieldparagraph">
+                  <label>User Icon:</label>
+                  <input type="file" onChange={ (e) => this.updateFile(e) } />
+                </div>
+
+
+                <div className="fieldparagraph">
+                  <img className="iconPreview" src={ this.state.imageUrl } />
+                </div>
 
                   <div className="buttonContainer">
                     <button onClick={(e) => this.handleSubmit(e) }>

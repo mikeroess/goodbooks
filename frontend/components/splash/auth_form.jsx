@@ -11,7 +11,7 @@ class AuthForm extends React.Component {
       password: "",
       email: "",
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
