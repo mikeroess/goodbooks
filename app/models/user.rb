@@ -14,6 +14,8 @@
 
 class User < ApplicationRecord
   attr_reader :password
+  has_attached_file :image, default_url: "book-flat.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :username, :email, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true

@@ -14,6 +14,8 @@ class LoggedInHeader extends React.Component {
     this.props.logout().then(() => hashHistory.push("/login"));
   }
 
+
+
   render() {
     return (
       <header className="header">
@@ -24,8 +26,9 @@ class LoggedInHeader extends React.Component {
               <span className="books">Books</span>
             </a>
           </h1>
+
           <p className="header-button">
-            <button onClick={this.handleClick}>Sign out</button>
+            <button onClick={this.handleClick}><img className="userIcon" src='http://s3.amazonaws.com/goodbooks-standard/users/images/000/000/051/original/book-flat.png?1481300082'></img></button>
           </p>
         </nav>
       </header>

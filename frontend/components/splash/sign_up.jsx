@@ -33,7 +33,7 @@ handleSubmit(e) {
   .then(() => hashHistory.push("/"));
 }
 
-handleClick(e) {
+guestLogin(e) {
   e.preventDefault();
   this.props.login({user: {email: "mwr", password: "password"}})
   .then(() => hashHistory.push("/user"));
@@ -98,7 +98,7 @@ renderErrors() {
                       Sign up
                     </button>
 
-                  <button onClick={(e) => this.handleClick(e) }>
+                  <button onClick={(e) => this.guestLogin(e) }>
                       Guest Account
                     </button>
                   </div>
