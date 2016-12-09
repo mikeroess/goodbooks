@@ -1,13 +1,19 @@
 import React from 'react';
 import ShelfIndexItem from './shelf_index_item';
 import CreateShelfContainer from './create_shelf_container';
+import { withRouter } from 'react-router';
 
 class Shelves extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchShelves(this.props.currentUser.userId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.shelves.length !== nextProps.shelves.length) {
+      nextProps.fetchShelves(nextProps.currentUser.userId);
+    }
+  }
 
   render() {
     const shelves = this.props.shelves;
@@ -39,4 +45,4 @@ class Shelves extends React.Component {
   }
 }
 
-export default Shelves;
+export default withRouter(Shelves);

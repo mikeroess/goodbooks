@@ -4,9 +4,10 @@ import { Link, withRouter } from 'react-router';
 class ShelfIndexItem extends React.Component {
 
 render () {
+  const linkPath = `/user/shelf/${this.props.shelf.shelfId}`;
   return (
       <li>
-      <Link className="shelfIndexLink">
+      <Link to={ linkPath } className="shelfIndexLink">
         {this.props.shelf.title} {this.props.shelf.count}
       </Link>
       </li>
@@ -15,4 +16,4 @@ render () {
 
 }
 
-export default ShelfIndexItem;
+export default withRouter(ShelfIndexItem);

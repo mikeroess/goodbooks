@@ -21,6 +21,12 @@ def index
 end
 
 def show
+  @shelf = Shelf.find(params[:id])
+  if @shelf
+    render 'api/shelves/show'
+  else
+    render json: @shelf.errors.full_messages, status: 422
+  end
 end
 
 def destroy

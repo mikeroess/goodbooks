@@ -19,3 +19,10 @@ export const destroyShelf = (shelfId) => {
     url: `api/shelves/${shelfId}`
   });
 };
+
+export const fetchShelf = (shelfId) => {
+  return $.ajax({
+    method: "GET",
+    url: `api/shelves/${shelfId}`
+  })
+}

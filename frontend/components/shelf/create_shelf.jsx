@@ -13,6 +13,10 @@ class CreateShelfComponent extends React.Component {
     });
   }
 
+  // handleSubmit() {
+  //   // clear state then submit
+  // }
+
   render() {
       return(
 

@@ -7,6 +7,10 @@ import ShelvesContainer from '../shelf/shelves_container';
 
 
 class UserHome extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
 
   render() {
     return (
@@ -19,7 +23,8 @@ class UserHome extends React.Component {
           </aside>
 
           <content className="userHomeContent">
-            <h1>I will become the main content</h1>
+            { this.props.children }
+            // <h1>I will become the main content</h1>
           </content>
 
         </main>

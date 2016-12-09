@@ -5,11 +5,25 @@ export const RECEIVE_SHELVES = "RECEIVE_SHELVES";
 export const RECEIVE_SHELF_DETAIL = "RECEIVE_SHELF_DETAIL";
 export const RECEIVE_SHELF_OWNER = "RECEIVE_SHELF_OWNER";
 export const RECEIVE_SHELF = "RECEIVE_SHELF";
+export const REQUEST_ALL_SHELVES = "REQUEST_ALL_SHELVES";
+export const REQUEST_A_SHELF = "REQUEST_A_SHELF";
 
 export const receiveErrors = (errors) => {
   return {
     type: RECEIVE_ERRORS,
     errors
+  };
+};
+
+export const requestAllShelves = () => {
+  return {
+    type: REQUEST_ALL_SHELVES,
+  };
+};
+
+export const requestAShelf = () => {
+  return {
+    type: REQUEST_A_SHELF,
   };
 };
 
@@ -36,7 +50,7 @@ export const receiveShelf = (shelf) => {
 
 export const receiveShelfDetail = (shelf) => {
   return {
-    type: RECEIVE_SHELF,
+    type: RECEIVE_SHELF_DETAIL,
     shelf
   };
 };
@@ -45,16 +59,24 @@ export const createShelfAction = (shelf) => {
   return (dispatch) => {
     return APIUtil.createShelf(shelf)
       .then(newShelf => dispatch(receiveShelf(newShelf)),
-      error => dispatch(receiveErrors(error.reseponseJSON)));
+      error => dispatch(receiveErrors(error.responseJSON)));
   };
 };
 
 export const fetchShelves = (userId) => {
   return (dispatch) => {
+    dispatch(requestAllShelves());
     return APIUtil.fetchShelves()
     .then(shelves => dispatch(receiveShelves(shelves)),
     error => dispatch(receiveErrors(error.responseJSON)));
   };
 };
 
-// remove_shelf
+export const fetchShelf = (shelfId) => {
+  return (dispatch) => {
+    dispatch(requestAShelf());
+    return APIUtil.fetchShelf(shelfId)
+      .then(shelf => dispatch(receiveShelfDetail(shelf))),
+      error => dispatch(receiveErrors(error.responseJSON));
+  };
+};
