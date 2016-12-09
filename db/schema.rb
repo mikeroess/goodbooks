@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209151714) do
+ActiveRecord::Schema.define(version: 20161209195514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title",                                                                                                                                                       null: false
+    t.string   "author_name",                                                                                                                                                 null: false
+    t.text     "cover_image_url",    default: "plain_book_url"
+    t.text     "blurb",              default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "shelves", force: :cascade do |t|
     t.string   "title",      null: false
