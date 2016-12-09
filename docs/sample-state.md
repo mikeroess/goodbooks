@@ -73,15 +73,16 @@
 
   "shelfDetail": {
     "title": "1927",
+    "id": 12,
     "count": 3,
-    "books": {
-      "1": {
+    "books": [
+      {
         "title": "Rules for the Direction of the Mind",
         "author_name": "Renee Descartes",
         "author_id": null,
         "cover_image_url": "assets/images/1"
       },
-      "2": {
+      {
         "title": "Release It!",
         "author_name": "Michael Nygard",
         "author_id": null,
@@ -90,7 +91,7 @@
         "user_rating": 4,
         "status": "read"
       }
-    }
+    ]
   },
 
   "errors": ["Shelf Requires a Name"]

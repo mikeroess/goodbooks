@@ -1,10 +1,14 @@
 import React from 'react';
 import ShelfDetailItem from './shelf_detail_item';
+import { withRouter } from 'react-router';
 
 
 
 class ShelfDetail extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchShelf(this.props.params.shelfId);
+  }
 
     render() {
       return (
@@ -23,4 +27,4 @@ class ShelfDetail extends React.Component {
     }
 }
 
-export default ShelfDetail;
+export default withRouter(ShelfDetail);

@@ -48,10 +48,11 @@ export const receiveShelf = (shelf) => {
 };
 
 
-export const receiveShelfDetail = (shelf) => {
+export const receiveShelfDetail = (shelfDetail) => {
+  debugger
   return {
     type: RECEIVE_SHELF_DETAIL,
-    shelf
+    shelfDetail
   };
 };
 
