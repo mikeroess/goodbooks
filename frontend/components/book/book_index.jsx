@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter} from 'react-router';
+import BookIndexItem from './book_index_item';
 
 class BookIndex extends React.Component {
 
@@ -18,16 +19,22 @@ class BookIndex extends React.Component {
     let booksContent;
     if ( books.length > 1) {
       booksContent = books.map((book) => {
-        return <li key={book.bookId}> <img src={book.coverUrl} /> {book.title} {book.authorName }</li>;
+        return <BookIndexItem key={book.bookId} book={book}/>;
       });
     }
     return(
-      <ul  className="booksIndex">
-        { booksContent }
-        { this.props.children }
-      </ul>
+      <section className="booksIndex">
+          <ul className="booksIndexHeader group">
+            <li className="cover-image-col">cover</li>
+            <li className="title-col">title</li>
+            <li className="author-col">author</li>
+          </ul>
+          { booksContent }
+      { this.props.children }
+    </section>
     );
   }
 }
+
 
 export default withRouter(BookIndex);

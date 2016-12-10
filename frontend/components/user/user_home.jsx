@@ -24,7 +24,6 @@ class UserHome extends React.Component {
 
           <content className="userHomeContent">
             { this.props.children }
-            // <h1>I will become the main content</h1>
           </content>
 
         </main>

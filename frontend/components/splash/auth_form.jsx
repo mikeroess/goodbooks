@@ -34,7 +34,7 @@ class AuthForm extends React.Component {
 handleSubmit(e) {
   e.preventDefault();
   this.props.login({user: this.state})
-  .then(() => hashHistory.push("/"));
+  .then(() => hashHistory.push("/user"));
 }
 
 guestLogin(e) {

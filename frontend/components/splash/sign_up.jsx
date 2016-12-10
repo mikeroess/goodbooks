@@ -50,7 +50,7 @@ handleSubmit(e) {
   formData.append("user[email]", this.state.email);
   formData.append("user[image]", this.state.imageFile);
   this.props.signup(formData)
-  .then(() => hashHistory.push("/"));
+  .then(() => hashHistory.push("/user"));
 }
 
 

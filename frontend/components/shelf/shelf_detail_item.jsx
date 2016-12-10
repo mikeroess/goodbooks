@@ -12,7 +12,6 @@ class ShelfDetailItem extends React.Component {
         <li className="avg-rating-col">detail_avg rating</li>
         <li className="rating-col">detail_rating</li>
         <li className="shelves-col">detail_shelves</li>
-
       </ul>
     );
   }
