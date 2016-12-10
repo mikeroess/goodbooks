@@ -18,7 +18,14 @@
 
 class User < ApplicationRecord
   attr_reader :password
-  has_attached_file :image, default_url: "/app/assets/images/book-flat.png"
+  has_attached_file :image,
+  :storage => :s3,
+  :s3_credentials => {:bucket => ENV["s3_bucket"],
+                      :access_key_id => ENV["s3_access_key_id"],
+                      :secret_access_key => ENV["s3_secret_access_key"]
+  },
+  :path => "/image/:id/:filename",
+  default_url: "http://s3.amazonaws.com/goodbooks-standard/users/images/000/000/015/original/book-flat.png?1481397991"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :username, :email, presence: true, uniqueness: true

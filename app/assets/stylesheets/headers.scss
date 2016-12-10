@@ -123,12 +123,13 @@
     background: #fff;
   }
 
+  // this stopped working when dropdown was positioned absolutely
   .loggedInHeader-icon:hover .dropDown a{
     padding: 3px 4px;
     width: 240px;
   }
 
-
+// this stopped working when dropdown was positioned absolutely
   .drowDown a:hover {
     text-decoration: underline;
   }
