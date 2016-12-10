@@ -29,9 +29,12 @@ class LoggedInHeader extends React.Component {
             </a>
           </h1>
 
-          <p className="header-icon">
-            <button onClick={this.handleClick}><img className="userIcon" src={imagePath}></img></button>
-          </p>
+          <nav className="loggedInHeader-icon">
+            <img className="userIcon group" src={imagePath}></img>
+              <ul className="dropDown headerDropdown group">
+                <li><Link onClick={this.handleClick}>Sign Out</Link></li>
+              </ul>
+          </nav>
         </nav>
       </header>
     );

@@ -5,10 +5,11 @@ class SignupHeader extends React.Component {
 
 
   render() {
-    const membershipTest = "Not a member?";
+    const membershipText = "Not a member?";
     return (
       <header className="header">
         <nav className="header-nav group">
+
           <h1 className="header-logo">
             <a href="/">
               <span className="good">good</span>
@@ -16,9 +17,11 @@ class SignupHeader extends React.Component {
             </a>
           </h1>
 
-          <p className="header-button">{membershipTest}
+          <div className="header-button group">
+            <span className="topRightText">{membershipText}</span>
             <Link to="/signup"><button>Sign up</button></Link>
-          </p>
+          </div>
+
         </nav>
       </header>
     );
