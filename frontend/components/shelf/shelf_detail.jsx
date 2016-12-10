@@ -10,7 +10,21 @@ class ShelfDetail extends React.Component {
     this.props.fetchShelf(this.props.params.shelfId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.shelfId !== nextProps.params.shelfId) {
+      nextProps.fetchShelf(nextProps.params.shelfId);
+    }
+  }
+
     render() {
+
+      const shelfDetail = this.props.shelfDetail;
+      let shelfBooksDetails = <div></div>;
+      if (shelfDetail.length > 0) {
+        shelfBooksDetails = shelfDetail.map((book) => {
+          return <ShelfDetailItem key={book.bookId} bookDetail={book} />;
+        });
+      }
       return (
         <section className="shelfDetail">
           <ul className="shelfDetailHeader group">
@@ -21,7 +35,7 @@ class ShelfDetail extends React.Component {
             <li className="rating-col">rating</li>
             <li className="shelves-col">shelves</li>
           </ul>
-          <ShelfDetailItem />
+          { shelfBooksDetails }
         </section>
       );
     }

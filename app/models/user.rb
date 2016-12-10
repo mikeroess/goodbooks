@@ -26,7 +26,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   before_validation :ensure_session_token
 
-  has_many :shelves
+  has_many :shelves, dependent: :destroy
   has_many :books, through: :shelves
 
   def is_password?(password)

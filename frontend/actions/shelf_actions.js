@@ -49,7 +49,6 @@ export const receiveShelf = (shelf) => {
 
 
 export const receiveShelfDetail = (shelfDetail) => {
-  debugger
   return {
     type: RECEIVE_SHELF_DETAIL,
     shelfDetail
