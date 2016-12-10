@@ -18,9 +18,9 @@ class LoginHeader extends React.Component {
 
           <div className="header-button group">
             <span className="topRightText">{membershipText}</span>
-            <Link to="/login"><button>Sign up</button></Link>
+            <Link to="/login"><button>Log In</button></Link>
           </div>
-          
+
         </nav>
       </header>
     );

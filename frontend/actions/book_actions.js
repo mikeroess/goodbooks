@@ -32,3 +32,19 @@ export const recieveReaders = (readers) => {
     readers
   };
 };
+
+export const fetchAllBooks = () => {
+  return (dispatch) => {
+    return APIUtil.fetchAllBooks()
+      .then(books => dispatch(recieveBooks(books)),
+      error => dispatch(receiveErrors(error.responseJSON)));
+  };
+};
+
+export const fetchBook = (bookId) => {
+  return (dispatch) => {
+    return APIUtil.fetchBook(bookId)
+      .then(book => receiveBookDetail(book)),
+      error => dispatch(receiveErrors(error.responseJSON));
+  };
+};

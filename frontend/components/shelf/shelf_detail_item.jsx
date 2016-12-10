@@ -6,7 +6,7 @@ class ShelfDetailItem extends React.Component {
   render() {
     return(
       <ul className="shelfDetailItem group">
-        <li className="cover-col">{ this.props.bookDetail.coverImageUrl }</li>
+        <li className="cover-col"><img src={ this.props.bookDetail.coverImageUrl } /></li>
         <li className="title-col">{ this.props.bookDetail.title }</li>
         <li className="author-col">{ this.props.bookDetail.authorName}</li>
         <li className="avg-rating-col">detail_avg rating</li>

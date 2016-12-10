@@ -1,7 +1,7 @@
 import React from 'react';
 import ShelfIndexItem from './shelf_index_item';
 import CreateShelfContainer from './create_shelf_container';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class Shelves extends React.Component {
 
@@ -24,7 +24,9 @@ class Shelves extends React.Component {
       });
 
       return(
+
         <section className="shelves">
+          <Link to="/user/books" > <h3>ALL BOOKS</h3> </Link>
           <h3>BOOKSHELVES</h3>
           <ul className="customShelvesList">
             { shelfContent }
