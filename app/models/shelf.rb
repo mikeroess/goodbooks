@@ -14,5 +14,6 @@ class Shelf < ApplicationRecord
   validates :title, uniqueness: {scope: :user_id, message: "You already have a shelf with that name"}
 
   belongs_to :user
-  has_many :books
+  has_many :books, through: :shelved_books
+  has_many :shelved_books
 end

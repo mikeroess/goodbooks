@@ -14,6 +14,7 @@
   text-decoration: none;
   line-height: 21px;
   font-size: 14px;
+  float: left
 }
 
 .shelfIndexLink:hover {
@@ -44,4 +45,23 @@
   padding: 2px;
   font-size: 11px;
   background: #fff;
+}
+
+.deleteShelf{
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  background-color: #F4F1EA;
+  color: #333333;
+  display: inline-block;
+  padding: 4px;
+  font-size: 10px;
+  float: left;
+  margin-left:  7px;
+}
+
+.deleteShelf:hover {
+  background: image-url('splash-background.jpg');
 }

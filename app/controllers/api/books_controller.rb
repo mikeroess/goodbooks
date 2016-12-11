@@ -17,6 +17,14 @@ class Api::BooksController < ApplicationController
     render 'api/books/index'
   end
 
+  def show
+    @book = Book.find(params[:id])
+    if @book
+      render 'api/books/show'
+    else
+      render json: @book.errors.full_messages, status: 422
+    end
+  end
 
   private
 

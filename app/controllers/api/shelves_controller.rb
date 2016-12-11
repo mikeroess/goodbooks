@@ -30,6 +30,13 @@ def show
 end
 
 def destroy
+  @shelf = Shelf.find(params[:id])
+  if @shelf
+    @shelf.destroy
+    render 'api/shelves/destroy'
+  else
+    render json: @user.errors.full_messages, status: 422
+  end
 end
 
 

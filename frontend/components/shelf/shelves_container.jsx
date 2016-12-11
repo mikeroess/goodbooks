@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Shelves from './shelves';
-import { fetchShelves } from '../../actions/shelf_actions';
+import { fetchShelves, destroyShelf } from '../../actions/shelf_actions';
 import { receiveLoading } from '../../actions/loading_actions';
 
 const mapStateToProps = ({ session, shelves, loading}) => {
@@ -16,7 +16,8 @@ const mapStateToProps = ({ session, shelves, loading}) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchShelves: () => dispatch(fetchShelves()),
-    setLoading: (newLoadingState) => dispatch(receiveLoading(newLoadingState))
+    setLoading: (newLoadingState) => dispatch(receiveLoading(newLoadingState)),
+    destroyShelf: (shelfId) => dispatch(destroyShelf(shelfId))
   };
 };
 

@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 import { RECEIVE_ERRORS, RECEIVE_SHELF_DETAIL,
-  RECEIVE_SHELVES, RECEIVE_SHELF_OWNER, RECEIVE_SHELF} from '../actions/shelf_actions';
+  RECEIVE_SHELVES, RECEIVE_SHELF_OWNER, RECEIVE_SHELF, REMOVE_SHELF} from '../actions/shelf_actions';
 
 const initialState = {
   shelfOwner: {},
@@ -35,8 +35,13 @@ const ShelfReducer = (state = initialState, action) => {
       newState.shelves.push(action.shelf);
       return newState;
 
-    default:
-    return state;
+      case REMOVE_SHELF:
+        newState.shelves.filter(
+          (shelf) => shelf.shelfId !== action.shelf.shelfId);
+        return newState;
+
+      default:
+        return state;
   }
 };
 

@@ -16,4 +16,4 @@ class BookIndexItem extends React.Component {
 
 }
 
-export default BookIndexItem;
+export default withRouter(BookIndexItem);

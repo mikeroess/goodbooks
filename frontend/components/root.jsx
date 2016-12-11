@@ -29,9 +29,8 @@ const Root = ({ store }) => {
     <Router history={ hashHistory }>
       <Route path="/" component={ App } onEnter={ _redirectIfLoggedIn }/>
       <Route path="/user" component={ UserContainer } onEnter={ _ensureLoggedIn }>
-        <Route path="/user/books" component={ BookIndexContainer }>
-          <Route path="user/books/:bookId" component={ BookDetailContainer } />
-        </Route>
+        <Route path="/user/books" component={ BookIndexContainer } />
+        <Route path="/user/books/:bookId" component={ BookDetailContainer } />
         <Route path="/user/shelf/:shelfId" component={ ShelfDetailContainer }/>
       </Route>
       <Route path="/login" component={AuthFormContainer}

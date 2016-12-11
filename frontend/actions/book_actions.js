@@ -19,10 +19,10 @@ export const recieveBooks = (books) => {
   };
 };
 
-export const receiveBookDetail = (bookDetail) => {
+export const receiveBookDetail = (bookDetails) => {
   return {
     type: RECEIVE_BOOK_DETAIL,
-    bookDetail
+    bookDetails
   };
 };
 
@@ -44,7 +44,7 @@ export const fetchAllBooks = () => {
 export const fetchBook = (bookId) => {
   return (dispatch) => {
     return APIUtil.fetchBook(bookId)
-      .then(book => receiveBookDetail(book)),
+      .then(bookDetails => receiveBookDetail(bookDetails)),
       error => dispatch(receiveErrors(error.responseJSON));
   };
 };
