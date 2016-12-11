@@ -9,20 +9,24 @@ class BookIndexItem extends React.Component {
   //   }
   // }
 
+  // <form className="AddToShelf">
+  //   {this.props.shelves}
+  // </form>
+
 
   render() {
-
-    // const select_boxes =
     // debugger
+    // const select_boxes =
     const linkPath = `user/books/${this.props.book.bookId}`;
     const imagePath = this.props.book.coverUrl;
 
     return(
       <ul className="bookIndexItem group">
-        <li className="cover-image-col">
-          <Link to={ linkPath } className="bookIndexLink"></Link>
-          <img src={imagePath} />
-          </li>
+        <li className="cover-col">
+          <Link to={ linkPath } className="bookIndexLink">
+            <img src={imagePath} />
+          </Link>
+        </li>
 
         <li className="title-col">
           <Link to={ linkPath } className="bookIndexLink">
@@ -36,9 +40,7 @@ class BookIndexItem extends React.Component {
           </Link>
         </li>
 
-        <form className="AddToShelf">
-          // {this.props.shelves}
-        </form>
+
       </ul>
     );
   }

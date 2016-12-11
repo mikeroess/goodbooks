@@ -19,24 +19,23 @@ class BookIndex extends React.Component {
   }
 
   render() {
+
     const shelves = this.props.shelves;
     const books = this.props.books;
-    let booksContent;
+    let booksContent = <div></div>;
     if ( books.length > 1) {
       booksContent = books.map((book) => {
-        return <BookIndexItem key={book.bookId} book={book}
-          shelves={shelves}/>;
+        return <BookIndexItem key={book.bookId} book={book} shelves={shelves} />;
       });
     }
     return(
       <section className="booksIndex">
           <ul className="booksIndexHeader group">
-            <li className="cover-image-col-header">cover</li>
+            <li className="cover-col-header">cover</li>
             <li className="title-col">title</li>
             <li className="author-col">author</li>
           </ul>
           { booksContent }
-      { this.props.children }
     </section>
     );
   }
