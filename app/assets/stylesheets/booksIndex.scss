@@ -22,8 +22,19 @@
   overflow-wrap: break-word;
 }
 
-.cover-image-col {
+.cover-image-col-header {
   width: 250px;
+}
+
+.cover-col {
+  width: 50px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.cover-col > image {
+  width: 50px;
+  height: 80px;
 }
 
 .title-col {

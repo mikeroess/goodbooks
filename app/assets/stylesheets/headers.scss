@@ -22,12 +22,62 @@
      font-size: 30px;
      padding: 5px 15px;
      color: #382110;
+     margin-top: 7px;
    }
 
    .header-nav {
      display: block;
      width: 100%;
    }
+
+  .browse {
+    float: left;
+    padding: 0 5px 0 10px;
+  }
+
+  .browse:hover{
+    cursor: pointer;
+    background: #58371F;
+  }
+
+  .browse a {
+    font-family: helvetica;
+    font-size: 16px;
+    padding: 0px 15px 2px 15px;
+    color: #382110;
+    margin-top: 7px;
+    text-decoration: none;
+    line-height: 50px;
+  }
+
+  .browse:hover a {
+    color: #fff;
+  }
+
+  .myBooksHeader {
+    float: left;
+    margin-left: 20px;
+    padding: 0 5px;
+  }
+
+  .myBooksHeader:hover{
+    cursor: pointer;
+    background: #58371F;
+  }
+
+  .myBooksHeader a {
+    font-family: helvetica;
+    font-size: 16px;
+    padding: 0px 15px 2px 15px;
+    color: #382110;
+    margin-top: 7px;
+    text-decoration: none;
+    line-height: 50px;
+  }
+
+  .myBooksHeader:hover a {
+    color: #fff;
+  }
 
    .login {
      float: right;
@@ -106,11 +156,13 @@
      margin: 0 6px 0 0;
      font-family: "Lato", "Helvetica Neue", "Helvetica";
      font-size: 12px;
+     padding-bottom: 1px;
    }
 
    .loggedInHeader-icon img {
      padding: 8px 12px;
      margin-left: 10px;
+     padding-bottom: 1px;
    }
 
    .loggedInHeader-icon:hover {
@@ -137,7 +189,7 @@
   .dropDown {
     display: none;
     position: absolute;
-    top: 55px;
+      top: 55px;
   }
 
   .userIcon {

@@ -15,19 +15,29 @@ class LoggedInHeader extends React.Component {
     this.props.logout().then(() => hashHistory.push("/login"));
   }
 
-
-
   render() {
     const imagePath = this.props.currentUser.imageUrl;
     return (
       <header className="header">
         <nav className="header-nav group">
           <h1 className="header-logo">
-            <a href="/">
-              <span className="good">good</span>
-              <span className="books">Books</span>
-            </a>
+            <Link to="/">
+              <span className="good">good</span><span className="books">Books</span>
+              </Link>
           </h1>
+
+          <nav className="myBooksHeader">
+            <Link to="/user/books">
+              My Books
+            </Link>
+          </nav>
+
+
+          <nav className="browse">
+            <Link to="/user/books">
+              Browse
+            </Link>
+          </nav>
 
           <nav className="loggedInHeader-icon">
             <img className="userIcon group" src={imagePath}></img>

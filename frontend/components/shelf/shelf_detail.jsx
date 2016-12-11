@@ -16,6 +16,10 @@ class ShelfDetail extends React.Component {
     }
   }
 
+  // <li className="avg-rating-col">avg rating</li>
+  // <li className="rating-col">rating</li>
+  // <li className="shelves-col">shelves</li>
+
     render() {
 
       const shelfDetail = this.props.shelfDetail;
@@ -31,9 +35,6 @@ class ShelfDetail extends React.Component {
             <li className="cover-col">cover</li>
             <li className="title-col">title</li>
             <li className="author-col">author</li>
-            <li className="avg-rating-col">avg rating</li>
-            <li className="rating-col">rating</li>
-            <li className="shelves-col">shelves</li>
           </ul>
           { shelfBooksDetails }
         </section>

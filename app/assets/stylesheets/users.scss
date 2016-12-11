@@ -3,11 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .userHome {
   min-height: 900px;
-  background: rgba(244,241,234,0.5);
+  // background: rgba(244,241,234,0.5);
+  background: #fff;
 }
 
 .userMain {
   margin: 0 auto;
+  margin-top: 2px;
   width: 900px;
 }
 
