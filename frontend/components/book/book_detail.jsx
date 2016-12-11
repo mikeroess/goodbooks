@@ -21,14 +21,19 @@ class BookDetail extends React.Component{
       <section className="BookDetailMain">
 
         <section className="BookDetailBasics group">
-          <div className="coverAndReadStatus"></div>
+          <div className="coverAndReadStatus">
             <img src={this.props.bookDetails.coverUrl} />
+          </div>
 
           <div className="textDetails">
-            <p><h2>{this.props.bookDetails.title}</h2>
+            <div className="bookDetailAuthor">
+              <h2 className="bookDetailTitle">
+                {this.props.bookDetails.title}
+              </h2>
             by: {this.props.bookDetails.authorName}
-            </p>
-            <p>{this.props.bookDetail.blurb}</p>
+          </div>
+
+            <p className="BookDetailBlurb">{this.props.bookDetails.blurb}</p>
           </div>
         </section>
 

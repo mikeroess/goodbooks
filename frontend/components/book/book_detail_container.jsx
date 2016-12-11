@@ -4,7 +4,7 @@ import { fetchBook } from '../../actions/book_actions';
 
 const mapStateToProps = ( { books }) => {
   return {
-    bookDetails: books.bookDetail,
+    bookDetails: books.bookDetails,
     reader: books.readers,
     shelves: books.shelves
   };

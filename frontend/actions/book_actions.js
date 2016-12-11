@@ -44,7 +44,7 @@ export const fetchAllBooks = () => {
 export const fetchBook = (bookId) => {
   return (dispatch) => {
     return APIUtil.fetchBook(bookId)
-      .then(bookDetails => receiveBookDetail(bookDetails)),
-      error => dispatch(receiveErrors(error.responseJSON));
+      .then(bookDetails => dispatch(receiveBookDetail(bookDetails)),
+      error => dispatch(receiveErrors(error.responseJSON)));
   };
 };
