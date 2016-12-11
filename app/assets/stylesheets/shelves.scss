@@ -1,11 +1,9 @@
 .shelves h3 {
-  color: #333333;
+  color: #aaa;
   font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.25;
-  margin: 12px 0;
-  text-transform: uppercase;
+  font-size: 1.17em;
+  font-weight: normal;
+  margin-bottom: 12px;
 }
 
 .shelfIndexLink {
@@ -32,6 +30,8 @@
   display: inline-block;
   padding: 4px;
   font-size: 10px;
+  float: right;
+  margin-right: 10px;
 }
 
 .miniCreateShelf:hover {
@@ -45,6 +45,12 @@
   padding: 2px;
   font-size: 11px;
   background: #fff;
+  float: left;
+}
+
+.CreateShelfForm h4 {
+  font-size: 14px;
+  margin-bottom: 0;
 }
 
 .deleteShelf{
@@ -58,8 +64,8 @@
   display: inline-block;
   padding: 4px;
   font-size: 10px;
-  float: left;
-  margin-left:  7px;
+  float: right;
+  margin-right: 10px;
 }
 
 .deleteShelf:hover {

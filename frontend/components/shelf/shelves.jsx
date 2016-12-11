@@ -26,8 +26,8 @@ class Shelves extends React.Component {
       return(
 
         <section className="shelves">
-          
-          <h3>BOOKSHELVES</h3>
+
+          <h3>Bookshelves</h3>
           <ul className="customShelvesList">
             { shelfContent }
           </ul>

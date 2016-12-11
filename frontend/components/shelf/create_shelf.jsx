@@ -23,12 +23,14 @@ class CreateShelfComponent extends React.Component {
         <form className="CreateShelfForm"
           onSubmit={() => this.props.createShelf(this.state)}>
 
-          <label><h3>Add a Shelf:</h3></label>
-          <input type="text" placeholder="shelf name"
-            value={this.state.title} onChange={this.handleInput()}>
-          </input>
+          <label><h4>Add a Shelf:</h4></label>
+          <div className="group">
+            <input type="text" placeholder="shelf name"
+              value={this.state.title} onChange={this.handleInput()}>
+            </input>
 
-          <button className="miniCreateShelf">add</button>
+            <button className="miniCreateShelf">add</button>
+          </div>
         </form>
       );
   }
