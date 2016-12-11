@@ -1,3 +1,13 @@
+.shelfDetail {
+  width: 600px;
+  background: #fff;
+}
+
+.shelfDetailHeader {
+  border-bottom: solid 2px #F4F4EA;
+  margin-top: 5px;
+}
+
 .shelfDetailHeader > li {
   float: left;
   padding: 12px 5px 5px 0;
@@ -6,28 +16,35 @@
   font-weight: bold;
 }
 
-.shelfDetailHeader {
-  border-bottom: solid 2px #F4F4EA;
-}
-
-.shelfDetail {
-  width: 600px;
-  margin-top: 40px;
-  background: #fff;
+.shelfDetailItem {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(238, 238, 238);
 }
 
 .shelfDetailItem > li {
   float: left;
   padding: 12px 5px 5px 0;
   overflow-wrap: break-word;
+
+}
+
+.shelfDetailItem > li > a {
+  color: rgb(0, 99, 93);
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .cover-col {
   width: 51px;
 }
 
-.title-col {
+.cover-col-header {
+  width: 51px;
+}
+
+li.title-col {
   width: 182px;
+  margin-left: 10px;
 }
 
 .author-col {

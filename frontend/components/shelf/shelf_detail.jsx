@@ -32,7 +32,7 @@ class ShelfDetail extends React.Component {
       return (
         <section className="shelfDetail">
           <ul className="shelfDetailHeader group">
-            <li className="cover-col">cover</li>
+            <li className="cover-col-header">cover</li>
             <li className="title-col">title</li>
             <li className="author-col">author</li>
           </ul>
