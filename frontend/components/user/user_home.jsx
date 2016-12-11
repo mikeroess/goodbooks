@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import LoggedInHeaderContainer from '../header/logged_in_header_container';
 import ShelvesContainer from '../shelf/shelves_container';
 
@@ -16,7 +16,12 @@ class UserHome extends React.Component {
     return (
     <div className="userHome">
       <LoggedInHeaderContainer />
+
       <main className="userMain group">
+
+        <nav className="userMainNav">
+          <Link to="/user/books">My Books</Link>
+        </nav>
 
           <aside className="userHomeAside">
               <ShelvesContainer />
