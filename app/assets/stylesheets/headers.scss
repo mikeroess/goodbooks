@@ -157,6 +157,7 @@
      font-family: "Lato", "Helvetica Neue", "Helvetica";
      font-size: 12px;
      padding-bottom: 1px;
+     height: 59px;
    }
 
    .loggedInHeader-icon img {
@@ -189,10 +190,11 @@
   .dropDown {
     display: none;
     position: absolute;
-      top: 55px;
+      top: 60px;
   }
 
   .userIcon {
+    padding-top: 20px;
     width: 40px;
     height: 40px;
     object-fit: cover;
