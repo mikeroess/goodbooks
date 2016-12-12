@@ -43,10 +43,10 @@ class AddToShelf extends React.Component {
     }
     const keys = Object.keys(this.state);
     const input = keys.map((objectKey) =>
-    <div key={objectKey} className="checkBoxDiv group">
+    <div key={objectKey} className="checkBoxDiv group" onClick={() => this.handleChange(event, objectKey)}>
 
         <input type="checkbox"
-          checked={this.state[objectKey].checked} onChange={() => this.handleChange(event, objectKey)}
+          checked={this.state[objectKey].checked}
         />
       <label>{this.state[objectKey].title}</label>
     </div>

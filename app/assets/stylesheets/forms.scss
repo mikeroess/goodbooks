@@ -1,7 +1,39 @@
+.checkBoxDiv {
+  margin: 2px 0;
+}
+
 .checkBoxDiv input {
   float: left;
 }
 
 .checkBoxDiv label {
   float: left;
+  width: 150px;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.checkBoxDiv input:hover {
+  background: #e1e1e5;
+}
+
+.checkBoxDiv label:hover {
+  background: #e1e1e5;
+}
+
+.UpdateShelvesForm button {
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  background-color: #F4F1EA;
+  color: #333333;
+  display: inline-block;
+  padding: 4px;
+  font-size: 12px;
+}
+
+.UpdateShelvesForm button:hover {
+  background: image-url('splash-background.jpg');
 }
