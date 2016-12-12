@@ -1,2 +1,2 @@
 json.username @user.username
-json.imageUrl @user.image.url
+json.imageUrl asset_path(@user.image.url)

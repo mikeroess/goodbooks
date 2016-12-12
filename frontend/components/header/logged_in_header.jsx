@@ -12,9 +12,7 @@ class LoggedInHeader extends React.Component {
 
   handleClick(event){
     event.preventDefault();
-    console.log('stuff');
     this.props.signOut().then(() => {
-      console.log('should be redirecting');
       hashHistory.push("/login");
     },
     (error) => console.log("error"));

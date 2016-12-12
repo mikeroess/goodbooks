@@ -9,7 +9,6 @@ const mapStateToProps = ({ session }) => {
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
     signOut: () => {
-      console.log('logging out');
       return dispatch(logout());
     }
   };

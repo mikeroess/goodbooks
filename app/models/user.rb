@@ -25,7 +25,7 @@ class User < ApplicationRecord
                       :secret_access_key => ENV["s3_secret_access_key"]
   },
   :path => "/image/:id/:filename",
-  default_url: "http://s3.amazonaws.com/goodbooks-standard/users/images/000/000/015/original/book-flat.png?1481397991"
+  default_url: "book-flat.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :username, :email, presence: true, uniqueness: true

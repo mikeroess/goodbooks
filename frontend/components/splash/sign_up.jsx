@@ -48,7 +48,9 @@ handleSubmit(e) {
   formData.append("user[username]", this.state.username);
   formData.append("user[password]", this.state.password);
   formData.append("user[email]", this.state.email);
-  formData.append("user[image]", this.state.imageFile);
+  if (this.state.imageFile) {
+    formData.append("user[image]", this.state.imageFile);
+  }
   this.props.signup(formData)
   .then(() => hashHistory.push("/user"),
   (error) => console.log(error));

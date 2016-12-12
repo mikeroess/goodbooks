@@ -21,16 +21,19 @@ class ShelfDetail extends React.Component {
   // <li className="shelves-col">shelves</li>
 
     render() {
-      
       const shelfDetail = this.props.shelfDetail;
+      if (typeof(shelfDetail.books) === 'undefined') {
+        return <div></div>;
+      }
       let shelfBooksDetails = <div></div>;
-      if (shelfDetail.length > 0) {
-        shelfBooksDetails = shelfDetail.map((book) => {
+      if (shelfDetail.books.length > 0) {
+        shelfBooksDetails = shelfDetail.books.map((book) => {
           return <ShelfDetailItem key={book.bookId} bookDetail={book} />;
         });
       }
       return (
         <section className="shelfDetail">
+          <h3>{this.props.shelfDetail.title}</h3>
           <ul className="shelfDetailHeader group">
             <li className="cover-col-header">cover</li>
             <li className="title-col">title</li>
