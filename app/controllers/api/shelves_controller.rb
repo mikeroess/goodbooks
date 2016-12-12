@@ -2,10 +2,9 @@ class Api::ShelvesController < ApplicationController
 
 def create
   @shelf = Shelf.new(shelf_params)
-  # @shelf.title = params[:title]
   @shelf.user_id = current_user.id
   if @shelf.save
-    render 'api/shelves/show'
+    render 'api/shelves/create'
   else
     render json: @shelf.errors.full_messages, staus: 422
   end

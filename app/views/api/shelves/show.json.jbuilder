@@ -1,3 +1,4 @@
+json.shelfTitle @shelf.title
 json.title @shelf.title
-json.shelfId @shelf.id
-json.count @shelf.books.length
+ json.shelfId @shelf.id
+json.array! @shelf.books, partial: 'api/books/book', as: :book

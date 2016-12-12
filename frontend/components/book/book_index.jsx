@@ -19,7 +19,7 @@ class BookIndex extends React.Component {
   }
 
   render() {
-    
+
     const shelves = this.props.shelves;
     const books = this.props.books;
     let booksContent = <div></div>;
@@ -36,7 +36,7 @@ class BookIndex extends React.Component {
             <li className="author-col">author</li>
           </ul>
           { booksContent }
-          // { this.props.children }
+          { this.props.children }
     </section>
     );
   }

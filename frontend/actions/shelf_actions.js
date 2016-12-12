@@ -94,7 +94,9 @@ export const fetchShelf = (shelfId) => {
   return (dispatch) => {
     dispatch(requestAShelf());
     return APIUtil.fetchShelf(shelfId)
-      .then(shelf => dispatch(receiveShelfDetail(shelf))),
+      .then(shelf => {
+        dispatch(receiveShelfDetail(shelf));
+      }),
       error => dispatch(receiveErrors(error.responseJSON));
   };
 };

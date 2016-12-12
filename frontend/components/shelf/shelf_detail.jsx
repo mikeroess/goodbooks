@@ -21,7 +21,7 @@ class ShelfDetail extends React.Component {
   // <li className="shelves-col">shelves</li>
 
     render() {
-
+      
       const shelfDetail = this.props.shelfDetail;
       let shelfBooksDetails = <div></div>;
       if (shelfDetail.length > 0) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router'
+import { Link, withRouter } from 'react-router';
 
 
 // <li className="avg-rating-col">detail_avg rating</li>
@@ -11,24 +11,25 @@ class ShelfDetailItem extends React.Component {
 
 
   render() {
-    const bookPath = `user/books/${this.props.bookDetail.bookId}`;
+    
+    // const bookPath = `user/books/${this.props.bookDetail.bookId}`;
     return(
       <ul className="shelfDetailItem group">
 
         <li className="cover-col">
-          <Link to={ bookPath }>
+          <Link >
             <img src={ this.props.bookDetail.coverImageUrl } />
             </Link>
         </li>
 
         <li className="title-col">
-          <Link to={ bookPath }>
+          <Link>
             { this.props.bookDetail.title }
           </Link>
         </li>
 
         <li className="author-col">
-          <Link to={ bookPath }>
+          <Link >
             { this.props.bookDetail.authorName}
           </Link>
         </li>
