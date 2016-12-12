@@ -5,7 +5,6 @@ const initialState = {
   errors: [],
   books: [],
   bookDetails: {},
-  shelves: [],
   readers: [],
 };
 
