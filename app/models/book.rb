@@ -5,11 +5,9 @@
 #  id                 :integer          not null, primary key
 #  title              :string           not null
 #  author_name        :string           not null
-#  cover_image_url    :text             default("plain_book_url")
 #  blurb              :text             default("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."), not null
 #  bookable_type      :string
 #  bookable_id        :integer
-#  shelf_id           :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  image_file_name    :string
