@@ -26,7 +26,7 @@ export const fetchAllBooks = () => {
 export const fetchMyBooks = () => {
   return $.ajax({
     method: "GET",
-    url: "api/books/myBooks"
+    url: "/api/myBooks"
   });
 };
 

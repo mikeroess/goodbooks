@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resource :shelved_books, only: [:update]
   end
 
-  get 'api/books/myBooks', to: 'api/books#myBooks'
+  get 'api/myBooks', to: 'api/books#myBooks'
 end
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

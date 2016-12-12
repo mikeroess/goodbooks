@@ -34,7 +34,7 @@ class LoggedInHeader extends React.Component {
           </h1>
 
           <nav className="myBooksHeader">
-            <Link to="/user/books">
+            <Link to="/user/myBooks">
               My Books
             </Link>
           </nav>

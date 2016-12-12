@@ -14,7 +14,7 @@ const mapStateToProps = ( { shelves, books }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchMyBooks: () => dispatch(fetchMyBooks()),
+    fetchBooks: () => dispatch(fetchMyBooks()),
     fetchShelves: () => dispatch(fetchShelves())
   };
 };

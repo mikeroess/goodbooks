@@ -5,18 +5,18 @@ import BookIndexItem from './book_index_item';
 class BookIndex extends React.Component {
 
   componentDidMount() {
-    this.props.fetchAllBooks();
+    this.props.fetchBooks();
     this.props.fetchShelves();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.books.length !== nextProps.books.length) {
-      nextProps.fetchAllBooks();
-    }
-    if (this.props.shelves.length !== nextProps.shelves.length) {
-      nextProps.fetchShelves();
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.books.length !== nextProps.books.length) {
+  //     nextProps.fetchAllBooks();
+  //   }
+  //   if (this.props.shelves.length !== nextProps.shelves.length) {
+  //     nextProps.fetchShelves();
+  //   }
+  // }
 
   render() {
 
