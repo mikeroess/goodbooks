@@ -14,7 +14,8 @@ class AddToShelf extends React.Component {
       nextProps.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
-          checked: nextProps.bookShelves.includes(shelf.shelfId)
+          checked: nextProps.bookShelves.includes(shelf.shelfId),
+          bookId: nextProps.bookId
         };
       });
     }
@@ -27,7 +28,11 @@ class AddToShelf extends React.Component {
     this.setState(newValue);
   }
 
-  handleSubmit
+  handleSubmit() {
+    const shelvedBooks = {};
+    shelvedBooks["shelvedBooks"] = this.state;
+    this.props.updateBookshelves(shelvedBooks);
+  }
 
   render() {
     if (!Array.isArray(this.props.userShelves)) {
@@ -42,7 +47,7 @@ class AddToShelf extends React.Component {
     </label>
       );
     return (
-      <form className="UpdateShelvesForm" onSubmit={handleSubmit}>
+      <form className="UpdateShelvesForm" onSubmit={() => this.handleSubmit()}>
         { input }
         <button>Update Shelves</button>
       </form>

@@ -4,6 +4,12 @@ import { Link, withRouter } from 'react-router';
 class ShelfIndexItem extends React.Component {
 
 
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.shelf.count !== nextProps.shelf.count) {
+  //     nextProps.fetchShelf(this.props.shelf.shelfId);
+  //   }
+  // }
+
 render() {
   const linkPath = `/user/shelf/${this.props.shelf.shelfId}`;
 

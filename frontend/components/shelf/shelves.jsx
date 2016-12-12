@@ -20,7 +20,9 @@ class Shelves extends React.Component {
     if (Array.isArray(shelves)) {
 
       const shelfContent = shelves.map((shelf) => {
-        return <ShelfIndexItem key={shelf.shelfId} shelf={shelf} destroyShelf={(shelfId) => this.props.destroyShelf(shelfId)}/>;
+        return <ShelfIndexItem key={shelf.shelfId} shelf={shelf}
+          // fetchShelf={(shelfId) => this.props.fetchShelf(shelfId)}
+          destroyShelf={(shelfId) => this.props.destroyShelf(shelfId)}/>;
       });
 
       return(
