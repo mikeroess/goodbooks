@@ -12,11 +12,20 @@ class LoggedInHeader extends React.Component {
 
   handleClick(event){
     event.preventDefault();
-    this.props.logout().then(() => hashHistory.push("/login"));
+    console.log('stuff');
+    this.props.signOut().then(() => {
+      console.log('should be redirecting');
+      hashHistory.push("/login");
+    },
+    (error) => console.log("error"));
   }
 
   render() {
-    const imagePath = this.props.currentUser.imageUrl;
+    let imagePath = "";
+    if (this.props.currentUser !== null) {
+      imagePath = this.props.currentUser.imageUrl;
+    }
+
     return (
       <header className="header">
         <nav className="header-nav group">
@@ -27,7 +36,7 @@ class LoggedInHeader extends React.Component {
           </h1>
 
           <nav className="myBooksHeader">
-            <Link to="/user/books">
+            <Link to="/user/books/myBooks">
               My Books
             </Link>
           </nav>

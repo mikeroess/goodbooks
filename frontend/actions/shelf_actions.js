@@ -74,7 +74,9 @@ export const destroyShelf = (shelfId) => {
 export const createShelfAction = (shelf) => {
   return (dispatch) => {
     return APIUtil.createShelf(shelf)
-      .then(newShelf => dispatch(receiveShelf(newShelf)),
+      .then(newShelf => {
+        dispatch(receiveShelf(newShelf));
+      },
       error => dispatch(receiveErrors(error.responseJSON)));
   };
 };

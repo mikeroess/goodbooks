@@ -23,6 +23,13 @@ export const fetchAllBooks = () => {
   });
 };
 
+export const fetchMyBooks = () => {
+  return $.ajax({
+    method: "GET",
+    url: "api/books/myBooks"
+  });
+};
+
 export const destroyBook = (bookId) => {
   return $.ajax({
     method: "DELETE",

@@ -4,6 +4,7 @@ import { fetchShelves, destroyShelf, fetchShelf } from '../../actions/shelf_acti
 import { receiveLoading } from '../../actions/loading_actions';
 
 const mapStateToProps = ({ session, shelves, loading}) => {
+  // debugger
   return { currentUser: session.currentUser,
           shelfDetail: shelves.shelfDetail,
           shelves: shelves.shelves,

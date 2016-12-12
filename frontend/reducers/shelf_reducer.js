@@ -32,13 +32,15 @@ const ShelfReducer = (state = initialState, action) => {
       return newState;
 
     case RECEIVE_SHELF:
+
       newState.shelves.push(action.shelf);
       return newState;
 
       case REMOVE_SHELF:
-        newState.shelves.filter(
+        const newShelves = newState.shelves.filter(
           (shelf) => shelf.shelfId !== action.shelf.shelfId);
-        return newState;
+         newState.shelves = newShelves;
+         return newState;
 
       default:
         return state;

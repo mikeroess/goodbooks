@@ -20,7 +20,7 @@ class UserHome extends React.Component {
       <main className="userMain group">
 
         <nav className="userMainNav">
-          <Link to="/user/books">My Books</Link>
+          <Link to="/user/books/myBooks">My Books</Link>
         </nav>
 
           <aside className="userHomeAside">

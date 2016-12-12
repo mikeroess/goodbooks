@@ -1,8 +1,8 @@
 class Api::ShelvesController < ApplicationController
 
 def create
-  @shelf = Shelf.new
-  @shelf.title = params[:title]
+  @shelf = Shelf.new(shelf_params)
+  # @shelf.title = params[:title]
   @shelf.user_id = current_user.id
   if @shelf.save
     render 'api/shelves/show'

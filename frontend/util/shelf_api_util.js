@@ -9,7 +9,7 @@ export const createShelf = (shelf) => {
   return $.ajax({
     method: "POST",
     url: `api/shelves`,
-    data: shelf
+    data: {shelf}
   });
 };
 
@@ -24,5 +24,5 @@ export const fetchShelf = (shelfId) => {
   return $.ajax({
     method: "GET",
     url: `api/shelves/${shelfId}`
-  })
-}
+  });
+};

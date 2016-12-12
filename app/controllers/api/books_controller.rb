@@ -26,6 +26,16 @@ class Api::BooksController < ApplicationController
     end
   end
 
+  def myBooks
+    @user = current_user
+    @books = @user.books
+    if @books
+      render 'api/books/index'
+    else
+      render json @books.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def book_params

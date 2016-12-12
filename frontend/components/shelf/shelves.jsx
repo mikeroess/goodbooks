@@ -9,11 +9,6 @@ class Shelves extends React.Component {
     this.props.fetchShelves(this.props.currentUser.userId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.shelves.length !== nextProps.shelves.length) {
-      nextProps.fetchShelves(nextProps.currentUser.userId);
-    }
-  }
 
   render() {
     const shelves = this.props.shelves;
@@ -21,7 +16,7 @@ class Shelves extends React.Component {
 
       const shelfContent = shelves.map((shelf) => {
         return <ShelfIndexItem key={shelf.shelfId} shelf={shelf}
-          // fetchShelf={(shelfId) => this.props.fetchShelf(shelfId)}
+          fetchShelf={(shelfId) => this.props.fetchShelf(shelfId)}
           destroyShelf={(shelfId) => this.props.destroyShelf(shelfId)}/>;
       });
 

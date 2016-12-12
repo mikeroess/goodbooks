@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CreateShelfComponent from './create_shelf';
-import { createShelfAction } from '../../actions/shelf_actions';
+import { createShelfAction, receiveShelf } from '../../actions/shelf_actions';
 
 const mapStateToProps = ({session, shelves}) => {
   return {
@@ -11,6 +11,7 @@ const mapStateToProps = ({session, shelves}) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createShelf: (shelf) => dispatch(createShelfAction(shelf)),
+    receiveShelf: (shelf) => dispatch(receiveShelf(shelf))
   };
 };
 
