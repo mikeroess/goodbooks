@@ -32,7 +32,6 @@ const ShelfReducer = (state = initialState, action) => {
       return newState;
 
     case RECEIVE_SHELF:
-
       newState.shelves.push(action.shelf);
       return newState;
 

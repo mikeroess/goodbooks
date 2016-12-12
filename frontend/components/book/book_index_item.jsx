@@ -15,7 +15,6 @@ class BookIndexItem extends React.Component {
 
 
   render() {
-    // debugger
     // const select_boxes =
     const linkPath = `user/books/${this.props.book.bookId}`;
     const imagePath = this.props.book.coverUrl;

@@ -9,7 +9,6 @@ class Shelves extends React.Component {
     this.props.fetchShelves(this.props.currentUser.userId);
   }
 
-
   render() {
     const shelves = this.props.shelves;
     if (Array.isArray(shelves)) {

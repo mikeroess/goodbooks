@@ -10,7 +10,8 @@ class AddToShelf extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.userShelves !== nextProps.userShelves && Array.isArray(this.props.userShelves)) {
+    let updated = (this.props.userShelves !== nextProps.userShelves || this.props.bookShelves !== nextProps.bookShelves);
+    if (updated && Array.isArray(nextProps.userShelves)) {
       nextProps.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
@@ -18,6 +19,7 @@ class AddToShelf extends React.Component {
           bookId: nextProps.bookId
         };
       });
+
     }
   }
 
@@ -35,6 +37,7 @@ class AddToShelf extends React.Component {
   }
 
   render() {
+
     if (!Array.isArray(this.props.userShelves)) {
       return <div></div>;
     }

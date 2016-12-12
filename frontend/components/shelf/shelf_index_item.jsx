@@ -3,13 +3,12 @@ import { Link, withRouter } from 'react-router';
 
 class ShelfIndexItem extends React.Component {
 
- componentWillReceiveProps(nextProps) {
-   if (this.props.shelf.count !== nextProps.shelf.count) {
-     nextProps.fetchShelf(this.props.shelf.shelfId);
-   }
- }
+
+  componentDidMount() {
+    this.props.fetchShelf(this.props.shelf.shelfId);
+  }
+ componentWillReceiveProp
 render() {
-  // debugger
   const linkPath = `/user/shelf/${this.props.shelf.shelfId}`;
   return (
       <div className="ShelfIndexItem group">

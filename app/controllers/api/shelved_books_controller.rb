@@ -12,7 +12,9 @@ class Api::ShelvedBooksController < ApplicationController
         destroy_shelved_book(shelf_id, @book_id)
       end
     end
-    render json: @book_id
+    @book = Book.find(@book_id)
+    @user = current_user
+    render 'api/shelvedBooks/update'
   end
 
 

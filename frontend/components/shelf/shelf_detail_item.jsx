@@ -11,7 +11,7 @@ class ShelfDetailItem extends React.Component {
 
 
   render() {
-    
+
     // const bookPath = `user/books/${this.props.bookDetail.bookId}`;
     return(
       <ul className="shelfDetailItem group">
