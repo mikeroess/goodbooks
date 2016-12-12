@@ -34,13 +34,13 @@ class BookDetail extends React.Component{
           </div>
 
             <p className="BookDetailBlurb">{this.props.bookDetails.blurb}</p>
+            <AddToShelfContainer />
 
           </div>
         </section>
 
         <section className="BookDetailReviews">
           <div className="MyReview"></div>
-          <AddToShelfContainer />
           <div className="otherReviews"></div>
         </section>
 
