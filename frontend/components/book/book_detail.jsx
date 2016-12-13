@@ -20,8 +20,8 @@ class BookDetail extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.params.bookId !== nextProps.params.bookId) {
-      nextProps.fetchBook(nextProps.params.bookId);
+    if (this.props.review !== nextProps.review) {
+      this.setState({displayForm: false});
     }
   }
 
@@ -35,13 +35,17 @@ class BookDetail extends React.Component{
     }
 
 
-    const currentReviewForm = (this.props.review === null) ? <CreateReviewContainer /> : <UpdateReviewContainer />;
+const currentReviewForm = (this.props.review === null) ? <CreateReviewContainer /> : <UpdateReviewContainer />;
+let myReview;
+if (this.props.review !== null) {
+  myReview = <ReviewDetail key={this.props.review.id} review={this.props.review} />;
+}
 
-    let reviews;
-      if (typeof(this.props.bookDetails.reviews) !== 'undefined')
-        reviews = this.props.bookDetails.reviews.map((review) => {
-        return <ReviewDetail key={review.id} review={review} />;
-      });
+let reviews;
+  if (typeof(this.props.bookDetails.reviews) !== 'undefined')
+    reviews = this.props.bookDetails.reviews.map((review) => {
+    return <ReviewDetail key={review.id} review={review} />;
+  });
 
     return(
       <section className="BookDetailMain">
@@ -71,7 +75,7 @@ class BookDetail extends React.Component{
               <h4>My Review</h4>
               <button className="displayReview" onClick={this.displayReviewClick}>{ this.state.displayForm ? "Hide Form" : "Edit Review"}</button>
             </div>
-            { this.state.displayForm ? currentReviewForm : null }
+            { this.state.displayForm ? currentReviewForm : myReview }
           </div>
           <div className="otherReviews">
             <h4>Other Reviews</h4>

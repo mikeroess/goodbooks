@@ -14,6 +14,6 @@ json.bookDetails do
   json.shelves @book.shelves.ids
   json.bookId @book.id
   json.reviews do
-    json.array! @book.reviews, partial: 'api/reviews/review', as: :review
+    json.array! @book.reviews.reject{ |review| review == @review}, partial: 'api/reviews/review', as: :review
   end
 end
