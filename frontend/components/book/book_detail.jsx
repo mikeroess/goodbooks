@@ -63,8 +63,12 @@ let reviews;
           </div>
 
             <p className="BookDetailBlurb">{this.props.bookDetails.blurb}</p>
-            <div className="bookDetailShelvesDiv group"></div>
+            <div className="bookDetailShelvesDiv group">
             <AddToShelfContainer className="bookDetailsUpdateShelves"/>
+            <h4>Read Status</h4>
+            {this.props.readStatuses[this.props.params.bookId][status]}
+
+            </div>
           </div>
         </section>
 

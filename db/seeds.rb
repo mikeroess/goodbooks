@@ -9,7 +9,7 @@
 User.destroy_all
 user1 = User.create(username: "mwr", email: "mwr", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user2 = User.create(username: "hal", email: "candycorn@gmail.com", password: "password", image: File.open('app/assets/images/book-flat.png'))
-user3 = User.create(username: "mwr3", email: "mwr3", password: "password", image: File.open('app/assets/images/book-flat.png'))
+user3 = User.create(username: "kendall", email: "Ilovecatsforever!!!!!!@garbage.pail", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user4 = User.create(username: "mwr4", email: "mwr4", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user5 = User.create(username: "barn", email: "barn@barn.io", password: "barnaby", image: File.open('app/assets/images/book-flat.png'))
 user6 = User.create(username: "zoh", email: "zoh@gmail.com", password: "gothypants", image: File.open('app/assets/images/book-flat.png'))

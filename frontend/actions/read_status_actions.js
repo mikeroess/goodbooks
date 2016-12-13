@@ -12,6 +12,8 @@ export const receiveReadStatuses = (readStatuses) => {
   };
 };
 
+// fetch read statuses
+
 export const createReadStatus = (readStatus) => {
   return (dispatch) => {
     return APIUtil.createReadStatus(readStatus)

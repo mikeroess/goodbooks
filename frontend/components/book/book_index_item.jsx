@@ -2,16 +2,14 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 class BookIndexItem extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   state: {
-  //     shelves: []
-  //   }
-  // }
 
-  // <form className="AddToShelf">
-  //   {this.props.shelves}
-  // </form>
+
+
+  // <li className="read-status-col">
+  //   <Link to={ linkPath } className="bookIndexLink">
+  //     {this.props.book.readStatus }
+  //   </Link>
+  // </li>
 
 
   render() {
@@ -38,6 +36,8 @@ class BookIndexItem extends React.Component {
             {this.props.book.authorName }
           </Link>
         </li>
+
+
 
 
       </ul>
