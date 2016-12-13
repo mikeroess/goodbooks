@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 import BookDetail from './book_detail';
 import { fetchBook } from '../../actions/book_actions';
 
-const mapStateToProps = ( { books }) => {
+const mapStateToProps = ( { session, review, books }) => {
   return {
     bookDetails: books.bookDetails,
     reader: books.readers,
-    shelves: books.shelves
+    shelves: books.shelves,
+    review: review.review,
+    currentUsername: session.currentUser.username
   };
 };
 

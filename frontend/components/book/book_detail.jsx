@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import AddToShelfContainer from '../forms/add_to_shelf_container';
 import CreateReviewContainer from '../forms/create_review_container';
 import ReviewDetail from '../review/review_detail';
+import UpdateReviewContainer from '../forms/update_review_container';
 
 
 class BookDetail extends React.Component{
@@ -22,11 +23,28 @@ class BookDetail extends React.Component{
       return (<div></div>);
     }
 
+    // const userHasReview = () => {
+    //   debugger
+    //   return (typeof(this.props.bookDetails.reviews) !== 'undefined' &&
+    //   this.props.currentUsername === this.props.review.authorName
+    // );
+    // };
+    // { userHasReview() ? <h4>Update Review!</h4> : <CreateReviewContainer />}
+
     let reviews;
-    if (typeof(this.props.bookDetails.reviews) !== 'undefined')
-      reviews = this.props.bookDetails.reviews.map((review) => {
-        return <ReviewDetail review={review} />;
-    });
+      if (typeof(this.props.bookDetails.reviews) !== 'undefined')
+        reviews = this.props.bookDetails.reviews.map((review) => {
+        return <ReviewDetail key={review.id} review={review} />;
+      });
+
+
+      // if  {
+      //   myReviewForm = <h4>Update Review!</h4>;
+      //   } else {
+      //     myReviewForm = ;
+      //   }
+
+      // { myReviewForm }
 
     return(
       <section className="BookDetailMain">
@@ -54,11 +72,14 @@ class BookDetail extends React.Component{
         </section>
 
         <section className="BookDetailReviews">
-          <div className="MyReview"></div>
-          <div className="otherReviews"></div>
-          <h4>Reviews</h4>
-          { reviews }
-          <CreateReviewContainer />
+          <div className="MyReview">
+            <h4>My Review</h4>
+            { (this.props.review === null) ? <CreateReviewContainer /> : <UpdateReviewContainer /> }
+          </div>
+          <div className="otherReviews">
+            <h4>Other Reviews</h4>
+
+          </div>
         </section>
 
       </section>

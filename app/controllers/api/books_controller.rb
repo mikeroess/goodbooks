@@ -20,7 +20,12 @@ class Api::BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     if @book
-      render 'api/books/show'
+      @review = Review.where(user_id: current_user.id, book_id: @book.id).first
+      if @review
+        render 'api/books/show'
+      else
+        render 'api/books/noReview'
+      end
     else
       render json: @book.errors.full_messages, status: 422
     end

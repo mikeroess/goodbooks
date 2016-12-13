@@ -23,7 +23,7 @@ class AddToShelf extends React.Component {
     }
   }
 
-  handleChange(e, key) {
+  handleChange(key) {
     const newValue = {};
     newValue[key] = this.state[key];
     newValue[key].checked = !newValue[key].checked;
@@ -41,19 +41,26 @@ class AddToShelf extends React.Component {
     if (!Array.isArray(this.props.userShelves)) {
       return <div></div>;
     }
-    const keys = Object.keys(this.state);
-    const input = keys.map((objectKey) =>
-    <div key={objectKey} className="checkBoxDiv group" onClick={() => this.handleChange(event, objectKey)}>
-        <input type="checkbox"
-          checked={this.state[objectKey].checked}
+    const shelfIds = Object.keys(this.state);
+    const shelves = shelfIds.map((shelfId) =>
+    <div  key={shelfId} className="checkBoxDiv group" >
+
+
+
+
+        <input type="checkbox" id={`checkbox-label-shelf-id${shelfId}`}
+          checked={ this.state[shelfId].checked }
+          onChange={ () => this.handleChange(shelfId) }
         />
-      <label>{this.state[objectKey].title}</label>
+
+    <label htmlFor={`checkbox-label-shelf-id${shelfId}`}>{ this.state[shelfId].title }</label>
+
     </div>
       );
     return (
       <form className="UpdateShelvesForm" onSubmit={() => this.handleSubmit()}>
         <h4>My Shelves</h4>
-        { input }
+        { shelves }
         <button>Update Shelves</button>
       </form>
     );

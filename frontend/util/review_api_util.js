@@ -6,10 +6,11 @@ export const createReview = (review) => {
   });
 };
 
-export const updateReview = (review) => {
+export const updateReview = (review, reviewId) => {
+  debugger
   return $.ajax({
     method: "PATCH",
-    url: `/api/reviews/${review.reviewId}`,
+    url: `/api/reviews/${reviewId}`,
     data: review
   });
 };
@@ -21,3 +22,11 @@ export const destroyReview = (reviewId) => {
     url: `/api/reviews/${reviewId}`,
   });
 };
+//
+// export const fetchReview = (reviewId) => {
+//   return $.ajax({
+//     method: "GET",
+//     url: ,
+//     data: reviewId
+//   });
+// };

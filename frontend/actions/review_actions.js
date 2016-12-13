@@ -14,14 +14,14 @@ export const receiveReview = (review) => {
 export const createReview = (review) => {
   return (dispatch) => {
     return APIUtil.createReview(review)
-      .then((createdReview) => dispatch(createReview(createdReview)),
+      .then((createdReview) => dispatch(receiveReview(createdReview)),
       (err) => console.log(err));
   };
 };
 
-export const updateReview = (review) => {
+export const updateReview = (review, reviewId) => {
   return (dispatch) => {
-    return APIUtil.updateReview(review)
+    return APIUtil.updateReview(review, reviewId)
       .then( (updatedReview) => dispatch(receiveReview(updateReview)),
       (error) => console.log(error));
   };
@@ -32,5 +32,13 @@ export const destroyReview = (reviewId) => {
     return APIUtil.destroyReview(reviewId)
       .then( () => dispatch(receiveReview(null)),
       (error) => console.log(error));
+  };
+};
+
+export const fetchReview = (bookId) => {
+  return (dispatch) => {
+    return APIUtil.fetchReview(bookId)
+      .then( (review) =>  dispatch(receiveReview(review)),
+        (error) => console.log(error));
   };
 };

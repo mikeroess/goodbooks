@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import { createReview } from '../../actions/review_actions';
-import CreateReview from './create_review';
+import ReviewForm from './review_form';
 
 const mapStateToProps = ({ review }) => {
-  return {review: review};
+  return {title: "",
+        body: ""};
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      createReview: (review) => dispatch(createReview(review))
+      submitReview: (review) => dispatch(createReview(review))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateReview);
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);

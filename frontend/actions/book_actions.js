@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/book_api_util';
+import { receiveReview } from './review_actions';
 
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RECEIVE_BOOKS = "RECEIVE_BOOKS";
@@ -52,7 +53,10 @@ export const fetchMyBooks = () => {
 export const fetchBook = (bookId) => {
   return (dispatch) => {
     return APIUtil.fetchBook(bookId)
-      .then(bookDetails => dispatch(receiveBookDetail(bookDetails)),
+      .then((update) => {
+        dispatch(receiveReview(update["review"]));
+        dispatch(receiveBookDetail(update["bookDetails"]));
+      },
       error => dispatch(receiveErrors(error.responseJSON)));
   };
 };
