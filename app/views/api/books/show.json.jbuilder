@@ -4,3 +4,6 @@ json.authorName @book.author_name
 json.blurb @book.blurb
 json.shelves @book.shelves.ids
 json.bookId @book.id
+json.reviews do
+  json.array! @book.reviews, partial: 'api/reviews/review', as: :review
+end

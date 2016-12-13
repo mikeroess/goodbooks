@@ -44,7 +44,6 @@ class AddToShelf extends React.Component {
     const keys = Object.keys(this.state);
     const input = keys.map((objectKey) =>
     <div key={objectKey} className="checkBoxDiv group" onClick={() => this.handleChange(event, objectKey)}>
-
         <input type="checkbox"
           checked={this.state[objectKey].checked}
         />
@@ -53,6 +52,7 @@ class AddToShelf extends React.Component {
       );
     return (
       <form className="UpdateShelvesForm" onSubmit={() => this.handleSubmit()}>
+        <h4>My Shelves</h4>
         { input }
         <button>Update Shelves</button>
       </form>

@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+border-bottom: solid 1px #EBE8D5;v# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -8,7 +8,7 @@
 
 User.destroy_all
 user1 = User.create(username: "mwr", email: "mwr", password: "password", image: File.open('app/assets/images/book-flat.png'))
-user2 = User.create(username: "mwr2", email: "mwr2", password: "password", image: File.open('app/assets/images/book-flat.png'))
+user2 = User.create(username: "hal", email: "candycorn@gmail.com", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user3 = User.create(username: "mwr3", email: "mwr3", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user4 = User.create(username: "mwr4", email: "mwr4", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user5 = User.create(username: "barn", email: "barn@barn.io", password: "barnaby", image: File.open('app/assets/images/book-flat.png'))
@@ -65,3 +65,16 @@ shelvedbook17 = ShelvedBook.create(book_id: book14.id, shelf_id: shelf9.id)
 shelvedbook18 = ShelvedBook.create(book_id: book15.id, shelf_id: shelf10.id)
 shelvedbook18 = ShelvedBook.create(book_id: book16.id, shelf_id: shelf10.id)
 shelvedbook18 = ShelvedBook.create(book_id: book16.id, shelf_id: shelf3.id)
+
+Review.destroy_all
+review1 = Review.create(book_id: book1.id, user_id: user1.id, title: "Sagely wisdom", body: "He's no Solomon, but the sayings of Odin have some pretty good gems.  Not the best telling of the Volsunga saga I've read.")
+review1 = Review.create(book_id: book1.id, user_id: user2.id, title: "I love the norse", body: "Title says it all")
+review1 = Review.create(book_id: book2.id, user_id: user2.id, title: "My favorite Saga", body: "Seriously -- it's like someone wed Diogenes of Sinope and 80's action movie hero, wrapping the whole thing in the trappings of the medieval bardic tradition.  Everyone should read this book, and everyone should love this book.")
+review1 = Review.create(book_id: book2.id, user_id: user1.id, title: "Sagely wisdom", body: "He's no Solomon, but the sayings of Odin have some pretty good gems.  Not the best telling of the Volsung saga I've read.")
+review1 = Review.create(book_id: book2.id, user_id: user5.id, title: "Good jokes by a bad poet", body: "Don't get me wrong.  I get why Mike like this book so much.  I don't think it's the best, though.  It's up there.  One of the best.  But, Njal's is so much better")
+review1 = Review.create(book_id: book14.id, user_id: user1.id, title: "A fun adventure", body: "There are some classic adventure tropes here.  I guess what I like most about this is how low the stakes are.  The whole thing is written with this epic scope, but it's just some guys stealing cows from their neighbors.  I mean, there's something humerous in that, right?")
+review1 = Review.create(book_id: book14.id, user_id: user2.id, title: "Great pictures", body: "Man, this edition has some wonderful pictures.")
+review1 = Review.create(book_id: book14.id, user_id: user6.id, title: "Maeve is awesome", body: "Badass woman queen starting (local) international incidents because her pride has been insulted.")
+review1 = Review.create(book_id: book11.id, user_id: user1.id, title: "Ugh", body: "I like stories about the machinations of spiteful dwarves and the power they influence over kings as much as the next, but this is a little too close to home right now.")
+review1 = Review.create(book_id: book11.id, user_id: user2.id, title: "Meh", body: "It was fine.")
+review1 = Review.create(book_id: book11.id, user_id: user5.id, title: "What a weird book.", body: "Don't get me wrong, I think I like it.  I recommended it to a friend.  I just don't know why I like it.  It's so weird.")

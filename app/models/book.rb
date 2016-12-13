@@ -27,4 +27,5 @@ class Book < ApplicationRecord
   has_many :shelved_books
   has_many :users, through: :shelves, as: :readers
   has_many :shelves, through: :shelved_books
+  has_many :reviews
 end

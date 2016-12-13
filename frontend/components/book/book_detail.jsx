@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import AddToShelfContainer from '../forms/add_to_shelf_container';
 import CreateReviewContainer from '../forms/create_review_container';
-
+import ReviewDetail from '../review/review_detail';
 
 
 class BookDetail extends React.Component{
@@ -21,6 +21,13 @@ class BookDetail extends React.Component{
     if (typeof(this.props.bookDetails) === 'undefined') {
       return (<div></div>);
     }
+
+    let reviews;
+    if (typeof(this.props.bookDetails.reviews) !== 'undefined')
+      reviews = this.props.bookDetails.reviews.map((review) => {
+        return <ReviewDetail review={review} />;
+    });
+
     return(
       <section className="BookDetailMain">
 
@@ -38,7 +45,10 @@ class BookDetail extends React.Component{
           </div>
 
             <p className="BookDetailBlurb">{this.props.bookDetails.blurb}</p>
-            <AddToShelfContainer />
+
+            <div className="bookDetailShelvesDiv group"></div>
+            <AddToShelfContainer className="bookDetailsUpdateShelves"/>
+
 
           </div>
         </section>
@@ -46,6 +56,8 @@ class BookDetail extends React.Component{
         <section className="BookDetailReviews">
           <div className="MyReview"></div>
           <div className="otherReviews"></div>
+          <h4>Reviews</h4>
+          { reviews }
           <CreateReviewContainer />
         </section>
 
