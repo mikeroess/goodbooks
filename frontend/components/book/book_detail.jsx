@@ -46,7 +46,6 @@ let reviews;
     reviews = this.props.bookDetails.reviews.map((review) => {
     return <ReviewDetail key={review.id} review={review} />;
   });
-
     return(
       <section className="BookDetailMain">
 
