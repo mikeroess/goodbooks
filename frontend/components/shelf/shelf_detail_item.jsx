@@ -11,25 +11,29 @@ class ShelfDetailItem extends React.Component {
 
 
   render() {
+    let bookPath = "";
 
-    // const bookPath = `user/books/${this.props.bookDetail.bookId}`;
+
+    if (this.props.bookDetails !== "undefined") {
+      bookPath = `user/books/${this.props.bookDetail.bookId}`;
+    }
     return(
       <ul className="shelfDetailItem group">
 
         <li className="cover-col">
-          <Link >
-            <img src={ this.props.bookDetail.coverImageUrl } />
+          <Link to={bookPath}>
+            <img src={ this.props.bookDetail.coverUrl } />
             </Link>
         </li>
 
         <li className="title-col">
-          <Link>
+          <Link to={bookPath}>
             { this.props.bookDetail.title }
           </Link>
         </li>
 
         <li className="author-col">
-          <Link >
+          <Link to={bookPath}>
             { this.props.bookDetail.authorName}
           </Link>
         </li>

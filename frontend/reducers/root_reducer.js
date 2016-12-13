@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   loading: LoadingReducer,
   shelves: ShelfReducer,
   books: BookReducer,
-  reviews: ReviewReducer
+  review: ReviewReducer
 });
 
 export default rootReducer;

@@ -1,6 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import AddToShelfContainer from '../forms/add_to_shelf_container';
+import CreateReviewContainer from '../forms/create_review_container';
+
+
+
 class BookDetail extends React.Component{
 
   componentDidMount() {
@@ -42,6 +46,7 @@ class BookDetail extends React.Component{
         <section className="BookDetailReviews">
           <div className="MyReview"></div>
           <div className="otherReviews"></div>
+          <CreateReviewContainer />
         </section>
 
       </section>

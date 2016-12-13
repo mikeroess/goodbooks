@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 import { RECEIVE_ERRORS, RECEIVE_BOOKS, RECEIVE_BOOK_DETAIL, RECEIVE_SHELVES,
-  RECEIVE_READERS } from './../actions/book_actions';
+  RECEIVE_READERS } from '../actions/book_actions';
 const initialState = {
   errors: [],
   books: [],
