@@ -69,6 +69,7 @@ shelvedbook18 = ShelvedBook.create(book_id: book16.id, shelf_id: shelf3.id)
 Review.destroy_all
 review1 = Review.create(book_id: book1.id, user_id: user1.id, title: "Sagely wisdom", body: "He's no Solomon, but the sayings of Odin have some pretty good gems.  Not the best telling of the Volsunga saga I've read.")
 review2 = Review.create(book_id: book1.id, user_id: user2.id, title: "I love the norse", body: "Title says it all")
+review2 = Review.create(book_id: book2.id, user_id: user2.id, title: "I'm sorry it's gross", body: "but seriously -- this book has the best vomit scene in all of world history")
 review3 = Review.create(book_id: book2.id, user_id: user1.id, title: "My favorite Saga", body: "Seriously -- it's like someone wed Diogenes of Sinope and 80's action movie hero, wrapping the whole thing in the trappings of the medieval bardic tradition.  Everyone should read this book, and everyone should love this book.")
 review4 = Review.create(book_id: book2.id, user_id: user5.id, title: "Good jokes by a bad poet", body: "Don't get me wrong.  I get why Mike like this book so much.  I don't think it's the best, though.  It's up there.  One of the best.  But, Njal's is so much better")
 review5 = Review.create(book_id: book14.id, user_id: user1.id, title: "A fun adventure", body: "There are some classic adventure tropes here.  I guess what I like most about this is how low the stakes are.  The whole thing is written with this epic scope, but it's just some guys stealing cows from their neighbors.  I mean, there's something humerous in that, right?")

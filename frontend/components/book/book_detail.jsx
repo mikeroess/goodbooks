@@ -78,7 +78,7 @@ class BookDetail extends React.Component{
           </div>
           <div className="otherReviews">
             <h4>Other Reviews</h4>
-
+            { reviews }
           </div>
         </section>
 
