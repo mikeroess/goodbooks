@@ -73,7 +73,7 @@ let reviews;
           <div className="MyReview">
             <div className="MyReviewHeader group">
               <h4>My Review</h4>
-              <button className="displayReview" onClick={this.displayReviewClick}>{ this.state.displayForm ? "Hide Form" : "Edit Review"}</button>
+              <button className="displayReview" onClick={this.displayReviewClick}>{ this.state.displayForm ? "Back" : "Edit Review"}</button>
             </div>
             { this.state.displayForm ? currentReviewForm : myReview }
           </div>

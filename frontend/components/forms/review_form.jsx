@@ -51,7 +51,7 @@ class ReviewForm extends React.Component {
 
         <div className="createReviewBody">
           <label>Review</label>
-          <input id="CreateReivewTextArea" type="textArea" value={this.state.body} onChange={this.handleInput("body")}/>
+          <textArea id="CreateReivewTextArea" value={this.state.body} onChange={this.handleInput("body")}/>
         </div>
 
         <button>Submit Review</button>

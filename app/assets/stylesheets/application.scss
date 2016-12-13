@@ -25,6 +25,10 @@
    display: inherit;
  }
 
+ textarea {
+   resize: none;
+ }
+
  body {
    background: image-url('splash-background.jpg');
  }
