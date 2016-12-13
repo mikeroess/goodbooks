@@ -22,7 +22,9 @@ export const createReview = (review) => {
 export const updateReview = (review, reviewId) => {
   return (dispatch) => {
     return APIUtil.updateReview(review, reviewId)
-      .then( (updatedReview) => dispatch(receiveReview(updateReview)),
+      .then( (updatedReview) => {
+        dispatch(receiveReview(updatedReview));
+      },
       (error) => console.log(error));
   };
 };
