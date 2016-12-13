@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :books, only: [:show, :create, :destroy, :index]
     resources :reviews, only: [:create, :update, :destroy]
     resource :shelved_books, only: [:update]
+    resource :create_statuses, only: [:create, :update, :destroy]
   end
 
   get 'api/myBooks', to: 'api/books#myBooks'
