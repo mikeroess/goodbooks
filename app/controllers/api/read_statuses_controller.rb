@@ -1,10 +1,16 @@
 class Api::ReadStatusesController < ApplicationController
 
+  def index
+    @user = current_user
+    render 'api/read_statuses/index'
+  end
+
   def create
     @read_status = ReadStatus.new(read_status_params)
     @read_status.user_id = current_user.id
-    if @read_status.save
-      render 'api/read_statuses/show'
+    if @read_stawtus.save
+      @user = current_user
+      render 'api/read_statuses/index'
     else
       render json: @read_status.errors.full_messages, status: 422
     end
@@ -14,7 +20,8 @@ class Api::ReadStatusesController < ApplicationController
     @read_status = ReadStatus.find(params[:id])
     @read_status.user_id = current_user.id
     if @read_status.update(read_status_params)
-      render 'api/read_statuses/show'
+      @user = current_user
+      render 'api/read_statuses/index'
     else
       render json: @read_status.errors.full_messages, status: 422
     end

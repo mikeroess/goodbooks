@@ -10,8 +10,8 @@ const ReviewReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_REVIEW:
-    newState.review = action.review;
-    return newState;
+      newState.review = action.review;
+      return newState;
 
     default:
       return state;
