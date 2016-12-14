@@ -49,6 +49,15 @@
 
 .bookDetailsUpdateShelves {
   float: left;
+
+}
+
+.bookDetailsReadStatus {
+  float: left;
+}
+
+.shelfList {
+  float: left;
 }
 
 .MyReview {
@@ -61,7 +70,7 @@
 
 .MyReviewHeader > button {
   margin-top: 15px;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 .displayReview {
@@ -74,6 +83,10 @@
   display: inline-block;
   padding: 4px;
   font-size: 14px;
+}
+
+.updateShelvesList {
+  float: left;
 }
 
 .displayReview:hover {

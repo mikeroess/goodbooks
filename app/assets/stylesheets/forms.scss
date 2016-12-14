@@ -80,3 +80,34 @@
 .UpdateShelvesForm button:hover {
   background: image-url('splash-background.jpg');
 }
+
+form.readStatusForm {
+  float: left;
+  width: 100px;
+  margin: 0;
+}
+
+form.UpdateShelvesForm {
+  float: left;
+  width: 200px;
+  margin: 0;
+}
+
+
+.readStatusForm button {
+ line-height: 1;
+ cursor: pointer;
+ text-decoration: none;
+ border: 1px solid #D6D0C4;
+ border-radius: 3px;
+ background-color: #F4F1EA;
+ color: #333333;
+ display: inline-block;
+ padding: 4px;
+ font-size: 12px;
+ margin-top: 5px;
+}
+
+.readStatusForm button:hover {
+  background: image-url('splash-background.jpg');
+}
