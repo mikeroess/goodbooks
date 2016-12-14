@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserHome from './user_home';
 import { receiveLoading } from '../../actions/loading_actions';
+import { fetchReadStatuses } from '../../actions/read_status_actions';
 
 const mapStateToProps = ({ session, loading}) => {
   return {currentUser: session.currentUser,
@@ -9,7 +10,8 @@ const mapStateToProps = ({ session, loading}) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    loading: (loadAction) => dispatch(receiveLoading(loadAction))
+    loading: (loadAction) => dispatch(receiveLoading(loadAction)),
+    fetchReadStatuses: () => dispatch(fetchReadStatuses())
   };
 };
 

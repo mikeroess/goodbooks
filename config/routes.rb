@@ -8,9 +8,11 @@ Rails.application.routes.draw do
     resources :books, only: [:show, :create, :destroy, :index]
     resources :reviews, only: [:create, :update, :destroy]
     resource :shelved_books, only: [:update]
-    resource :read_statuses, only: [:create, :update, :destroy, :index]
+    resources :read_statuses, only: [:update, :destroy]
+    resource :read_statuses, only: [:create]
   end
 
   get 'api/myBooks', to: 'api/books#myBooks'
+  get 'api/read_statuses', to: 'api/read_statuses#index'
 end
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

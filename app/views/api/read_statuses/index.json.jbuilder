@@ -1,1 +1,6 @@
-json.partial! @user.read_statuses, partial 'api/read_statuses/read_status', as: :read_status
+@user.read_statuses.each do |read_status|
+  json.set! read_status.book_id do
+    json.status read_status.status
+    json.readStatusId read_status.id
+  end
+end

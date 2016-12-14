@@ -11,6 +11,10 @@ class UserHome extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchReadStatuses();
+  }
+
 
   render() {
     return (

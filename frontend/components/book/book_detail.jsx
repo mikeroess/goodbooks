@@ -4,7 +4,8 @@ import AddToShelfContainer from '../forms/add_to_shelf_container';
 import CreateReviewContainer from '../forms/create_review_container';
 import ReviewDetail from '../review/review_detail';
 import UpdateReviewContainer from '../forms/update_review_container';
-
+import ReadStatusContainer from '../forms/read_status_form_container';
+// import ReadStatusForm from '../forms/read_status_form'
 
 class BookDetail extends React.Component{
   constructor(props) {
@@ -24,7 +25,7 @@ class BookDetail extends React.Component{
       this.setState({displayForm: false});
     }
   }
-
+// {this.props.readStatuses[this.props.params.bookId][status]}
   displayReviewClick() {
     this.setState({displayForm: !this.state.displayForm});
   }
@@ -52,6 +53,7 @@ let reviews;
         <section className="BookDetailBasics group">
           <div className="coverAndReadStatus">
             <img src={this.props.bookDetails.coverUrl} />
+            <ReadStatusContainer bookId={this.props.params.bookId} />
           </div>
 
           <div className="textDetails">
@@ -65,8 +67,7 @@ let reviews;
             <p className="BookDetailBlurb">{this.props.bookDetails.blurb}</p>
             <div className="bookDetailShelvesDiv group">
             <AddToShelfContainer className="bookDetailsUpdateShelves"/>
-            <h4>Read Status</h4>
-            {this.props.readStatuses[this.props.params.bookId][status]}
+
 
             </div>
           </div>

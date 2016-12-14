@@ -17,6 +17,7 @@ class Api::ReadStatusesController < ApplicationController
   end
 
   def update
+    debugger
     @read_status = ReadStatus.find(params[:id])
     @read_status.user_id = current_user.id
     if @read_status.update(read_status_params)

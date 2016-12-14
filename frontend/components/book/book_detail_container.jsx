@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import BookDetail from './book_detail';
 import { fetchBook } from '../../actions/book_actions';
+// import { fetchReadStatuses } from '../../actions/read_status_actions';
 
 const mapStateToProps = ( { session, review, books, readStatuses }) => {
   return {
@@ -16,6 +17,7 @@ const mapStateToProps = ( { session, review, books, readStatuses }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchBook: (bookId) => dispatch(fetchBook(bookId))
+    // fetchReadStatuses: () => dispatch(fetchReadStatuses())
   };
 };
 
