@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-user1 = User.create(username: "mwr", email: "mwr", password: "password", image: File.open('app/assets/images/book-flat.png'))
+user1 = User.create(username: "mwr", email: "mwr", password: "password", image: File.open('app/assets/images/kdf.jpg'))
 user2 = User.create(username: "hal", email: "candycorn@gmail.com", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user3 = User.create(username: "kendall", email: "Ilovecatsforever!!!!!!@garbage.pail", password: "password", image: File.open('app/assets/images/book-flat.png'))
 user4 = User.create(username: "mwr4", email: "mwr4", password: "password", image: File.open('app/assets/images/book-flat.png'))
@@ -15,24 +15,28 @@ user5 = User.create(username: "barn", email: "barn@barn.io", password: "barnaby"
 user6 = User.create(username: "zoh", email: "zoh@gmail.com", password: "gothypants", image: File.open('app/assets/images/book-flat.png'))
 
 Book.destroy_all
-book1 = Book.create(title: "Elder Edda", author_name: "Snorri Sturluson", image: File.open('app/assets/images/default_book_cover.jpg'))
-book2 = Book.create(title: "Egil's Saga", author_name: "Snorri Sturluson", image: File.open('app/assets/images/default_book_cover.jpg'))
-book3 = Book.create(title: "Myths and Legends of Iceland", author_name: "Jon Arnason", image: File.open('app/assets/images/default_book_cover.jpg'))
-book4 = Book.create(title: "Release It!", author_name: "Michael Nygard", image: File.open('app/assets/images/default_book_cover.jpg'))
-book5 = Book.create(title: "SICP", author_name: "Gerald Jay Sussman and Hal Abelson", image: File.open('app/assets/images/default_book_cover.jpg'))
-book6 = Book.create(title: "The Three Body Problem", author_name: "Cixin Liu", image: File.open('app/assets/images/default_book_cover.jpg'))
-book7 = Book.create(title: "The Dark Forest", author_name: "Cixin Liu", image: File.open('app/assets/images/default_book_cover.jpg'))
+book1 = Book.create(title: "Elder Edda", author_name: "Snorri Sturluson", image: File.open('app/assets/images/elder_edda.jpg'))
+book2 = Book.create(title: "Egil's Saga", author_name: "Snorri Sturluson", image: File.open('app/assets/images/Egil.jpg'))
+book3 = Book.create(title: "Icelandic Folklore and Fairytales", author_name: "Jon Arnason", image: File.open('app/assets/images/Icelandic_f_and__tales.jpg'))
+book4 = Book.create(title: "Release It!", author_name: "Michael Nygard", image: File.open('app/assets/images/release_it.jpg'))
+book5 = Book.create(title: "SICP", author_name: "Gerald Jay Sussman and Hal Abelson", image: File.open('app/assets/images/SICP.jpg'))
+book6 = Book.create(title: "The Three Body Problem", author_name: "Cixin Liu", image: File.open('app/assets/images/three_body.jpg'))
+book7 = Book.create(title: "The Dark Forest", author_name: "Cixin Liu", image: File.open('app/assets/images/dark_forest.jpg'))
 book8 = Book.create(title: "Apothegm of Diogenes", author_name: "Diogenes of Sinope", image: File.open('app/assets/images/default_book_cover.jpg'))
-book9 = Book.create(title: "Independent People", author_name: "Haldor Laxness", image: File.open('app/assets/images/default_book_cover.jpg'))
-book10 = Book.create(title: "Death's End", author_name: "Cixin Liu", image: File.open('app/assets/images/default_book_cover.jpg'))
-book11 = Book.create(title: "The Dwarf", author_name: "Pär Lagerkvist", image: File.open('app/assets/images/default_book_cover.jpg'))
-book12 = Book.create(title: "Under the Glacier", author_name: "Haldor Laxness", image: File.open('app/assets/images/default_book_cover.jpg'))
-book13 = Book.create(title: "Flowers of Evil", author_name: "Charles Baudelaire", image: File.open('app/assets/images/default_book_cover.jpg'))
-book14 = Book.create(title: "Táin Bó Cúailnge", author_name: "Lost to Antiquity", image: File.open('app/assets/images/default_book_cover.jpg'))
-book15 = Book.create(title: "The Handmaid's Tale", author_name: "Margaret Atwood", image: File.open('app/assets/images/default_book_cover.jpg'))
-book16 = Book.create(title: "The Left Hand of Darkness", author_name: "Ursula K. Le Guin", image: File.open('app/assets/images/default_book_cover.jpg'))
+book9 = Book.create(title: "Independent People", author_name: "Haldor Laxness", image: File.open('app/assets/images/independent_peeps.jpg'))
+book10 = Book.create(title: "Death's End", author_name: "Cixin Liu", image: File.open('app/assets/images/deaths_end.jpg'))
+book11 = Book.create(title: "The Dwarf", author_name: "Pär Lagerkvist", image: File.open('app/assets/images/dwarf.jpg'))
+book12 = Book.create(title: "Under the Glacier", author_name: "Haldor Laxness", image: File.open('app/assets/images/under_glacier.jpg'))
+book13 = Book.create(title: "Flowers of Evil", author_name: "Charles Baudelaire", image: File.open('app/assets/images/flowers_of_evil.jpg'))
+book14 = Book.create(title: "Táin Bó Cúailnge", author_name: "Lost to Antiquity", image: File.open('app/assets/images/tain.jpg'))
+book15 = Book.create(title: "The Handmaid's Tale", author_name: "Margaret Atwood", image: File.open('app/assets/images/handmaid.jpg'))
+book16 = Book.create(title: "The Left Hand of Darkness", author_name: "Ursula K. Le Guin", image: File.open('app/assets/images/left_hand.jpg'))
+book17 = Book.create(title: "Discourses on Livy", author_name: "Nicolo Machiavelli", image: File.open('app/assets/images/livy.jpg'))
+book18 = Book.create(title: "The Political Thought of William of Ockham", author_name: "Arthur Stephen McGrade", image: File.open('app/assets/images/ockham.jpg'))
+book19 = Book.create(title: "Machiavelli in Hell", author_name: "Sebastian De Grazia ", image: File.open('app/assets/images/machiavelli_hell.jpg'))
 
-readStatus.destroy_all
+
+ReadStatus.destroy_all
 readstatus1 = ReadStatus.create(user_id: user1.id, book_id:book1.id, status:"read")
 readstatus2 = ReadStatus.create(user_id: user1.id, book_id:book2.id, status:"read")
 readstatus3 = ReadStatus.create(user_id: user1.id, book_id:book3.id, status:"read")
