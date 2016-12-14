@@ -17,6 +17,7 @@ class BookDetail extends React.Component{
     };
     this.displayReviewClick = this.displayReviewClick.bind(this);
     this.displayShelvesClick = this.displayShelvesClick.bind(this);
+    this.displayCurrentShelves = this.displayCurrentShelves.bind(this);
   }
 
   componentDidMount() {
@@ -29,13 +30,12 @@ class BookDetail extends React.Component{
         displayShelves: false,
         displayStatus: false});
     }
-    this.displayCurrentShelves = this.displayCurrentShelves.bind(this);
   }
 
   displayReviewClick() {
     this.setState({displayReview: !this.state.displayReview});
   }
-  // add to ~line 104 
+  // add to ~line 104
   // <button className="displayReview" onClick={this.displayShelvesClick}>{ this.state.displayShelves ? "Back" : "Edit Shelves"}</button>
   // {this.state.displayShelves ? <AddToShelfContainer id="bookDetailsUpdateShelves"/> : myShelves }
 
@@ -46,7 +46,7 @@ class BookDetail extends React.Component{
   displayCurrentShelves() {
     const shelves = this.props.userShelves.map((shelf) => {
       if (this.props.booksShelves.includes(shelf.shelfId)) {
-        return <li>{shelf.title}</li>;
+        return <li key={shelf.shelfId}>{shelf.title}</li>;
       }
     });
     return(<ul>
@@ -64,7 +64,8 @@ const currentReviewForm = (this.props.review === null) ? <CreateReviewContainer 
 
 let myReview;
 if (this.props.review !== null) {
-  myReview = <ReviewDetail key={this.props.review.id} review={this.props.review} />;
+  let thisKey=`myReview-${this.props.review.id}`;
+  myReview = <ReviewDetail key={thisKey} review={this.props.review} />;
 }
 
 let myShelves;
@@ -78,7 +79,7 @@ if (Array.isArray(this.props.userShelves) &&
 let reviews;
   if (typeof(this.props.bookDetails.reviews) !== 'undefined')
     reviews = this.props.bookDetails.reviews.map((review) => {
-    return <ReviewDetail key={review.id} review={review} />;
+    return <ReviewDetail key={`reviewDetail-${review.id}`} review={review} />;
   });
     return(
       <section className="BookDetailMain">
@@ -100,8 +101,10 @@ let reviews;
 
             <div className="bookDetailShelvesDiv group">
               <div className="UpdateshelvesList">
+                <h4>My Shelves</h4>
                 <AddToShelfContainer id="bookDetailsUpdateShelves"/>
               </div>
+              <h4>Current Status</h4>
               <ReadStatusContainer id="bookDetailsReadStatus"
                 bookId={this.props.params.bookId} />
             </div>

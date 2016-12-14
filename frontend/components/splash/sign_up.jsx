@@ -66,7 +66,7 @@ handleSubmit(e) {
 guestLogin(e) {
   e.preventDefault();
   this.props.login({user: {email: "mwr", password: "password"}})
-  .then(() => hashHistory.push("/user"));
+  .then(() => hashHistory.push("/user/books"));
 }
 
 renderErrors() {

@@ -13,6 +13,7 @@ class Api::ShelvedBooksController < ApplicationController
       end
     end
     @book = Book.find(@book_id)
+    @books = Book.all
     @user = current_user
     @review = Review.where(user_id: current_user.id, book_id: @book.id).first
     render 'api/shelvedBooks/update'

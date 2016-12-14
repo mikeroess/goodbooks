@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-
+import UpdateShelvesIndexContainer from '../forms/update_shelves_index_container';
 
 // <li className="avg-rating-col">detail_avg rating</li>
 // <li className="rating-col">detail_rating</li>
@@ -36,6 +36,10 @@ class ShelfDetailItem extends React.Component {
           <Link to={bookPath}>
             { this.props.bookDetail.authorName}
           </Link>
+        </li>
+
+        <li className="shelves-col">
+          <UpdateShelvesIndexContainer className="shelves-col" book={this.props.bookDetail} shelves={this.props.shelves} />
         </li>
 
       </ul>

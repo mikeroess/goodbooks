@@ -34,13 +34,13 @@ class AuthForm extends React.Component {
 handleSubmit(e) {
   e.preventDefault();
   this.props.login({user: this.state})
-  .then(() => hashHistory.push("/user"));
+  .then(() => hashHistory.push("/user/books"));
 }
 
 guestLogin(e) {
   e.preventDefault();
   this.props.login({user: {email: "mwr", password: "password"}})
-  .then(() => hashHistory.push("/user"));
+  .then(() => hashHistory.push("/user/books"));
 }
 
 renderErrors() {

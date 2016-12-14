@@ -7,7 +7,8 @@ const mapStateToProps = ( { shelves, books }) => {
   return {
     books: books.books,
     errors: books.errors,
-    shelves: shelves.shelves
+    shelves: shelves.shelves,
+    prekey: "allBooks"
   };
 };
 

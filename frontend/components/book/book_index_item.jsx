@@ -1,21 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import UpdateShelvesIndexContainer from '../forms/update_shelves_index_container';
+import ReadStatusFormContainer from '../forms/read_status_form_container';
 
 class BookIndexItem extends React.Component {
 
-
-
-  // <li className="read-status-col">
-  //   <Link to={ linkPath } className="bookIndexLink">
-  //     {this.props.book.readStatus }
-  //   </Link>
-  // </li>
-
-
   render() {
-    // const select_boxes =
     const linkPath = `user/books/${this.props.book.bookId}`;
     const imagePath = this.props.book.coverUrl;
+
 
     return(
       <ul className="bookIndexItem group">
@@ -35,6 +28,10 @@ class BookIndexItem extends React.Component {
           <Link to={ linkPath } className="bookIndexLink">
             {this.props.book.authorName }
           </Link>
+        </li>
+
+        <li className="shelves-col">
+          <UpdateShelvesIndexContainer key={this.props.book.bookId} className="shelves-col" book={this.props.book} shelves={this.props.shelves} />
         </li>
 
 

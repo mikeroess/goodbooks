@@ -19,6 +19,7 @@
 .bookIndexItem {
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(238, 238, 238);
+  height: 100px;
 }
 
 .bookIndexItem > li {
@@ -57,4 +58,18 @@
 
 .author-col {
   float: left;
+  margin-right: 15px;
+}
+
+li.shelves-col {
+  width: 200px;
+  overflow: display;
+}
+
+li.shelves-col button {
+  margin-bottom: 10px;
+}
+
+li.read-status-col button {
+  margin-top: 38px;
 }

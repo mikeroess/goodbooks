@@ -11,15 +11,16 @@ class AddToShelf extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    let updated = (this.props.userShelves !== nextProps.userShelves || this.props.bookShelves !== nextProps.bookShelves);
-    if (updated && Array.isArray(nextProps.userShelves) && Array.isArray(nextProps.bookShelves)) {
-      nextProps.userShelves.map((shelf) => {
+    let updated = (this.props.shelves !== nextProps.shelves || this.props.book.shelves !== nextProps.book.shelves);
+    if (updated && Array.isArray(nextProps.shelves) && Array.isArray(nextProps.book.shelves)) {
+      nextProps.shelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
-          checked: nextProps.bookShelves.includes(shelf.shelfId),
-          bookId: nextProps.bookId
+          checked: nextProps.book.shelfIds.includes(shelf.shelfId),
+          bookId: nextProps.book.bookId
         };
       });
+      this.setState({displayShelves: false});
     }
   }
 
@@ -41,14 +42,13 @@ class AddToShelf extends React.Component {
   }
 
   render() {
-
-    if (!Array.isArray(this.props.userShelves)) {
+    if (!Array.isArray(this.props.shelves)) {
       return <div></div>;
     }
     const shelfIds = Object.keys(this.state);
 
     const shelves = shelfIds.map((shelfId) =>
-    <div  key={`shelfIdCheckbox-${shelfId}${this.props.bookId}`} className="checkBoxDiv group">
+    <div  key={`shelfIdCheckbox-${shelfId}${this.props.book.bookId}`} className="checkBoxDiv group">
       <input type="checkbox" id={`checkbox-label-shelf-id${shelfId}`}
         checked={ this.state[shelfId].checked }
         onChange={ () => this.handleChange(shelfId) }
