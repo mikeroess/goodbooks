@@ -8,4 +8,7 @@ json.bookDetails do
   json.shelfIds @book.shelves.ids
   json.shelves @book.shelves
   json.bookId @book.id
+  json.reviews do
+    json.array! @book.reviews.reject{ |review| review == @review}, partial: 'api/reviews/review', as: :review
+  end
 end
