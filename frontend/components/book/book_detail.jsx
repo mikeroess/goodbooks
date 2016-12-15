@@ -35,9 +35,6 @@ class BookDetail extends React.Component{
   displayReviewClick() {
     this.setState({displayReview: !this.state.displayReview});
   }
-  // add to ~line 104
-  // <button className="displayReview" onClick={this.displayShelvesClick}>{ this.state.displayShelves ? "Back" : "Edit Shelves"}</button>
-  // {this.state.displayShelves ? <AddToShelfContainer id="bookDetailsUpdateShelves"/> : myShelves }
 
   displayShelvesClick() {
     this.setState({displayShelves: !this.state.displayShelves});

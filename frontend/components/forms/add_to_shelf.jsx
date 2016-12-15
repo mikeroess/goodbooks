@@ -81,7 +81,7 @@ class AddToShelf extends React.Component {
 
     return (
       <div>
-      <button className="displayReview" onClick={this.displayShelvesClick}>{ this.state.displayShelves ? "Back" : "Edit Shelves"}</button>
+      <button className="BookDetaildisplayReview" onClick={this.displayShelvesClick}>{ this.state.displayShelves ? "Back" : "Edit Shelves"}</button>
       <form className="UpdateShelvesForm" onSubmit={() => this.handleSubmit()}>
         { this.state.displayShelves ? shelves : shelvesList }
         {this.state.displayShelves ? <button>Update Shelves</button> : <div></div>}
