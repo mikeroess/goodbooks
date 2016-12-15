@@ -105,7 +105,7 @@ let reviews;
                 <AddToShelfContainer id="bookDetailsUpdateShelves"/>
               </div>
               <h4>Current Status</h4>
-              <ReadStatusContainer id={this.props.bookDetailsReadStatus}
+              <ReadStatusContainer
                 bookId={this.props.params.bookId} />
             </div>
           </div>

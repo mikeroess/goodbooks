@@ -7,19 +7,26 @@ class ReadStatusForm extends React.Component {
     super(props);
     this.state = {
       status: "",
-      id: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.submitReadStatus = this.submitReadStatus.bind(this);
   }
 
+  componentDidMount() {
+    if (typeof(this.props.bookId) !== "undefined") {
+      this.setState({status: this.props.readStatuses[this.props.bookId].status})
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
-    if (this.props.readStatuses !== nextProps.readStatuses &&
-       typeof(nextProps.bookId) !== "undefined") {
+
+    if (typeof(nextProps.bookId) !== "undefined" &&
+      this.props.readStatuses[nextProps.bookId] !== nextProps.readStatuses[nextProps.bookId]
+       )
+       {
       const newState = {
         status: nextProps.readStatuses[nextProps.bookId].status,
-        id: nextProps.readStatuses[nextProps.bookId].readStatusId
       };
       this.setState(newState);
     }
@@ -32,18 +39,17 @@ class ReadStatusForm extends React.Component {
   }
 
   submitReadStatus() {
+
     return (e) => {
       e.preventDefault();
-      const submission = {read_status: {status: this.state.status}};
-      this.props.updateReadStatus(submission, this.state.id);
+      const submission = { read_status: {status: this.state.status} };
+      const submissionId = this.props.readStatuses[this.props.bookId].readStatusId ;
+      this.props.updateReadStatus(submission, submissionId);
     };
   }
 
   render() {
-    let readStatusText;
-    if (typeof(this.props.readStatuses[this.props.bookId]) !== 'undefined') {
-      readStatusText = this.props.readStatuses[this.props.bookId].status;
-    }
+
     return(
       <form className="readStatusForm" onSubmit={this.submitReadStatus()}>
         <select value={this.state.status} onChange={this.handleChange()}>
