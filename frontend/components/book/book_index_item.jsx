@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import UpdateShelvesIndexContainer from '../forms/update_shelves_index_container';
-import ReadStatusFormContainer from '../forms/read_status_form_container';
+import ReadStatusContainer from '../forms/read_status_form_container';
 
 class BookIndexItem extends React.Component {
 

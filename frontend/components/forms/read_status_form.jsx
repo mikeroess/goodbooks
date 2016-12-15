@@ -14,14 +14,14 @@ class ReadStatusForm extends React.Component {
   }
 
   componentDidMount() {
-    if (typeof(this.props.bookId) !== "undefined") {
-      this.setState({status: this.props.readStatuses[this.props.bookId].status})
+    if (typeof(this.props.bookId) !== "undefined" && typeof(this.props.readStatuses[this.props.bookId]) !== "undefined") {
+      this.setState({status: this.props.readStatuses[this.props.bookId].status});
     }
   }
 
   componentWillReceiveProps(nextProps) {
 
-    if (typeof(nextProps.bookId) !== "undefined" &&
+    if (typeof(nextProps.bookId) !== "undefined" && this.props.readStatuses[this.props.bookId] !== "undefined" &&
       this.props.readStatuses[nextProps.bookId] !== nextProps.readStatuses[nextProps.bookId]
        )
        {
@@ -49,6 +49,9 @@ class ReadStatusForm extends React.Component {
   }
 
   render() {
+    if (this.props.readStatuses[this.props.bookId] === "undefined") {
+      return;
+    }
 
     return(
       <form className="readStatusForm" onSubmit={this.submitReadStatus()}>
