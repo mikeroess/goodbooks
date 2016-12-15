@@ -4,9 +4,9 @@ import { fetchBook } from '../../actions/book_actions';
 import { fetchShelves } from '../../actions/shelf_actions';
 import  { updateBookshelves } from '../../actions/shelved_book_actions';
 
-const mapStateToProps = ({ }) => {
+const mapStateToProps = ({ shelves }) => {
   return {
-
+    userShelves: shelves.shelves
   };
 };
 

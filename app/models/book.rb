@@ -24,7 +24,7 @@ class Book < ApplicationRecord
   validates :title, uniqueness: { scope: :author_name }
 
 
-  has_many :shelved_books
+  has_many :shelved_books, dependent: :destroy
   has_many :users, through: :shelves, as: :readers
   has_many :shelves, through: :shelved_books
   has_many :reviews

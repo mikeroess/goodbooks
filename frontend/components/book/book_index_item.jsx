@@ -9,7 +9,7 @@ class BookIndexItem extends React.Component {
     const linkPath = `user/books/${this.props.book.bookId}`;
     const imagePath = this.props.book.coverUrl;
 
-
+    let newKey = `updatedShelves${this.props.book.bookId}`;
     return(
       <ul className="bookIndexItem group">
         <li className="cover-col">
@@ -31,7 +31,7 @@ class BookIndexItem extends React.Component {
         </li>
 
         <li className="shelves-col">
-          <UpdateShelvesIndexContainer key={this.props.book.bookId} className="shelves-col" book={this.props.book} shelves={this.props.shelves} />
+          <UpdateShelvesIndexContainer key={newKey} className="shelves-col" book={this.props.book} shelves={this.props.shelves} />
         </li>
 
 

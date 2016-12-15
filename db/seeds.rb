@@ -7,14 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+puts "destroyed users"
 user1 = User.create(username: "mwr", email: "mwr", password: "password", image: File.open('app/assets/images/kdf.jpg'))
-user2 = User.create(username: "hal", email: "candycorn@gmail.com", password: "password", image: File.open('app/assets/images/book-flat.png'))
-user3 = User.create(username: "kendall", email: "Ilovecatsforever!!!!!!@garbage.pail", password: "password", image: File.open('app/assets/images/book-flat.png'))
-user4 = User.create(username: "mwr4", email: "mwr4", password: "password", image: File.open('app/assets/images/book-flat.png'))
-user5 = User.create(username: "barn", email: "barn@barn.io", password: "barnaby", image: File.open('app/assets/images/book-flat.png'))
-user6 = User.create(username: "zoh", email: "zoh@gmail.com", password: "gothypants", image: File.open('app/assets/images/book-flat.png'))
+user2 = User.create(username: "hal", email: "candycorn@gmail.com", password: "password", image: File.open('app/assets/images/kdf.jpg'))
+user3 = User.create(username: "kendall", email: "Ilovecatsforever!!!!!!@garbage.pail", password: "password", image: File.open('app/assets/images/kdf.jpg'))
+user4 = User.create(username: "mwr4", email: "mwr4", password: "password", image: File.open('app/assets/images/kdf.jpg'))
+user5 = User.create(username: "barn", email: "barn@barn.io", password: "barnaby", image: File.open('app/assets/images/kdf.jpg'))
+user6 = User.create(username: "zoh", email: "zoh@gmail.com", password: "gothypants", image: File.open('app/assets/images/kdf.jpg'))
 
 Book.destroy_all
+puts "destroyed books"
 book1 = Book.create(title: "Elder Edda", author_name: "Snorri Sturluson", image: File.open('app/assets/images/elder_edda.jpg'))
 book2 = Book.create(title: "Egil's Saga", author_name: "Snorri Sturluson", image: File.open('app/assets/images/Egil.jpg'))
 book3 = Book.create(title: "Icelandic Folklore and Fairytales", author_name: "Jon Arnason", image: File.open('app/assets/images/Icelandic_f_and__tales.jpg'))
@@ -36,7 +38,7 @@ book18 = Book.create(title: "The Political Thought of William of Ockham", author
 book19 = Book.create(title: "Ramayana", author_name: "Vālmīki", image: File.open('app/assets/images/ramayana.jpg'))
 book20 = Book.create(title: "Kural", author_name: "Thiruvalluvar", image: File.open('app/assets/images/kural.jpg'))
 book21 = Book.create(title: "Aghora: At the Left Hand of God", author_name: "Robert E. Svoboda", image: File.open('app/assets/images/aghora.jpg'))
-book22 = Book.create(title: "The Panchtantra", author_name: "Vishnu Sharma", image: File.open('app/assets/images/panchatanra.jpg'))
+# book22 = Book.create(title: "The Panchtantra", author_name: "Vishnu Sharma", image: File.open('app/assets/images/panchatanra.jpg'))
 book23 = Book.create(title: "The Kalevala", author_name: "Elias Lönnrot", image: File.open('app/assets/images/kalevala.jpg'))
 book24 = Book.create(title: "The Deeds of God in .Rddhipur", author_name: "Mhaimbhat", image: File.open('app/assets/images/deeds_of_god.jpg'))
 book25 = Book.create(title: "Thinking, Fast and Slow", author_name: "Daniel Kahneman ", image: File.open('app/assets/images/fast_and_slow.jpg'))
@@ -65,8 +67,6 @@ book47 = Book.create(title: "Immortal Lycanthropes", author_name: "Hal Johnson",
 book48 = Book.create(title: "The Plague", author_name: "Albert Camus", image: File.open('app/assets/images/plague.jpg'))
 book49 = Book.create(title: "Moby Dick", author_name: "Herman Melville", image: File.open('app/assets/images/moby_dick.jpg'))
 book50 = Book.create(title: "Fearsome Creatures of the Lumberwoods: Twenty Chilling Tales from the Wilderness", author_name: "Hal Johnson", image: File.open('app/assets/images/fearsome.jpg'))
-
-
 
 ReadStatus.destroy_all
 readstatus1 = ReadStatus.create(user_id: user1.id, book_id:book1.id, status:"read")
@@ -112,9 +112,10 @@ shelf9 = Shelf.create(user_id: user6.id, title: "Celtic Reconstruction")
 shelf10 = Shelf.create(user_id: user6.id, title: "Feminist Literature")
 
 ShelvedBook.destroy_all
-shelvedbook1 = ShelvedBook.create(book_id: book1.id, shelf_id: shelf4.id)
-shelvedbook2 = ShelvedBook.create(book_id: book1.id, shelf_id: shelf7.id)
-shelvedbook3 = ShelvedBook.create(book_id: book2.id, shelf_id: shelf4.id)
+shelvedbook1 = ShelvedBook.create(book_id: book1.id, shelf_id: shelf1.id)
+shelvedbook2 = ShelvedBook.create(book_id: book2.id, shelf_id: shelf2.id)
+shelvedbook3 = ShelvedBook.create(book_id: book3.id, shelf_id: shelf3.id)
+shelvedbook4 = ShelvedBook.create(book_id: book4.id, shelf_id: shelf4.id)
 shelvedbook4 = ShelvedBook.create(book_id: book2.id, shelf_id: shelf7.id)
 shelvedbook5 = ShelvedBook.create(book_id: book3.id, shelf_id: shelf4.id)
 shelvedbook6 = ShelvedBook.create(book_id: book4.id, shelf_id: shelf2.id)

@@ -79,7 +79,7 @@ if (Array.isArray(this.props.userShelves) &&
 let reviews;
   if (typeof(this.props.bookDetails.reviews) !== 'undefined')
     reviews = this.props.bookDetails.reviews.map((review) => {
-    return <ReviewDetail key={`reviewDetail-${review.id}`} review={review} />;
+    return <ReviewDetail key={`reviewDetail-${review.reviewId}`} review={review} />;
   });
     return(
       <section className="BookDetailMain">
@@ -105,7 +105,7 @@ let reviews;
                 <AddToShelfContainer id="bookDetailsUpdateShelves"/>
               </div>
               <h4>Current Status</h4>
-              <ReadStatusContainer id="bookDetailsReadStatus"
+              <ReadStatusContainer id={this.props.bookDetailsReadStatus}
                 bookId={this.props.params.bookId} />
             </div>
           </div>

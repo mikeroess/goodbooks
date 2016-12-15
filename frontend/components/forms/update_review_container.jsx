@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import { updateReview } from '../../actions/review_actions';
+import { updateReview, destroyReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = ({ review }) => {
     if (review.review !== null) {
     return { title: review.review.title,
       body: review.review.body,
-      id: review.review.reviewId};
+      id: review.review.reviewId,
+      review: review.review };
   } else {
     return {
       title: "",
@@ -17,7 +18,8 @@ const mapStateToProps = ({ review }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      submitReview: (review, reviewId) => dispatch(updateReview(review, reviewId))
+      submitReview: (review, reviewId) => dispatch(updateReview(review, reviewId)),
+      deleteReview: (reviewId) => dispatch(destroyReview(reviewId))
     };
 };
 

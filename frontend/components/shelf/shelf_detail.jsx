@@ -8,27 +8,27 @@ class ShelfDetail extends React.Component {
 
   componentWillMount() {
     this.props.fetchShelf(this.props.params.shelfId);
-    this.props.fetchBooks();
-    this.props.fetchShelves();
+    // this.props.fetchBooks();
+    // this.props.fetchShelves();
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.params.shelfId !== nextProps.params.shelfId) {
-  //     nextProps.fetchShelf(nextProps.params.shelfId);
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.shelfId !== nextProps.params.shelfId) {
+      nextProps.fetchShelf(nextProps.params.shelfId);
+    }
+  }
 
 
     render() {
       const shelfDetail = this.props.shelfDetail;
-      if (typeof(shelfDetail.books) === 'undefined') {
+      if (typeof(this.props.books) === 'undefined') {
         return <div></div>;
       }
       let shelfBooksDetails = <div></div>;
-      if (shelfDetail.books.length > 0) {
-        shelfBooksDetails = shelfDetail.books.map((book) => {
+      if (this.props.books.length > 0) {
+        shelfBooksDetails = this.props.books.map((book) => {
           let newKey=`shelfDetailItem${book.bookId}`;
-          return <ShelfDetailItem key={newKey} bookDetail={book} shelves={this.props.shelves}/>;
+          return <ShelfDetailItem key={newKey} book={book} shelves={this.props.shelves}/>;
         });
       }
       return (

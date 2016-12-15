@@ -5,6 +5,22 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RECEIVE_BOOKS = "RECEIVE_BOOKS";
 export const RECEIVE_BOOK_DETAIL = "RECEIVE_BOOK_DETAIL";
 export const RECEIVE_READERS = "RECEIVE_READERS";
+export const RECEIVE_SHELF_DETAIL_UPDATE = "RECEIVE_SHELF_DETAIL_UPDATE";
+export const RECEIVE_SHELF_DETAIL = "RECEIVE_SHELF_DETAIL";
+
+export const receiveShelfDetailUpdate = (update) => {
+  return {
+    type: RECEIVE_SHELF_DETAIL_UPDATE,
+    update
+  };
+};
+
+export const receiveShelfDetail = (books) => {
+  return {
+    type: RECEIVE_SHELF_DETAIL,
+    books
+  };
+};
 
 export const receiveErrors = (errors) => {
   return {
@@ -33,6 +49,7 @@ export const recieveReaders = (readers) => {
     readers
   };
 };
+
 
 export const fetchAllBooks = () => {
   return (dispatch) => {

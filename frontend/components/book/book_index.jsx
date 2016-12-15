@@ -7,8 +7,14 @@ class BookIndex extends React.Component {
   componentDidMount() {
     this.props.fetchBooks();
     this.props.fetchShelves();
+    console.log("I did mount");
   }
 
+  componentWillUnmount(){
+    console.log("I will unmount");
+  }
+
+          // { this.props.children }
 
   render() {
     const shelves = this.props.shelves;
@@ -30,7 +36,7 @@ class BookIndex extends React.Component {
             <li className="read-status-col">status</li>
           </ul>
           { booksContent }
-          { this.props.children }
+
     </section>
     );
   }

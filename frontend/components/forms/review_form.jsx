@@ -13,6 +13,7 @@ class ReviewForm extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.submitReview = this.submitReview.bind(this);
+    this.deleteReview = this.deleteReview.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,10 +41,37 @@ class ReviewForm extends React.Component {
     };
   }
 
+  deleteReview() {
+    return (e) => {
+      e.preventDefault();
+      this.props.deleteReview(this.props.id);
+    };
+  }
+
+  // renderErrors() {
+  //   debugger
+  //   if (typeof(this.props.review) === "undefined" || (this.props.review.errors) === "undefined") {
+  //     return;
+  //   } else {
+  //     return(
+  //       <ul className="errorsList">
+  //         {this.props.review.errors.map((error, i) => (
+  //           <li key={`error-${i}`} className="errorMessage">
+  //             {error}
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     );
+  //   }
+  // }
+
+  // { this.renderErrors()}
   render () {
+
+
+
     return (
       <form className="createReviewForm" onSubmit={this.submitReview()}>
-
         <div className="createReviewTitle group">
           <label>Title</label>
           <input type="text" value={this.state.title} onChange={this.handleInput("title")}/>
@@ -54,7 +82,9 @@ class ReviewForm extends React.Component {
           <textArea id="CreateReivewTextArea" value={this.state.body} onChange={this.handleInput("body")}/>
         </div>
 
+
         <button>Submit Review</button>
+        <button onClick={this.deleteReview()}>Delete Review</button>
 
       </form>
     );
