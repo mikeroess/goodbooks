@@ -11,7 +11,7 @@ class AddToShelf extends React.Component {
   }
 
   componentWillMount() {
-    if (Array.isArray(this.props.userShelves) && Array.isArray(this.props.shelfIds)) {
+    if (Array.isArray(this.props.userShelves) && Array.isArray(this.props.shelfIds) && typeof(this.props.book) !== 'undefined') {
       this.props.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
