@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import UpdateShelvesIndexContainer from '../forms/update_shelves_index_container';
+import ReadStatusContainer from '../forms/read_status_form_container';
 
 class ShelfDetailItem extends React.Component {
 
@@ -35,6 +36,10 @@ class ShelfDetailItem extends React.Component {
 
         <li className="shelves-col">
           <UpdateShelvesIndexContainer key={this.props.book.bookId} className="shelves-col" book={this.props.book} />
+        </li>
+
+        <li className="read-status-col">
+          <ReadStatusContainer bookId={this.props.book.bookId} />
         </li>
 
 

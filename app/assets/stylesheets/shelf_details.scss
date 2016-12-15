@@ -19,13 +19,13 @@
 .shelfDetailItem {
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(238, 238, 238);
+  width: 700px;
 }
 
 .shelfDetailItem > li {
   float: left;
   padding: 12px 5px 5px 0;
   overflow-wrap: break-word;
-
 }
 
 .shelfDetailItem > li > a {
@@ -71,4 +71,8 @@ li.title-col {
 
 .shelves-col {
   width: 78px;
+}
+
+.read-status-col {
+  float: left;
 }
