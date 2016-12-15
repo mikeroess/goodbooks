@@ -28,7 +28,7 @@ class UserHome extends React.Component {
         </nav>
 
           <aside className="userHomeAside">
-              <ShelvesContainer />
+            <ShelvesContainer />
           </aside>
 
           <content className="userHomeContent">

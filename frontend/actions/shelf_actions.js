@@ -8,6 +8,21 @@ export const RECEIVE_SHELF = "RECEIVE_SHELF";
 export const REQUEST_ALL_SHELVES = "REQUEST_ALL_SHELVES";
 export const REQUEST_A_SHELF = "REQUEST_A_SHELF";
 export const REMOVE_SHELF = "REMOVE_SHELF";
+export const RECEIVE_SHELF_DETAIL_UPDATE = "RECEIVE_SHELF_DETAIL_UPDATE";
+
+export const receiveShelfDetailUpdate = (update) => {
+  return {
+    type: RECEIVE_SHELF_DETAIL_UPDATE,
+    update
+  };
+};
+
+export const recieveShelfDetail = (shelfDetail) => {
+  return {
+    type: RECEIVE_SHELF_DETAIL,
+    shelfDetail
+  };
+};
 
 export const receiveErrors = (errors) => {
   return {

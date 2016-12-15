@@ -4,7 +4,8 @@ import ReviewForm from './review_form';
 
 const mapStateToProps = ({ review }) => {
   return {title: "",
-        body: ""};
+        body: "",
+        review: review.review };
 };
 
 const mapDispatchToProps = (dispatch) => {

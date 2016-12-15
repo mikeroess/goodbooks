@@ -10,10 +10,23 @@ class AddToShelf extends React.Component {
     this.displayShelvesClick = this.displayShelvesClick.bind(this);
   }
 
+  componentWillMount() {
+    if (Array.isArray(this.props.userShelves) && Array.isArray(this.props.book.shelfIds)) {
+      this.props.userShelves.map((shelf) => {
+        this.state[shelf.shelfId] = {
+          title: shelf.title,
+          checked: this.props.book.shelfIds.includes(shelf.shelfId),
+          bookId: this.props.book.bookId
+        };
+      });
+      this.setState({displayShelves: false});
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
-    let updated = (this.props.shelves !== nextProps.shelves || this.props.book.shelves !== nextProps.book.shelves);
-    if (updated && Array.isArray(nextProps.shelves) && Array.isArray(nextProps.book.shelves)) {
-      nextProps.shelves.map((shelf) => {
+    let updated = (this.props.userShelves !== nextProps.userShelves || this.props.book.shelfIds !== nextProps.book.shelfIds);
+    if (updated && Array.isArray(nextProps.userShelves) && Array.isArray(nextProps.book.shelfIds)) {
+      nextProps.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
           checked: nextProps.book.shelfIds.includes(shelf.shelfId),
@@ -42,7 +55,7 @@ class AddToShelf extends React.Component {
   }
 
   render() {
-    if (!Array.isArray(this.props.shelves)) {
+    if (!Array.isArray(this.props.userShelves)) {
       return <div></div>;
     }
     const shelfIds = Object.keys(this.state);
