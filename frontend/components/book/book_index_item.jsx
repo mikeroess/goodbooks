@@ -34,6 +34,9 @@ class BookIndexItem extends React.Component {
           <UpdateShelvesIndexContainer key={newKey} className="shelves-col" book={this.props.book} shelves={this.props.shelves} />
         </li>
 
+        <li className="read-status-col">
+          <ReadStatusContainer bookId={this.props.book.bookId} />
+        </li>
 
 
 
