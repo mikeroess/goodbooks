@@ -56,7 +56,6 @@ class BookDetail extends React.Component{
       return (<div></div>);
     }
 
-
 const currentReviewForm = (this.props.review === null) ? <CreateReviewContainer /> : <UpdateReviewContainer />;
 
 let myReview;
@@ -88,7 +87,7 @@ let reviews;
           </div>
 
           <div className="textDetails">
-            <div className="bookDetailAuthor">
+            <div className="bookDetailAuthor">  
               <h2 className="bookDetailTitle">
                 {this.props.bookDetails.title}
               </h2>
@@ -96,13 +95,19 @@ let reviews;
             <p className="BookDetailBlurb">{this.props.bookDetails.blurb}</p>
           </div>
 
+          <div className="ReadStatusList">
+            <h4>Current Status</h4>
+            <ReadStatusContainer bookId={this.props.params.bookId} />
+          </div>
+
             <div className="bookDetailShelvesDiv group">
               <div className="UpdateshelvesList">
-                <h4>My Shelves</h4>
+                <h4 id="BookDetailUpdateShelvesListMyShelvesHeader">My Shelves</h4>
                 <AddToShelfContainer id="bookDetailsUpdateShelves"/>
               </div>
-              <h4>Current Status</h4>
-              <ReadStatusContainer bookId={this.props.params.bookId} />
+
+
+
             </div>
           </div>
         </section>

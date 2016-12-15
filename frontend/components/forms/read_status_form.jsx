@@ -55,12 +55,12 @@ class ReadStatusForm extends React.Component {
 
     return(
       <form className="readStatusForm" onSubmit={this.submitReadStatus()}>
+        <button>Update Status</button>
         <select value={this.state.status} onChange={this.handleChange()}>
           <option value="to-read">To Read</option>
           <option value="reading">Reading</option>
           <option value="read">Read</option>
         </select>
-        <button>Update Status</button>
 
       </form>
     );
