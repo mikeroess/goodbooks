@@ -8,7 +8,8 @@ const mapStateToProps = ({ books, shelves }) => {
   return {
     userShelves: shelves.shelves,
     bookShelves: books.bookDetails.shelves,
-    bookId: books.bookDetails.bookId
+    bookId: books.bookDetails.bookId,
+    shelfIds: books.bookDetails.shelfIds
   };
 };
 

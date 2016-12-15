@@ -10,13 +10,26 @@ class AddToShelf extends React.Component {
     this.displayShelvesClick = this.displayShelvesClick.bind(this);
   }
 
+  componentWillMount() {
+    if (Array.isArray(this.props.userShelves) && Array.isArray(this.props.shelfIds)) {
+      this.props.userShelves.map((shelf) => {
+        this.state[shelf.shelfId] = {
+          title: shelf.title,
+          checked: this.props.shelfIds.includes(shelf.shelfId),
+          bookId: this.props.book.bookId
+        };
+      });
+      this.setState({displayShelves: false});
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
-    let updated = (this.props.userShelves !== nextProps.userShelves || this.props.bookShelves !== nextProps.bookShelves);
+    let updated = (this.props.userShelves !== nextProps.userShelves || this.props.shelfIds !== nextProps.shelfIds);
     if (updated && Array.isArray(nextProps.userShelves) && Array.isArray(nextProps.bookShelves)) {
       nextProps.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
-          checked: nextProps.bookShelves.includes(shelf.shelfId),
+          checked: nextProps.shelfIds.includes(shelf.shelfId),
           bookId: nextProps.bookId
         };
       });
