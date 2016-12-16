@@ -4,7 +4,8 @@
 
 GoodBooks is a full-stack {db: 'Postgres', backEnd: 'Ruby on Rails', frontEnd: 'React/Redux'} web application inspired by GoodReads.  
 
-At it's heart, GoodBooks aims to serve two purposes: 1) storing/organizing information
+At it's heart, GoodBooks aims to serve two purposes:
+1) storing/organizing information
 2) connecting enthusiasts of an otherwise solitary activity.  
 
 Primarily it is a vehicle for readers to quickly store, sort, and access information about books.  Readers often wish to categorize books for easy recall later, log books they would like to read, and make notes to remember specific passages or thoughts about a book.  
@@ -20,7 +21,7 @@ The primary unit of organization is a shelf.  Shelves contain references to as m
 
 To ensure maximum utility, shelves can easily created, destroyed, accessed or updated from a sidebar attached to every view on the site.  
 
-![Shelf Index Component](https://github.com/mikeroess/goodbooks/tree/master/docs/wireframes/shelvesIndex.png)
+![Shelf Index Component](docs/wireframes/shelvesIndex.png)
 
 ## Book Detail
 The main source for information storage and retrieval about a book is the book detail view.  To permit ease of use, this page can be accessed from any shelf index or browse view that lists the book.  
