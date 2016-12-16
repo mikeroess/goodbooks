@@ -22,3 +22,21 @@
   margin-left: 5px;
   font-style: italic;
 }
+
+.ReviewErrors {
+  font-weight: normal;
+  font-size: 12px;
+  margin: 3px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial;
+  color: #333;
+  display: block;
+  padding: 2px 0;
+  list-style: none;
+  background-color: #fff7c9;
+  font-size: 12px;
+  width: 170px;
+}
+
+.createReviewForm button {
+  margin: 10px;
+}

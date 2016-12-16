@@ -9,12 +9,12 @@ class ReviewForm extends React.Component {
       title: this.props.title,
       body: this.props.body,
       book_id: this.props.params.bookId,
+      errors: false,
     };
 
     this.handleInput = this.handleInput.bind(this);
     this.submitReview = this.submitReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,10 +37,16 @@ class ReviewForm extends React.Component {
   submitReview() {
     return (e) => {
       e.preventDefault();
-      const submission = {review: this.state};
-      this.props.submitReview(submission, this.props.id);
+      if (this.state.body === "") {
+        this.setState({errors: true})
+      } else {
+        const submission = {review: this.state};
+        this.props.submitReview(submission, this.props.id);
+      }
     };
   }
+
+
 
   deleteReview() {
     return (e) => {
@@ -48,29 +54,13 @@ class ReviewForm extends React.Component {
       this.props.deleteReview(this.props.id);
     };
   }
-  renderErrors() {
-    if (this.props.errors === null) {
-      return;
-    } else {
-      return(
-        <ul className="errorsList">
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`} className="errorMessage">
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    }
-  }
-// { this.renderErrors() }
+
   render () {
-    
+
 
 
     return (
       <form className="createReviewForm" onSubmit={this.submitReview()}>
-
         <div className="createReviewTitle group">
           <label>Title</label>
           <input type="text" value={this.state.title} onChange={this.handleInput("title")}/>
@@ -82,6 +72,7 @@ class ReviewForm extends React.Component {
         </div>
 
 
+        { this.state.errors ? <div className="ReviewErrors">Body cannot be blank<br /></div> : <div></div> }
         <button>Submit Review</button>
         <button onClick={this.deleteReview()}>Delete Review</button>
 
