@@ -14,7 +14,9 @@ class CreateShelfComponent extends React.Component {
   }
 
   handleSubmit() {
-    this.props.createShelf(this.state);
+    if (this.state.title !== "") {
+      this.props.createShelf(this.state);
+    }
     this.setState({title: ""});
   }
 // this.props.createShelf(this.state)
