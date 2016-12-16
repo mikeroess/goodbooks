@@ -27,7 +27,7 @@ class AddToShelf extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let updated = (this.props.userShelves !== nextProps.userShelves || this.props.shelfIds !== nextProps.shelfIds);
-    if (updated && Array.isArray(nextProps.userShelves) && Array.isArray(nextProps.bookShelves)) {
+    if (updated && Array.isArray(nextProps.userShelves) && Array.isArray(nextProps.shelfIds)) {
       this.state.shelfIds = [];
       nextProps.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
@@ -53,7 +53,10 @@ class AddToShelf extends React.Component {
 
   handleSubmit() {
     const shelvedBooks = {};
-    shelvedBooks["shelvedBooks"] = this.state;
+    const stateCopy = this.state;
+    delete stateCopy["displayShelves"];
+    delete stateCopy["shelfIds"];
+    shelvedBooks["shelvedBooks"] = stateCopy;
     this.props.updateBookshelves(shelvedBooks);
   }
 

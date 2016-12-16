@@ -25,7 +25,6 @@ const BookReducer = (state = initialState, action) => {
       return newState;
 
     case RECEIVE_SHELF_DETAIL:
-      debugger
       newState.books = action.shelfDetail.books;
       return newState;
 

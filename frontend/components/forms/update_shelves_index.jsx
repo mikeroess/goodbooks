@@ -53,7 +53,6 @@ class AddToShelf extends React.Component {
   }
 
   handleSubmit() {
-    debugger
     const shelvedBooks = {};
     const stateCopy = this.state;
     delete stateCopy["displayShelves"];
@@ -65,6 +64,7 @@ class AddToShelf extends React.Component {
     } else {
       this.props.fetchBooks(this.props.params.shelfId);
     }
+    this.setState({displayShelves: false});
   }
 
   render() {
