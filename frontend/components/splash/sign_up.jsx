@@ -79,6 +79,9 @@ renderErrors() {
   }
 }
 
+// <div className="fieldparagraph">
+//   <img className="iconPreview" src={ this.state.imageUrl } />
+// </div>
   render(){
 
     if (this.props.loggedIn) {
@@ -121,11 +124,6 @@ renderErrors() {
                 <div className="fieldparagraph">
                   <label>User Icon:</label>
                   <input type="file" onChange={ (e) => this.updateFile(e) } />
-                </div>
-
-
-                <div className="fieldparagraph">
-                  <img className="iconPreview" src={ this.state.imageUrl } />
                 </div>
 
                   <div className="buttonContainer">

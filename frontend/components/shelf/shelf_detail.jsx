@@ -22,7 +22,7 @@ class ShelfDetail extends React.Component {
       if (typeof(this.props.books) === 'undefined') {
         return <div></div>;
       }
-      let shelfBooksDetails = <div></div>;
+      let shelfBooksDetails;
       if (this.props.books.length > 0) {
         shelfBooksDetails = this.props.books.map((book) => {
           let newKey=`shelfDetailItem${book.bookId}`;
