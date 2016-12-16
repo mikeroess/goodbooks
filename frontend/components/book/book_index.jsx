@@ -10,6 +10,12 @@ class BookIndex extends React.Component {
     console.log("I did mount");
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.books !== nextProps.books){
+      nextProps.fetchBooks();
+    }
+  }
+
   componentWillUnmount(){
     console.log("I will unmount");
   }

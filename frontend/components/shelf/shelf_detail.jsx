@@ -8,8 +8,6 @@ class ShelfDetail extends React.Component {
 
   componentWillMount() {
     this.props.fetchShelf(this.props.params.shelfId);
-    // this.props.fetchBooks();
-    // this.props.fetchShelves();
   }
 
   componentWillReceiveProps(nextProps) {

@@ -9,12 +9,6 @@ const initialState = {
   errors: []
 };
 
-//
-// case RECEIVE_SHELF_OWNER:
-//   newState.shelfOwner = action.shelfOwner;
-//   return newState;
-
-
 const ShelfReducer = (state = initialState, action) => {
   const newState = merge({}, state);
   Object.freeze(state);
