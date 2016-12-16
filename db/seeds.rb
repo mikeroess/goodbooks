@@ -67,6 +67,31 @@ book48 = Book.create(title: "The Plague", author_name: "Albert Camus", image: Fi
 book49 = Book.create(title: "Moby Dick", author_name: "Herman Melville", image: File.open('app/assets/images/moby_dick.jpg'))
 book50 = Book.create(title: "Fearsome Creatures of the Lumberwoods: Twenty Chilling Tales from the Wilderness", author_name: "Hal Johnson", image: File.open('app/assets/images/fearsome.jpg'))
 
+Review.destroy_all
+review1 = Review.create(book_id: book1.id, user_id: user1.id, title: "Sagely wisdom", body: "He's no Solomon, but the sayings of Odin have some pretty good gems.  Not the best telling of the Volsunga saga I've read.")
+review2 = Review.create(book_id: book1.id, user_id: user2.id, title: "I love the norse", body: "Title says it all")
+review2 = Review.create(book_id: book2.id, user_id: user2.id, title: "I'm sorry; it's gross", body: "Gutter humor all the way down.  Don't get me wrong, it's very clever gutter humor.  Still, ick.")
+review3 = Review.create(book_id: book2.id, user_id: user1.id, title: "My favorite Saga", body: "Seriously -- it's like someone wed Diogenes of Sinope and 80's action movie hero, wrapping the whole thing in the trappings of the medieval bardic tradition.  Everyone should read this book, and everyone should love this book.")
+review4 = Review.create(book_id: book2.id, user_id: user5.id, title: "Good jokes by a bad poet", body: "Look, I get why Mike like this book so much.  I don't think it's the best, though.  It's up there.  One of the best.  But, Njal's is so much better.  4 out of 4 Barn's agree.")
+review5 = Review.create(book_id: book14.id, user_id: user1.id, title: "A fun adventure", body: "There are some classic adventure tropes here.  I guess what I like most about this is how low the stakes are.  The whole thing is written with this epic scope, but it's just some guys stealing cows from their neighbors.  I mean, there's something humerous in that, right?")
+review6 = Review.create(book_id: book14.id, user_id: user2.id, title: "Great pictures", body: "Man, this edition has some wonderful pictures.")
+review7 = Review.create(book_id: book14.id, user_id: user6.id, title: "Maeve is awesome", body: "Seriously powerful woman queen starting (local) international incidents because her pride has been insulted.")
+review8 = Review.create(book_id: book11.id, user_id: user1.id, title: "Ugh", body: "I like stories about the machinations of spiteful dwarves and the power they influence over kings as much as the next, but this is a little too close to home right now.")
+review9 = Review.create(book_id: book11.id, user_id: user2.id, title: "Meh", body: "It was fine.")
+review10 = Review.create(book_id: book11.id, user_id: user5.id, title: "What a weird book.", body: "Don't get me wrong, I think I like it.  I recommended it to a friend.  I just don't know why I like it.  It's so weird.")
+review11 = Review.create(book_id: book4.id, user_id: user1.id, title: "Thanks, DM!", body: "I was building a rails app for a colleague and encountered a nasty race condition.  I complained about it to my spouse, and she talked to her boss who recommended this book to me.  Man, what a wonderful discussion of design practices, and the rationale behind them.  Clear and measured throughout.  I feel like I leveld up after reading this book.  Thanks, David!")
+review12 = Review.create(book_id: book2.id, user_id: user3.id, title: "Boys!", body: "Why did I let myself get roped into reading this garbage.  I mean, they told me it was about a viking.  They way they talked about it didn't make it sound appeaing either.  But, they just wouldn't shut up.  So, I gave it a go.  I regret that.")
+review13 = Review.create(book_id: book5.id, user_id: user6.id, title: "Lorem", body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+review14 = Review.create(book_id: book5.id, user_id: user2.id, title: "Mathmatical!", body: "What a lovely introduction.  I enjoy the enthusiasm these two clearly have for the subject, and the wishful thinking approach to breaking down problems is really cool.  I did watch the lectures along with this book.  P.S. -- knowing Z, I'll bet she typed out that Lorem Ipsum herself!")
+review15 = Review.create(book_id: book44.id, user_id: user1.id, title: "classic", body: "One weird thing, though -- the future as Gibson envisioned it was really pink.  Read the book again -- 82 times he says pink.  It's just pink plastic bubblegum.  It's vaporwave.")
+review16 = Review.create(book_id: book44.id, user_id: user2.id, title: "Meh", body: "It's fine.  Overrated")
+review17 = Review.create(book_id: book44.id, user_id: user3.id, title: "I agree with that guy!", body: "It's an okay book.  But, a bit boring.")
+review18 = Review.create(book_id: book44.id, user_id: user4.id, title: "Woof!", body: "I'm a dog!  I don't read!  Who gave me an account.  Bark Bark Bark!  I don't like when my family reads--Let's go throw the toy around.")
+review19 = Review.create(book_id: book44.id, user_id: user5.id, title: "It was a part of my childhood", body: "I can't judge it properly, but I am sad to see the extent to which Gibson got the future right.")
+review20 = Review.create(book_id: book6.id, user_id: user6.id, title: "It was okay", body: "I'll bet NLopez would dig it though.  Well, Maybe not.  Maybe Cho, though?")
+
+
+
 ReadStatus.destroy_all
 readstatus1 = ReadStatus.create(user_id: user1.id, book_id:book1.id, status:"read")
 readstatus2 = ReadStatus.create(user_id: user1.id, book_id:book2.id, status:"read")
@@ -172,18 +197,3 @@ shelvedbook15 = ShelvedBook.create(book_id: book23.id, shelf_id: shelf7.id)
 shelvedbook15 = ShelvedBook.create(book_id: book13.id, shelf_id: shelf7.id)
 shelvedbook15 = ShelvedBook.create(book_id: book47.id, shelf_id: shelf8.id)
 shelvedbook15 = ShelvedBook.create(book_id: book50.id, shelf_id: shelf8.id)
-
-
-
-Review.destroy_all
-review1 = Review.create(book_id: book1.id, user_id: user1.id, title: "Sagely wisdom", body: "He's no Solomon, but the sayings of Odin have some pretty good gems.  Not the best telling of the Volsunga saga I've read.")
-review2 = Review.create(book_id: book1.id, user_id: user2.id, title: "I love the norse", body: "Title says it all")
-review2 = Review.create(book_id: book2.id, user_id: user2.id, title: "I'm sorry it's gross", body: "but seriously -- this book has the best vomit scene in all of world history")
-review3 = Review.create(book_id: book2.id, user_id: user1.id, title: "My favorite Saga", body: "Seriously -- it's like someone wed Diogenes of Sinope and 80's action movie hero, wrapping the whole thing in the trappings of the medieval bardic tradition.  Everyone should read this book, and everyone should love this book.")
-review4 = Review.create(book_id: book2.id, user_id: user5.id, title: "Good jokes by a bad poet", body: "Don't get me wrong.  I get why Mike like this book so much.  I don't think it's the best, though.  It's up there.  One of the best.  But, Njal's is so much better")
-review5 = Review.create(book_id: book14.id, user_id: user1.id, title: "A fun adventure", body: "There are some classic adventure tropes here.  I guess what I like most about this is how low the stakes are.  The whole thing is written with this epic scope, but it's just some guys stealing cows from their neighbors.  I mean, there's something humerous in that, right?")
-review6 = Review.create(book_id: book14.id, user_id: user2.id, title: "Great pictures", body: "Man, this edition has some wonderful pictures.")
-review7 = Review.create(book_id: book14.id, user_id: user6.id, title: "Maeve is awesome", body: "Badass woman queen starting (local) international incidents because her pride has been insulted.")
-review8 = Review.create(book_id: book11.id, user_id: user1.id, title: "Ugh", body: "I like stories about the machinations of spiteful dwarves and the power they influence over kings as much as the next, but this is a little too close to home right now.")
-review9 = Review.create(book_id: book11.id, user_id: user2.id, title: "Meh", body: "It was fine.")
-review10 = Review.create(book_id: book11.id, user_id: user5.id, title: "What a weird book.", body: "Don't get me wrong, I think I like it.  I recommended it to a friend.  I just don't know why I like it.  It's so weird.")
