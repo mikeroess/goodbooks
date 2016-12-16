@@ -100,7 +100,6 @@ renderErrors() {
           </form>
 
         </div>
-        <Footer />
       </div>
     );
       }
