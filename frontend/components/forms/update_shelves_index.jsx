@@ -53,17 +53,24 @@ class AddToShelf extends React.Component {
   }
 
   handleSubmit() {
+    debugger
     const shelvedBooks = {};
-    shelvedBooks["shelvedBooks"] = this.state;
+    const stateCopy = this.state;
+    delete stateCopy["displayShelves"];
+    delete stateCopy["shelfIds"];
+    shelvedBooks["shelvedBooks"] = stateCopy;
     this.props.updateBookshelves(shelvedBooks);
+    if (typeof(this.props.params.shelfId) === "undefined" ) {
+      this.props.fetchBooks();
+    } else {
+      this.props.fetchBooks(this.props.params.shelfId);
+    }
   }
 
   render() {
     if (!Array.isArray(this.props.userShelves)) {
       return <div></div>;
     }
-    // const shelfIds = Object.keys(this.state);
-
     const shelfIds = this.state.shelfIds;
 
     let shelves;

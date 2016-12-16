@@ -19,8 +19,6 @@ class Api::ShelvedBooksController < ApplicationController
     render 'api/shelvedBooks/update'
   end
 
-
-
   private
 
 

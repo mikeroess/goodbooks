@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import UpdateShelvesIndex from './update_shelves_index';
-import { fetchAllBooks } from '../../actions/book_actions';
-import { fetchShelves } from '../../actions/shelf_actions';
+import { fetchBook } from '../../actions/book_actions';
+import { fetchShelves, fetchShelf } from '../../actions/shelf_actions';
 import  { updateBookshelves } from '../../actions/shelved_book_actions';
 
 const mapStateToProps = ({ shelves }) => {
@@ -12,7 +12,7 @@ const mapStateToProps = ({ shelves }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchBooks: () => dispatch(fetchAllBooks()),
+    fetchBooks: (shelfId) => dispatch(fetchShelf(shelfId)),
     updateBookshelves:
       (updatedShelves) => dispatch(updateBookshelves(updatedShelves))
   };

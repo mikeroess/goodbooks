@@ -11,7 +11,7 @@ class ShelfDetail extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.params.shelfId !== nextProps.params.shelfId) {
+    if (this.props.params.shelfId !== nextProps.params.shelfId ) {
       nextProps.fetchShelf(nextProps.params.shelfId);
     }
   }

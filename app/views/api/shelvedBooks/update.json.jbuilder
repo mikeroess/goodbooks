@@ -1,6 +1,6 @@
-  json.books do
-    json.array! @books, partial: 'api/books/book', as: :book
-  end
+  # json.books do
+  #   json.array! @books, partial: 'api/books/book', as: :book
+  # end
 
   json.shelves do
     json.array! @user.shelves, partial: 'api/shelves/shelf', as: :shelf

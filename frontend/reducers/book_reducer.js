@@ -21,10 +21,11 @@ const BookReducer = (state = initialState, action) => {
 
     case RECEIVE_SHELF_DETAIL_UPDATE:
       newState.bookDetails = action.update.bookDetails;
-      newState.books = action.update.books;
+      // newState.books = action.update.books;
       return newState;
 
     case RECEIVE_SHELF_DETAIL:
+      debugger
       newState.books = action.shelfDetail.books;
       return newState;
 
