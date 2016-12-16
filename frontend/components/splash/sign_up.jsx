@@ -57,12 +57,6 @@ handleSubmit(e) {
 }
 
 
-// password: "",
-// email: "",
-// loading: false,
-// imageFile: null,
-// imageUrl: null
-
 guestLogin(e) {
   e.preventDefault();
   this.props.login({user: {email: "mwr", password: "password"}})

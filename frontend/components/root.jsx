@@ -34,8 +34,8 @@ const Root = ({ store }) => {
       <Route path="/user" component={ UserContainer } onEnter={ _ensureLoggedIn }>
         <Route path="/user/books" component={ BookIndexContainer } />
         <Route path="/user/myBooks" component={ MyBooksContainer } />
-        <Route path="/user/books/:bookId" component={ BookDetailContainer } />
-        <Route path="/user/shelf/:shelfId" component={ ShelfDetailContainer }/>
+        <Route path="/user/books/:bookId" component={ BookDetailContainer } onEnter={ _ensureLoggedIn } />
+        <Route path="/user/shelf/:shelfId" component={ ShelfDetailContainer } onEnter={ _ensureLoggedIn } />
       </Route>
       <Route path="/login" component={AuthFormContainer}
          onEnter={_redirectIfLoggedIn} />

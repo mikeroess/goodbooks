@@ -52,7 +52,7 @@ class BookDetail extends React.Component{
   }
 
   render() {
-    if (typeof(this.props.bookDetails) === 'undefined') {
+    if (typeof(this.props.bookDetails) === 'undefined' || this.props.currentUsername === 'undefined') {
       return (<div></div>);
     }
 
@@ -87,7 +87,7 @@ let reviews;
           </div>
 
           <div className="textDetails">
-            <div className="bookDetailAuthor">  
+            <div className="bookDetailAuthor">
               <h2 className="bookDetailTitle">
                 {this.props.bookDetails.title}
               </h2>

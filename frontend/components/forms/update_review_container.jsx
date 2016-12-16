@@ -7,11 +7,13 @@ const mapStateToProps = ({ review }) => {
     return { title: review.review.title,
       body: review.review.body,
       id: review.review.reviewId,
-      review: review.review };
+      review: review.review,
+      errors: review.errors };
   } else {
     return {
       title: "",
-      body: ""
+      body: "",
+      errors: review.errors
     };
   }
 };

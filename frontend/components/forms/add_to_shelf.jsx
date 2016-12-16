@@ -12,12 +12,14 @@ class AddToShelf extends React.Component {
 
   componentWillMount() {
     if (Array.isArray(this.props.userShelves) && Array.isArray(this.props.shelfIds) && typeof(this.props.book) !== 'undefined') {
+      this.state.shelfIds = [];
       this.props.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
           checked: this.props.shelfIds.includes(shelf.shelfId),
           bookId: this.props.book.bookId
         };
+        this.state.shelfIds.push(shelf.shelfId);
       });
       this.setState({displayShelves: false});
     }
@@ -26,12 +28,14 @@ class AddToShelf extends React.Component {
   componentWillReceiveProps(nextProps) {
     let updated = (this.props.userShelves !== nextProps.userShelves || this.props.shelfIds !== nextProps.shelfIds);
     if (updated && Array.isArray(nextProps.userShelves) && Array.isArray(nextProps.bookShelves)) {
+      this.state.shelfIds = [];
       nextProps.userShelves.map((shelf) => {
         this.state[shelf.shelfId] = {
           title: shelf.title,
           checked: nextProps.shelfIds.includes(shelf.shelfId),
           bookId: nextProps.bookId
         };
+      this.state.shelfIds.push(shelf.shelfId);
       });
     }
   }
@@ -58,26 +62,30 @@ class AddToShelf extends React.Component {
     if (!Array.isArray(this.props.userShelves)) {
       return <div></div>;
     }
-    const shelfIds = Object.keys(this.state);
-
-    const shelves = shelfIds.map((shelfId) =>
-    <div  key={`shelfIdCheckbox-${shelfId}${this.props.bookId}`} className="checkBoxDiv group">
-      <input type="checkbox" id={`checkbox-label-shelf-id${shelfId}`}
-        checked={ this.state[shelfId].checked }
-        onChange={ () => this.handleChange(shelfId) }
-      />
-      <label htmlFor={`checkbox-label-shelf-id${shelfId}`}>
-        { this.state[shelfId].title }
-      </label>
-    </div>
-      );
-
-
-    const shelvesList = shelfIds.map((shelfId) => {
-      if (this.state[shelfId].checked) {
-        return <Link to={`user/shelf/${shelfId}`} key={shelfId} className="shelfListLink">{this.state[shelfId].title}</Link>;
+    const shelfIds = this.state.shelfIds;
+    let shelves;
+    if (typeof(shelfIds) !== "undefined") {
+       shelves = shelfIds.map((shelfId) =>
+      <div  key={`shelfIdCheckbox-${shelfId}${this.props.bookId}`} className="checkBoxDiv group">
+        <input type="checkbox" id={`checkbox-label-shelf-id${shelfId}`}
+          checked={ this.state[shelfId].checked }
+          onChange={ () => this.handleChange(shelfId) }
+        />
+        <label htmlFor={`checkbox-label-shelf-id${shelfId}`}>
+          { this.state[shelfId].title }
+        </label>
+      </div>
+        );
       }
-    });
+
+    let shelvesList;
+    if (typeof(shelfIds) !== "undefined") {
+      shelvesList = shelfIds.map((shelfId) => {
+        if (this.state[shelfId].checked) {
+          return <Link to={`user/shelf/${shelfId}`} key={shelfId} className="shelfListLink">{this.state[shelfId].title}</Link>;
+        }
+      });
+    }
 
     return (
       <div>

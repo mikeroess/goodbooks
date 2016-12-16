@@ -12,11 +12,11 @@ class LoggedInHeader extends React.Component {
 
   handleClick(event){
     event.preventDefault();
-    this.props.signOut().then(() => {
-      hashHistory.push("/login");
-    },
-    (error) => console.log("error"));
-  }
+    this.props.signOut()
+    .then(() => { hashHistory.push("/"); },
+      () => { hashHistory.push("/"); }
+
+  );}
 
   render() {
     let imagePath = "";
