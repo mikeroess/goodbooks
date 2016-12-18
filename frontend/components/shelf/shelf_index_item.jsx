@@ -5,7 +5,7 @@ class ShelfIndexItem extends React.Component {
 
 
   componentDidMount() {
-    this.props.fetchShelf(this.props.shelf.shelfId);
+    // this.props.fetchShelf(this.props.shelf.shelfId);
   }
  componentWillReceiveProp
 render() {
