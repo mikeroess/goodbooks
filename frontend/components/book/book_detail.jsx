@@ -5,7 +5,6 @@ import CreateReviewContainer from '../forms/create_review_container';
 import ReviewDetail from '../review/review_detail';
 import UpdateReviewContainer from '../forms/update_review_container';
 import ReadStatusContainer from '../forms/read_status_form_container';
-// import ReadStatusForm from '../forms/read_status_form'
 
 class BookDetail extends React.Component{
   constructor(props) {

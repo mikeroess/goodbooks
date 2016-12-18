@@ -9,8 +9,7 @@ export const updateBookshelves = (shelfUpdates) => {
     return APIUtil.updateBookshelves(shelfUpdates)
     .then((update) => {
       dispatch(receiveShelfDetailUpdate(update));
-      console.log("update received");
     },
-    error => console.log(error));
+    error => (error));
   };
 };

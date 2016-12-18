@@ -25,20 +25,9 @@ class AddToShelf extends React.Component {
     }
   }
 
-  // debugger
-  // let now = {};
-  // let next = {};
-  // now[0] = this.props.userShelves;
-  // now[1] = this.props.book.shelfIds;
-  //
-  // next[0] = nextProps.userShelves;
-  // next[1] = nextProps.book.shelfIds;
-  // const updated = (_.isEqual(now, next));
-
-
   componentWillReceiveProps(nextProps) {
     let updated = (this.props.userShelves !== nextProps.userShelves || this.props.book.shelfIds !== nextProps.book.shelfIds);
-    // updated && 
+    // updated &&
     if (Array.isArray(nextProps.userShelves) && Array.isArray(nextProps.book.shelfIds)) {
       this.state.shelfIds = [];
       nextProps.userShelves.map((shelf) => {

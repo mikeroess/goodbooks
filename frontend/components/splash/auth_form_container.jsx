@@ -9,7 +9,6 @@ const mapStateToProps = ({ session, loading }) => {
           loggedIn: Boolean(session.currentUser),
           errors: session.errors,
           };
-
 };
 
 const mapDispatchToProps = (dispatch, { location }) => {
@@ -17,11 +16,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
     login: (user) => dispatch(login(user)),
     loginGuest: () => dispatch(loginGuest()),
     clearErrors: () => dispatch(clearErrors()),
-
   };
-
-
-
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthForm);

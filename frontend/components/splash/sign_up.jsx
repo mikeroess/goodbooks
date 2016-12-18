@@ -53,7 +53,7 @@ handleSubmit(e) {
   }
   this.props.signup(formData)
   .then(() => hashHistory.push("/user"),
-  (error) => console.log(error));
+  (error) => (error));
 }
 
 
@@ -79,9 +79,6 @@ renderErrors() {
   }
 }
 
-// <div className="fieldparagraph">
-//   <img className="iconPreview" src={ this.state.imageUrl } />
-// </div>
   render(){
 
     if (this.props.loggedIn) {

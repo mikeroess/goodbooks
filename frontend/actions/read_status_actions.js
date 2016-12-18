@@ -15,7 +15,7 @@ export const fetchReadStatuses = () => {
   return (dispatch) => {
     APIUtil.fetchReadStatuses()
     .then((readStatuses) => dispatch(receiveReadStatuses(readStatuses)),
-    (err) => console.log(err));
+    (err) => (err));
   };
 };
 
@@ -23,7 +23,7 @@ export const createReadStatus = (readStatus) => {
   return (dispatch) => {
     return APIUtil.createReadStatus(readStatus)
       .then((readStatuses) => dispatch(receiveReadStatuses(readStatuses)),
-      (err) => console.log(err));
+      (err) => (err)));
   };
 };
 
@@ -31,7 +31,7 @@ export const updateReadStatus = (readStatus, id) => {
   return (dispatch) => {
     return APIUtil.updateReadStatus(readStatus, id)
       .then( (updatedReadStatuses) => dispatch(receiveReadStatuses(updatedReadStatuses)),
-      (error) => console.log(error));
+      (error) => (error));
   };
 };
 
@@ -39,6 +39,6 @@ export const destroyReadStatus = (readStatusId) => {
   return (dispatch) => {
     return APIUtil.destroyReadStatus(readStatusId)
       .then((updatedReadStatuses) => dispatch(receiveReadStatuses(updatedReadStatuses)),
-      (error) => console.log(error));
+      (error) => (error));
   };
 };

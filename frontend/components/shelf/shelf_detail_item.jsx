@@ -8,8 +8,6 @@ class ShelfDetailItem extends React.Component {
 
   render() {
     let bookPath = "";
-    //
-    //
     if (this.props.bookDetails !== "undefined") {
       bookPath = `user/books/${this.props.book.bookId}`;
     }

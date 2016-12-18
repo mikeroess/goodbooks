@@ -7,14 +7,7 @@ class BookIndex extends React.Component {
   componentDidMount() {
     this.props.fetchBooks();
     this.props.fetchShelves();
-    console.log("I did mount");
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.books !== nextProps.books){
-  //     nextProps.fetchBooks();
-  //   }
-  // }
 
   render() {
     const shelves = this.props.shelves;

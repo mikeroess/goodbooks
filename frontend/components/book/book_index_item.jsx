@@ -6,13 +6,7 @@ import MybooksUpdateShelvesContainer from '../forms/mybooks_update_shelves_conta
 
 class BookIndexItem extends React.Component {
 
-  // <li className="shelves-col">
-  //   <UpdateShelvesIndexContainer key={newKey} className="shelves-col" book={this.props.book} shelves={this.props.shelves} />
-  // </li>
-
-
   render() {
-    // debugger
     const linkPath = `user/books/${this.props.book.bookId}`;
     const imagePath = this.props.book.coverUrl;
 

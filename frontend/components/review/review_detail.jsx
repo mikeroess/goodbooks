@@ -5,9 +5,6 @@ class ReviewDetail extends React.Component {
 
 
   render() {
-    // const formatText = (text) => {
-    //   return text.split("\n").join();
-    // };
     return(
       <article className="reviewDetail">
         <div className="reviewHeader group">

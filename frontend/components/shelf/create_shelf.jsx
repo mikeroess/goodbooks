@@ -19,7 +19,7 @@ class CreateShelfComponent extends React.Component {
     }
     this.setState({title: ""});
   }
-// this.props.createShelf(this.state)
+  
   render() {
       return(
 
