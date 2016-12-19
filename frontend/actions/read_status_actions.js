@@ -23,7 +23,7 @@ export const createReadStatus = (readStatus) => {
   return (dispatch) => {
     return APIUtil.createReadStatus(readStatus)
       .then((readStatuses) => dispatch(receiveReadStatuses(readStatuses)),
-      (err) => (err)));
+      (err) => (err));
   };
 };
 

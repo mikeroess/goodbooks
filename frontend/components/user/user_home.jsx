@@ -15,11 +15,6 @@ class UserHome extends React.Component {
     this.props.fetchReadStatuses();
   }
 
-  // componentWillReceiveProps() {
-  //   if (this.props.readStatuses != nextProps.readStatuses)
-  // }
-
-
   render() {
     return (
     <div className="userHome">
