@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   end
 
   get 'api/myBooks', to: 'api/books#myBooks'
+  get 'api/myReadBooks', to: 'api/books#read_books'
+  get 'api/myReadingBooks', to: 'api/books#reading_books'
+  get 'api/myToReadBooks', to: 'api/books#to_read_books'
   get 'api/read_statuses', to: 'api/read_statuses#index'
 end
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -41,6 +41,20 @@ class Api::BooksController < ApplicationController
     end
   end
 
+  def reading_books
+    @user = current_user
+    statuses = ReadStatus.where(user_id: @user.id, status: "reading")
+    if statuses
+    else
+    end
+  end
+
+  def to_read_books
+  end
+
+  def reading_books
+  end
+
   private
 
   def book_params
