@@ -15,8 +15,9 @@ class LoggedInHeader extends React.Component {
     this.props.signOut()
     .then(() => { hashHistory.push("/"); },
       () => { hashHistory.push("/"); }
-
-  );}
+  );
+  window.gon = {};
+ }
 
   render() {
     let imagePath = "";
